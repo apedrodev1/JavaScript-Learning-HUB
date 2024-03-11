@@ -118,3 +118,18 @@ footer #acertos {
   border-left: 2px solid #008000;
   padding-left: 10px;
 }
+
+@media (max-width: 390px) {
+  main > button {
+    margin: 1px;
+  }
+
+  main {
+    min-height: 170px;
+  }
+
+  .container {
+    margin: 1px;
+    min-height: 450px;
+  }
+}
