@@ -58,7 +58,7 @@ main button:hover:disabled {
   cursor: not-allowed;
 }
 
-#btnApostar {
+.btn {
   padding: 5px;
   height: 40px;
   margin: 15px;
@@ -72,12 +72,16 @@ main button:hover:disabled {
   font-family: "Gemunu Libre", sans-serif;
 }
 
-#btnApostar:hover {
+.btn:hover {
   border: 2px solid #008000;
 }
 
 #btnApostar:hover:disabled {
   cursor: not-allowed;
+}
+
+#btnReiniciar {
+  display: none;
 }
 
 .resultado {
