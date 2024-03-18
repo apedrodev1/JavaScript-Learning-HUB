@@ -1,7 +1,26 @@
 const numerosApostados = [];
+const resultado = [];
+let valorAposta = 0;
+let qtdAcertos = 0;
+
+
 const btnApostar = document.getElementById("btnApostar");
 btnApostar.disabled = true;
-let valorAposta = 0;
+
+sortearNumeros();
+
+function sortearNumeros() {  // otimizar essa funcao mais tarde
+    for (i = 0; i < 6; i++) {
+        let numeroSorteado = Math.round(Math.random() * 59 + 1);
+
+        // verifica se o número sorteado exite na lista, enquanto exixtir ele vai sortear um nopvo número
+        while (resultado.includes(numeroSorteado)) {
+            let numeroSorteado = Math.round(Math.random() * 59 + 1);
+        }
+        resultado.push(numeroSorteado);// insere o número sorteado na lista
+    }
+
+};
 
 function selecionarNumeros(numero) {
     if (numerosApostados.length >= 0 && numerosApostados.length < 20) {
@@ -15,15 +34,12 @@ function selecionarNumeros(numero) {
         if (numerosApostados.length > 5) {
             btnApostar.disabled = false;
 
-
-
-
+            valorAposta();
         };
 
         // mostra quantidade de numeros apostados
         const qtdApostas = document.getElementById("qtdNumeros");
         qtdApostas.innerHTML = "<p>Qtd Numeros</p><p class='valor'>" + numerosApostados.length + "</p > ";
-
     };
 
 };
@@ -36,7 +52,7 @@ function desabilitarNumeroEscolhido(numero) {
 
 };
 
-function valordaAposta() {
+function valordaAposta() { // nao funciona - ver 
     switch (numerosApostados.length) {
         case 6:
             valorAposta = "R$ 5,00"
@@ -86,11 +102,44 @@ function valordaAposta() {
         default:
             valorAposta = "R$ 0,00"
             break;
-    };
+    }
 
     const divValorAposta = document.getElementById("valor");
     divValorAposta.innerHTML = "<p>valor da Aposta</p><p class='valor'>" + valorAposta + "</p>";
+};
 
+function apostar() {
+    for (i = 0; i < numerosApostados.length; i++) { //confere os acertos e coloca os valores na var qtdAcertos
+        if (resultado.includes(numerosApostados[i])) {
+            qtdAcertos++;
+        }
+    }
+    //mostra o resultado
+    const divResultado = document.getElementById("resultado");
+    for (i = 0; i < resultado.length; i++) {
+        divResultado.innerHTML += "<div class='resultadoCircle'>" + resultado[i] + "</div>";
+    }
 
+    //mostra qtd de acertos
+    let divAcertos = document.getElementById("acertos")
+    divAcertos.innerHTML = "<p>Acertos</p><p class='valor'>" + qtdAcertos + "</p>"
+
+    //desabilitar todos botoes
+    desabilitarTodosNumeros();
+
+    //habilitar o botao reiniciar
+    document.getElementById("btnReiniciar").style.display = 'inline';
 
 };
+
+function desabilitarTodosNumeros() {
+    for (i = 0; i <= 60; i++)
+        document.getElementById("num_" + i).disabled = true;
+
+
+}
+
+let btn = document.querySelector("#btnReiniciar");
+btn.addEventListener("click", function () {
+    location.reload();
+});
