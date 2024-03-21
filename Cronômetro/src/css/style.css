@@ -37,11 +37,11 @@
 }
 
 .separator {
-  padding: 0 15px;
+  padding: 0 10px;
   color: #525763;
 }
 
-#miliseconds {
+.miliseconds {
   font-size: 30px;
   color: #525763;
 }
@@ -58,7 +58,7 @@
   border-radius: 30px;
   cursor: pointer;
   border: 1px solid #ccc;
-  transition: all 0s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .btn:hover {
