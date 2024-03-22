@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+* {
+  font-family: "Orbitron", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+  padding-top: 3rem;
+  background-color: #f1f1f1;
+}
+
+.container h1 {
+  color: #0b3fb8;
+}
+
+.timer {
+  display: flex;
+  font-size: 55px;
+  font-weight: bold;
+  color: #333;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-right: 10px;
+  color: #172953;
+  min-width: 90px;
+}
+
+.separator {
+  font-size: 60px;
+  padding: 0 10px;
+  color: #525763;
+}
+
+#miliseconds {
+  font-size: 30px;
+  color: #525763;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+#startBtn {
+  background-color: #119d15;
+  color: #fff;
+}
+
+#pauseBtn {
+  background-color: #f2e20a;
+  color: #fff;
+}
+
+#resumeBtn {
+  background-color: #0000ff;
+  color: #fff;
+}
+
+#restartBtn {
+  background-color: #e53606;
+  color: #fff;
+}
+
+#pauseBtn,
+#resumeBtn {
+  display: none;
+}
