@@ -18,6 +18,9 @@ Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiênc
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/7e636054-8fd7-4390-82aa-11e14d850ad9)
 
+
+# Função script.js: 
+
 <code>
 function lampOn() {
     if (!isLampBroken()) {
@@ -26,11 +29,12 @@ function lampOn() {
 }</code>
 
 
-
-
-#Apagada: 
+# Apagada: 
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/fad5bf6d-bdaa-4ca0-ad1f-386c8df1b420)
+
+
+# Função script.js:
 
 <code>function lampOff() {
     if (!isLampBroken()) {
@@ -39,11 +43,12 @@ function lampOn() {
 }</code>
 
 
-#Quebrada:
+# Quebrada:
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/6ad9dfe0-a349-42e4-b84d-b50c60a4e767)
 
 
+# Função script.js: 
 <code>function lampBroken() {
     lamp.src = "./src/media/img/quebrada.jpg";
 }</code>
