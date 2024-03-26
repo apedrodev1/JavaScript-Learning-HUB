@@ -30,24 +30,7 @@ Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiênc
 
 A estrutura de pastas foi organizada da seguinte maneira:
 
-projeto-lampada/
-│
-├── src/
-│ ├── css/
-│ │ └── style.css
-│ │
-│ ├── js/
-│ │ └── script.js
-│ │
-│ └── media/
-│ └── img/
-│ ├── desligada.jpg
-│ ├── ligada.jpg
-│ └── quebrada.jpg
-│
-├── index.html
-│
-└── README.md
+![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/9a804a65-5732-4e52-ac8c-b71288cbb34f)
 
 ## JavaScript Otimizado
 
@@ -98,52 +81,53 @@ lamp.addEventListener("dblclick", lampBroken);</code>
 
 Depois:
 
-<code>const lamp = document.getElementById("lamp");
+const lamp = document.getElementById("lamp");
 
 function isLampBroken() {
-return lamp.src.includes('quebrada');
+    return lamp.src.includes('quebrada');
 }
 
 function lampOn() {
-if (!isLampBroken()) {
-lamp.src = './src/media/img/ligada.jpg';
-}
+    if (!isLampBroken()) {
+        lamp.src = './src/media/img/ligada.jpg';
+    }
 }
 
 function lampOff() {
-if (!isLampBroken()) {
-lamp.src = './src/media/img/desligada.jpg';
-}
+    if (!isLampBroken()) {
+        lamp.src = './src/media/img/desligada.jpg';
+    }
 }
 
 function lampBroken() {
-lamp.src = "./src/media/img/quebrada.jpg";
+    lamp.src = "./src/media/img/quebrada.jpg";
 }
 
 document.querySelectorAll('.btn button').forEach(button => {
-button.addEventListener('click', () => {
-switch (button.id) {
-case 'turnOn':
-lampOn();
-break;
-case 'turnOff':
-lampOff();
-break;
-case 'restartBtn':
-lampBroken();
-break;
-default:
-break;
-}
-});
+    button.addEventListener('click', () => {
+        switch (button.id) {
+            case 'turnOn':
+                lampOn();
+                break;
+            case 'turnOff':
+                lampOff();
+                break;
+            case 'restartBtn':
+                lampBroken();
+                break;
+            default:
+                break;
+        }
+    });
 });
 
 lamp.addEventListener("mouseover", lampOn);
 lamp.addEventListener("dblclick", lampBroken);
-</code>
 
 Nesta versão, as funções lampOn, lampOff e lampBroken foram otimizadas e a interação com os botões foi simplificada usando o método querySelectorAll.
 
+
 ---
+
 
 Esse README fornece uma descrição clara do projeto, seus objetivos, tecnologias utilizadas e como utilizá-lo, juntamente com os devidos créditos ao criador original do projeto.
