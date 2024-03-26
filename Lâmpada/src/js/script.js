@@ -1,24 +1,12 @@
-const turnOn = document.getElementById("turnOn");
-const turnOff = document.getElementById("turnOff");
 const lamp = document.getElementById("lamp");
 
-
-turnOn.addEventListener("click", lampOn);
-turnOff.addEventListener("click", lampOff);
-lamp.addEventListener("mouseover", lampOn);
-// lamp.addEventListener('mouseleave', lampOff); nao funciona, ver mais tarde
-lamp.addEventListener("dblclick", lampBroken);
-
-
-
 function isLampBroken() {
-    return lamp.src.indexOf('quebrada') > -1
+    return lamp.src.includes('quebrada');
 }
 
 function lampOn() {
     if (!isLampBroken()) {
         lamp.src = './src/media/img/ligada.jpg';
-        //TransitionEvent ver se funciona - deixar mais lento
     }
 }
 
@@ -29,5 +17,26 @@ function lampOff() {
 }
 
 function lampBroken() {
-    lamp.src = "./src/media/img/quebrada.jpg"
+    lamp.src = "./src/media/img/quebrada.jpg";
 }
+
+document.querySelectorAll('.btn button').forEach(button => {
+    button.addEventListener('click', () => {
+        switch (button.id) {
+            case 'turnOn':
+                lampOn();
+                break;
+            case 'turnOff':
+                lampOff();
+                break;
+            case 'restartBtn':
+                lampBroken();
+                break;
+            default:
+                break;
+        }
+    });
+});
+
+lamp.addEventListener("mouseover", lampOn);
+lamp.addEventListener("dblclick", lampBroken);
