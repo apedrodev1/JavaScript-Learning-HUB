@@ -76,6 +76,7 @@ body {
 }
 
 @media (min-width: 321px) {
+  /*RESPONSIVIDADE*/
   .teclas button {
     width: 25px;
     height: 25px;

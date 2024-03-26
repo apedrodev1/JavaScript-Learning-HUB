@@ -261,3 +261,6 @@ palavraSecretaSorteada = palavras[indexPalavra].categoria;
 
 console.log(palavraSecretaSorteada);
 console.log(palavraSecretaCategoria)
+
+
+///revisar
