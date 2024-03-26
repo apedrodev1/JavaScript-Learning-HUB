@@ -14,6 +14,41 @@ Este projeto consiste em uma página web que simula uma lâmpada interativa. O u
 
 Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiência interativa ao usuário. Além disso, as transições suaves entre as imagens da lâmpada e os botões estilizados conforme as boas práticas de IHC tornam a experiência mais agradável e intuitiva.
 
+# Acessa: 
+
+![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/7e636054-8fd7-4390-82aa-11e14d850ad9)
+
+<code>
+function lampOn() {
+    if (!isLampBroken()) {
+        lamp.src = './src/media/img/ligada.jpg';
+    }
+}</code>
+
+
+
+
+#Apagada: 
+
+![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/fad5bf6d-bdaa-4ca0-ad1f-386c8df1b420)
+
+<code>function lampOff() {
+    if (!isLampBroken()) {
+        lamp.src = './src/media/img/desligada.jpg';
+    }
+}</code>
+
+
+#Quebrada:
+
+![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/6ad9dfe0-a349-42e4-b84d-b50c60a4e767)
+
+
+<code>function lampBroken() {
+    lamp.src = "./src/media/img/quebrada.jpg";
+}</code>
+
+
 ## Tecnologias Utilizadas
 
 - HTML
@@ -31,101 +66,6 @@ Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiênc
 A estrutura de pastas foi organizada da seguinte maneira:
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/9a804a65-5732-4e52-ac8c-b71288cbb34f)
-
-## JavaScript Otimizado
-
-O código JavaScript foi otimizado para reduzir a repetição de código e simplificar as funções. Veja abaixo as alterações realizadas:
-
-<code>const lamp = document.getElementById("lamp");
-
-function isLampBroken() {
-return lamp.src.includes('quebrada');
-}
-
-function lampOn() {
-if (!isLampBroken()) {
-lamp.src = './src/media/img/ligada.jpg';
-}
-}
-
-function lampOff() {
-if (!isLampBroken()) {
-lamp.src = './src/media/img/desligada.jpg';
-}
-}
-
-function lampBroken() {
-lamp.src = "./src/media/img/quebrada.jpg";
-}
-
-document.querySelectorAll('.btn button').forEach(button => {
-button.addEventListener('click', () => {
-switch (button.id) {
-case 'turnOn':
-lampOn();
-break;
-case 'turnOff':
-lampOff();
-break;
-case 'restartBtn':
-lampBroken();
-break;
-default:
-break;
-}
-});
-});
-
-lamp.addEventListener("mouseover", lampOn);
-lamp.addEventListener("dblclick", lampBroken);</code>
-
-Depois:
-
-const lamp = document.getElementById("lamp");
-
-function isLampBroken() {
-    return lamp.src.includes('quebrada');
-}
-
-function lampOn() {
-    if (!isLampBroken()) {
-        lamp.src = './src/media/img/ligada.jpg';
-    }
-}
-
-function lampOff() {
-    if (!isLampBroken()) {
-        lamp.src = './src/media/img/desligada.jpg';
-    }
-}
-
-function lampBroken() {
-    lamp.src = "./src/media/img/quebrada.jpg";
-}
-
-document.querySelectorAll('.btn button').forEach(button => {
-    button.addEventListener('click', () => {
-        switch (button.id) {
-            case 'turnOn':
-                lampOn();
-                break;
-            case 'turnOff':
-                lampOff();
-                break;
-            case 'restartBtn':
-                lampBroken();
-                break;
-            default:
-                break;
-        }
-    });
-});
-
-lamp.addEventListener("mouseover", lampOn);
-lamp.addEventListener("dblclick", lampBroken);
-
-Nesta versão, as funções lampOn, lampOff e lampBroken foram otimizadas e a interação com os botões foi simplificada usando o método querySelectorAll.
-
 
 ---
 
