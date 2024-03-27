@@ -2,19 +2,20 @@
 
 Este projeto consiste na criação de uma lâmpada interativa utilizando HTML, CSS e JavaScript. A lâmpada pode ser ligada, desligada e quebrada por meio de botões na interface, além de acender ao passar o mouse sobre ela.
 
+</br>
 Sendo uma reprodução do mini projeto de uma lâmpada disponível no YouTube, criado pelo canal [Fernando Leonid](https://www.youtube.com/watch?v=4r0zOW9Zn-Y) e disponibilizado no [repositório do GitHub](https://github.com/fernandoleonid/mini-projetos-js/tree/master/01-lamp).
 
 ## Descrição
 
 Este projeto consiste em uma página web que simula uma lâmpada interativa. O usuário pode interagir com a lâmpada de três maneiras diferentes:
-
+</br>
  1. **Ligar:** Clique no botão "Ligar" para acender a lâmpada.
  2. **Desligar:** Clique no botão "Desligar" para apagar a lâmpada.
  3. **Quebrar:** Dê um duplo clique na lâmpada para quebrá-la.
-
+</br>
 Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiência interativa ao usuário. Além disso, as transições suaves entre as imagens da lâmpada e os botões estilizados conforme as boas práticas de IHC tornam a experiência mais agradável e intuitiva.
 
-# Acessa: 
+# Acesa: 
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/7e636054-8fd7-4390-82aa-11e14d850ad9)
 
