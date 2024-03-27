@@ -300,5 +300,31 @@ function verificaLetraEscolhida(letra) {
 
 }
 
+function comparaListas(letra) {
+    const pos = palavraSecretaSorteada.indexOf(letra) //rever aula 09 e 10 - entender
+    if (pos < 0) {
+        tentativas--;
+        //imagem de erro
+        //verificar se tentativas ainda e maior do 0
+    }
+    else {
+        for (i = 0; i < palavraSecretaSorteada.length; i++) {
+            if (palavraSecretaSorteada[i] == letra) {
+                listaDinamica[i] = letra;
+            }
+        }
+    }
+    let vitoria = true;
+    for (i = 0; i < palavraSecretaSorteada.length; i++) {
+        if (palavraSecretaSorteada[i] != listaDinamica[i]) {
+            vitoria = false;
+        } if (vitoria == true) {
+            // abreModal("PARABÉNS!", "Você venceu...");
+            tentativas = 0;
+            //piscarBotaoJogarNovamente(true);
+
+        }
+    }
+}
 
 
