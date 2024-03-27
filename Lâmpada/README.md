@@ -21,8 +21,7 @@ Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiênc
 
 - Função lampOn em script.js: 
 
-<code>
-function lampOn() {
+<code>function lampOn() {
     if (!isLampBroken()) {
         lamp.src = './src/media/img/ligada.jpg';
     }
@@ -48,7 +47,8 @@ function lampOn() {
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/6ad9dfe0-a349-42e4-b84d-b50c60a4e767)
 
 
-- Função lampBroken em script.js: 
+- Função lampBroken em script.js:
+  ****
 <code>function lampBroken() {
     lamp.src = "./src/media/img/quebrada.jpg";
 }</code>
