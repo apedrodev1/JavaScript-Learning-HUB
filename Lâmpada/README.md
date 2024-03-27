@@ -8,9 +8,9 @@ Sendo uma reprodução do mini projeto de uma lâmpada disponível no YouTube, c
 
 Este projeto consiste em uma página web que simula uma lâmpada interativa. O usuário pode interagir com a lâmpada de três maneiras diferentes:
 
-1. **Ligar:** Clique no botão "Ligar" para acender a lâmpada.
-2. **Desligar:** Clique no botão "Desligar" para apagar a lâmpada.
-3. **Quebrar:** Dê um duplo clique na lâmpada para quebrá-la.
+ 1. **Ligar:** Clique no botão "Ligar" para acender a lâmpada.
+ 2. **Desligar:** Clique no botão "Desligar" para apagar a lâmpada.
+ 3. **Quebrar:** Dê um duplo clique na lâmpada para quebrá-la.
 
 Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiência interativa ao usuário. Além disso, as transições suaves entre as imagens da lâmpada e os botões estilizados conforme as boas práticas de IHC tornam a experiência mais agradável e intuitiva.
 
@@ -21,8 +21,7 @@ Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiênc
 
 - Função lampOn em script.js: 
 
-<code>
-function lampOn() {
+<code>function lampOn() {
     if (!isLampBroken()) {
         lamp.src = './src/media/img/ligada.jpg';
     }
@@ -47,8 +46,8 @@ function lampOn() {
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/6ad9dfe0-a349-42e4-b84d-b50c60a4e767)
 
+- Função lampBroken em script.js:
 
-- Função lampBroken em script.js: 
 <code>function lampBroken() {
     lamp.src = "./src/media/img/quebrada.jpg";
 }</code>
