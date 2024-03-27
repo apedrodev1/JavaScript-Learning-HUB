@@ -245,12 +245,14 @@ const palavras = [
     },
 ]
 
+let tentativas = 6;
 let listaDinamica = [];
 let palavraSecretaCategoria;
 let palavraSecretaSorteada;
 
 criarPalavraSecreta();
 montarPalavraNaTela();
+
 
 function criarPalavraSecreta() {
     const indexPalavra = parseInt(Math.random() * palavras.length)
@@ -281,6 +283,21 @@ function montarPalavraNaTela() {
             }
         }
     }
+}
+
+function verificaLetraEscolhida(letra) {
+    if (tentativas > 0) {
+
+        mudarStyleLetra("tecla-" + letra);
+    }
+
+
+    function mudarStyleLetra(tecla) {
+        document.getElementById(tecla).style.background = "#c71585";
+        document.getElementById(tecla).style.color = "#fff";
+
+    }
+
 }
 
 
