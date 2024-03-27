@@ -8,9 +8,9 @@ Sendo uma reprodução do mini projeto de uma lâmpada disponível no YouTube, c
 
 Este projeto consiste em uma página web que simula uma lâmpada interativa. O usuário pode interagir com a lâmpada de três maneiras diferentes:
 
-1. **Ligar:** Clique no botão "Ligar" para acender a lâmpada.
-2. **Desligar:** Clique no botão "Desligar" para apagar a lâmpada.
-3. **Quebrar:** Dê um duplo clique na lâmpada para quebrá-la.
+- 1. **Ligar:** Clique no botão "Ligar" para acender a lâmpada.
+- 2. **Desligar:** Clique no botão "Desligar" para apagar a lâmpada.
+- 3. **Quebrar:** Dê um duplo clique na lâmpada para quebrá-la.
 
 Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiência interativa ao usuário. Além disso, as transições suaves entre as imagens da lâmpada e os botões estilizados conforme as boas práticas de IHC tornam a experiência mais agradável e intuitiva.
 
