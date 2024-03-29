@@ -275,15 +275,21 @@ function montarPalavraNaTela() {
         if (listaDinamica[i] == undefined) {
             if (palavraSecretaSorteada[i] == " ") {
                 listaDinamica[i] = "&nbsp;";
-                palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
+                palavraTela.innerHTML = palavraTela.innerHTML + "<div id='letras'>" + listaDinamica[i] + "</div>"
             }
             else {
                 listaDinamica[i] = "&nbsp;"
-                palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
+                palavraTela.innerHTML = palavraTela.innerHTML + "<div id='letras'>" + listaDinamica[i] + "</div>"
             }
         }
     }
 }
+
+// function mudarStyleLetra(tecla) {
+//     document.getElementById(tecla).style.background = "#c71585";
+//     document.getElementById(tecla).style.color = "#fff";
+
+// }
 
 function verificaLetraEscolhida(letra) {
     if (tentativas > 0) {
@@ -292,11 +298,7 @@ function verificaLetraEscolhida(letra) {
     }
 
 
-    function mudarStyleLetra(tecla) {
-        document.getElementById(tecla).style.background = "#c71585";
-        document.getElementById(tecla).style.color = "#fff";
 
-    }
 
 }
 
