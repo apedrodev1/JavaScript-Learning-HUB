@@ -8,9 +8,9 @@ Este projeto consiste em um cronômetro desenvolvido utilizando HTML, CSS e Java
 
 Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube, criado pelo canal [Matheus Battisti - Hora de Codar](https://www.youtube.com/watch?v=SbST27OWpmo) e disponibilizado no [repositório do GitHub](https://github.com/matheusbattisti/cronometro_js).
 
-![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/0b0f56f3-293a-4efb-99f9-4cc9ebbedec7)
+![image justify-content: center;](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/0b0f56f3-293a-4efb-99f9-4cc9ebbedec7)
+
            
-</br>
 ## Como Utilizar
 
 1. Clone este repositório em seu ambiente local.
