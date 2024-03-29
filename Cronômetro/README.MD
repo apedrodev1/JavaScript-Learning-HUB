@@ -1,8 +1,6 @@
 # Cronômetro em JavaScript
 
-Um cronômetro simples com três casas decimais, feito com HTML, CSS e JavaScript.
-
-</br>
+Um cronômetro simples com três casas decimais, desenvolvido em HTML, CSS e JavaScript. Oferece funcionalidades básicas como iniciar, pausar, continuar e reiniciar a contagem do tempo, proporcionando uma medição precisa de intervalos temporais.
 
 ## Descrição
 
@@ -22,11 +20,10 @@ Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube,
 
 1. **Iniciar:** Começa a contagem do tempo.
 
-- Função startTimer em script.js
+# Função startTimer em script.js:
 
-<code>
-    function startTimer() {
-    interval = setInterval(() => {
+<code>function startTimer() {
+interval = setInterval(() => {
 
         if (!isPaused) {
             miliseconds += 10;
@@ -53,22 +50,21 @@ Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube,
     }, 10);
 
     startBtn.style.display = "none"
-    pauseBtn.style.display = "inline-block"
-
-}<code>
+    pauseBtn.style.display = "inline-block"}<code>
 
 2. **Pausar:** Pausa a contagem do tempo.
 
-- Função pauseTimer em script.js
-  <code>function pauseTimer() {
-  isPaused = true
-  pauseBtn.style.display = "none";
-  resumeBtn.style.display = "block";
-  }<code>
+# Função pauseTimer em script.js:
+
+<code>function pauseTimer() {
+isPaused = true
+pauseBtn.style.display = "none";
+resumeBtn.style.display = "block";
+}<code>
 
 3. **Continuar:** Continua a contagem do tempo após pausar.
 
-- Função resumeTimer em script.js
+# Função resumeTimer em script.js:
 
 <code>function resumeTimer() {
 isPaused = false;
@@ -77,6 +73,8 @@ resumeBtn.style.display = "nome";
 }<code>
 
 4. **Reiniciar:** Zera o tempo e permite iniciar novamente.
+
+# Função restartTimer em script.js:
 
 <code>function restartTimer() {
 clearInterval(interval);
