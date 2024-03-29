@@ -8,7 +8,6 @@ Este projeto consiste em um cronômetro desenvolvido utilizando HTML, CSS e Java
 
 Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube, criado pelo canal [Matheus Battisti - Hora de Codar](https://www.youtube.com/watch?v=SbST27OWpmo) e disponibilizado no [repositório do GitHub](https://github.com/matheusbattisti/cronometro_js).
 
-</br>
 
 ## Como Utilizar
 
@@ -24,7 +23,6 @@ Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube,
 
 <code>function startTimer() {
 interval = setInterval(() => {
-
         if (!isPaused) {
             miliseconds += 10;
 
