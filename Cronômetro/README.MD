@@ -1,2 +1,109 @@
-https://github.com/matheusbattisti/cronometro_js
-https://www.youtube.com/watch?v=SbST27OWpmo
+# Cronômetro em JavaScript
+
+Um cronômetro simples com três casas decimais, feito com HTML, CSS e JavaScript.
+
+</br>
+
+## Descrição
+
+Este projeto consiste em um cronômetro desenvolvido utilizando HTML, CSS e JavaScript. O cronômetro apresenta precisão de até três casas decimais e oferece funcionalidades como iniciar, pausar, continuar e reiniciar a contagem do tempo. É uma aplicação simples e útil para medir intervalos de tempo com precisão.
+
+Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube, criado pelo canal [Matheus Battisti - Hora de Codar](https://www.youtube.com/watch?v=SbST27OWpmo) e disponibilizado no [repositório do GitHub](https://github.com/matheusbattisti/cronometro_js).
+
+</br>
+
+## Como Utilizar
+
+1. Clone este repositório em seu ambiente local.
+2. Abra o arquivo `index.html` em seu navegador web.
+3. Experimente interagir com os botões para ligar, desligar e quebrar a lâmpada.
+
+# Funcionalidades:
+
+1. **Iniciar:** Começa a contagem do tempo.
+
+- Função startTimer em script.js
+
+<code>
+    function startTimer() {
+    interval = setInterval(() => {
+
+        if (!isPaused) {
+            miliseconds += 10;
+
+            if (miliseconds === 1000) {
+                seconds++;
+                miliseconds = 0;
+            }
+            if (seconds === 60) {
+                minutes++;
+                seconds = 0;
+            }
+            // if (minutes === 60) { feature horas
+            //     hours++;
+            //     minutes = 0;
+            //     seconds = 0;
+            // }
+
+            minutesEl.textContent = formatTime(minutes);
+            secondsEl.textContent = formatTime(seconds);
+            milisecondsEl.textContent = (miliseconds);
+        }
+
+    }, 10);
+
+    startBtn.style.display = "none"
+    pauseBtn.style.display = "inline-block"
+
+}<code>
+
+2. **Pausar:** Pausa a contagem do tempo.
+
+- Função pauseTimer em script.js
+  <code>function pauseTimer() {
+  isPaused = true
+  pauseBtn.style.display = "none";
+  resumeBtn.style.display = "block";
+  }<code>
+
+3. **Continuar:** Continua a contagem do tempo após pausar.
+
+- Função resumeTimer em script.js
+
+<code>function resumeTimer() {
+isPaused = false;
+pauseBtn.style.display = "block";
+resumeBtn.style.display = "nome";
+}<code>
+
+4. **Reiniciar:** Zera o tempo e permite iniciar novamente.
+
+<code>function restartTimer() {
+clearInterval(interval);
+minutes = 0;
+seconds = 0;
+miliseconds = 0;
+
+    minutesEl.textContent = "00";
+    secondsEl.textContent = "00";
+    milisecondsEl.textContent = "000";
+
+    startBtn.style.display = "block";
+    pauseBtn.style.display = "none";
+    resumeBtn.style.display = "none";
+
+}<code>
+
+## Tecnologias Utilizadas
+
+- HTML
+- CSS
+- JavaScript
+
+## Estruturação de Pastas
+
+A estrutura de pastas foi organizada da seguinte maneira:
+
+---
+
+Esse README fornece uma descrição clara do projeto, seus objetivos, tecnologias utilizadas e como utilizá-lo, juntamente com os devidos créditos ao criador original do projeto.
