@@ -8,6 +8,9 @@ Este projeto consiste em um cronômetro desenvolvido utilizando HTML, CSS e Java
 
 Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube, criado pelo canal [Matheus Battisti - Hora de Codar](https://www.youtube.com/watch?v=SbST27OWpmo) e disponibilizado no [repositório do GitHub](https://github.com/matheusbattisti/cronometro_js).
 
+![alt text](image.png)
+
+</br>
 
 ## Como Utilizar
 
@@ -15,14 +18,15 @@ Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube,
 2. Abra o arquivo `index.html` em seu navegador web.
 3. Experimente interagir com os botões para ligar, desligar e quebrar a lâmpada.
 
-# Funcionalidades:
+## Funcionalidades:
 
-1. **Iniciar:** Começa a contagem do tempo.
+# 1. iniciar: Começa a contagem do tempo.
 
-# Função startTimer em script.js:
+- Função startTimer em script.js:
 
 <code>function startTimer() {
 interval = setInterval(() => {
+
         if (!isPaused) {
             miliseconds += 10;
 
@@ -50,9 +54,9 @@ interval = setInterval(() => {
     startBtn.style.display = "none"
     pauseBtn.style.display = "inline-block"}<code>
 
-2. **Pausar:** Pausa a contagem do tempo.
+# 2. Pausar: Pausa a contagem do tempo.
 
-# Função pauseTimer em script.js:
+- Função pauseTimer em script.js:
 
 <code>function pauseTimer() {
 isPaused = true
@@ -60,9 +64,9 @@ pauseBtn.style.display = "none";
 resumeBtn.style.display = "block";
 }<code>
 
-3. **Continuar:** Continua a contagem do tempo após pausar.
+# 3. Continuar: Continua a contagem do tempo após pausar.
 
-# Função resumeTimer em script.js:
+- Função resumeTimer em script.js:
 
 <code>function resumeTimer() {
 isPaused = false;
@@ -70,9 +74,9 @@ pauseBtn.style.display = "block";
 resumeBtn.style.display = "nome";
 }<code>
 
-4. **Reiniciar:** Zera o tempo e permite iniciar novamente.
+# 4. Reiniciar: Zera o tempo e permite iniciar novamente.
 
-# Função restartTimer em script.js:
+- Função restartTimer em script.js:
 
 <code>function restartTimer() {
 clearInterval(interval);
