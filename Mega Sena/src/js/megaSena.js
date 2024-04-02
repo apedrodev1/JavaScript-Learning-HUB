@@ -19,6 +19,15 @@ numeros.forEach((chunk) => {
     });
 });
 
+// Dividir o array de números em sub-arrays
+function chunk(array, chunkSize) {
+    const chunkedArray = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+        chunkedArray.push(array.slice(i, i + chunkSize));
+    }
+    return chunkedArray;
+}
+
 const numerosApostados = [];
 const resultado = [];
 let valorAposta = 0;
@@ -30,15 +39,6 @@ btnApostar.disabled = true;
 console.log(numeros);
 
 sortearNumeros();
-
-// Dividir o array de números em sub-arrays
-function chunk(array, chunkSize) {
-    const chunkedArray = [];
-    for (let i = 0; i < array.length; i += chunkSize) {
-        chunkedArray.push(array.slice(i, i + chunkSize));
-    }
-    return chunkedArray;
-}
 
 // #region Alterar Tema
 
