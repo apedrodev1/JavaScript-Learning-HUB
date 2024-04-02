@@ -2,7 +2,7 @@
 
 Um cronômetro simples com três casas decimais, desenvolvido em HTML, CSS e JavaScript. Oferece funcionalidades básicas como iniciar, pausar, continuar e reiniciar a contagem do tempo, proporcionando uma medição precisa de intervalos temporais.
 
-## Descrição
+## Descrição:
 
 Este projeto consiste em um cronômetro desenvolvido utilizando HTML, CSS e JavaScript. O cronômetro apresenta precisão de até três casas decimais e oferece funcionalidades como iniciar, pausar, continuar e reiniciar a contagem do tempo. É uma aplicação simples e útil para medir intervalos de tempo com precisão.
 
@@ -11,7 +11,7 @@ Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube,
 ![image justify-content: center;](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/0b0f56f3-293a-4efb-99f9-4cc9ebbedec7)
 
            
-## Como Utilizar
+## Como Utilizar:
 
 1. Clone este repositório em seu ambiente local.
 2. Abra o arquivo `index.html` em seu navegador web.
@@ -19,7 +19,7 @@ Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube,
 
 ## Funcionalidades:
 
-# 1. iniciar: Começa a contagem do tempo.
+1. Iniciar: Começa a contagem do tempo.
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/e4447942-3e11-4a21-8913-f29ddf96ab52)
 
@@ -45,8 +45,7 @@ interval = setInterval(() => {
     startBtn.style.display = "none"
     pauseBtn.style.display = "inline-block"}<code>
 
-
-# 2. Pausar: Pausa a contagem do tempo.
+ 2. Pausar: Pausa a contagem do tempo.
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/37046202-9a62-464f-ab76-863d7c1728d3)
 
@@ -59,7 +58,7 @@ pauseBtn.style.display = "none";
 resumeBtn.style.display = "block";
 }<code>
 
-# 3. Continuar: Continua a contagem do tempo após pausar.
+3. Continuar: Continua a contagem do tempo após pausar.
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/2c2a945a-3b92-4a21-93d1-65cb0ff06026)
 
@@ -72,7 +71,7 @@ pauseBtn.style.display = "block";
 resumeBtn.style.display = "nome";
 }<code>
 
-# 4. Reiniciar: Zera o tempo e permite iniciar novamente.
+4. Reiniciar: Zera o tempo e permite iniciar novamente.
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/278bb387-cbfd-4a50-a697-6f848e3c93a5)
 
@@ -92,13 +91,13 @@ miliseconds = 0;
     resumeBtn.style.display = "none";
 }<code>
 
-## Tecnologias Utilizadas
+## Tecnologias Utilizadas:
 
 - HTML
 - CSS
 - JavaScript
 
-## Estruturação de Pastas
+## Estruturação de Pastas:
 
 A estrutura de pastas foi organizada da seguinte maneira:
 
