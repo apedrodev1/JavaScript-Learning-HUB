@@ -101,6 +101,10 @@ miliseconds = 0;
 
 A estrutura de pastas foi organizada da seguinte maneira:
 
+![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/eab7fad5-d780-479d-8b98-faf22fd3923a)
+
 ---
 
 Esse README fornece uma descrição clara do projeto, seus objetivos, tecnologias utilizadas e como utilizá-lo, juntamente com os devidos créditos ao criador original do projeto.
+
+---
