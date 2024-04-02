@@ -8,7 +8,12 @@ Este projeto consiste em um cronômetro desenvolvido utilizando HTML, CSS e Java
 
 Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube, criado pelo canal [Matheus Battisti - Hora de Codar](https://www.youtube.com/watch?v=SbST27OWpmo) e disponibilizado no [repositório do GitHub](https://github.com/matheusbattisti/cronometro_js).
 
-![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/0b0f56f3-293a-4efb-99f9-4cc9ebbedec7)
+</br>
+<div style="text-align:center;">
+
+![image style="display: block; margin: 0 auto;](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/0b0f56f3-293a-4efb-99f9-4cc9ebbedec7)
+
+</div>
 
 ## Como Utilizar:
 
@@ -18,7 +23,7 @@ Sendo uma reprodução do mini projeto de um cronômetro disponível no YouTube,
 
 ## Funcionalidades:
 
-- Iniciar: Começa a contagem do tempo.
+1. Iniciar: Começa a contagem do tempo.
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/e4447942-3e11-4a21-8913-f29ddf96ab52)
 
@@ -41,9 +46,9 @@ milisecondsEl.textContent = (miliseconds);
 }
 }, 10);
 startBtn.style.display = "none"
-pauseBtn.style.display = "inline-block"}<code>
+pauseBtn.style.display = "inline-block"}</code>
 
-- Pausar: Pausa a contagem do tempo.
+2. Pausar: Pausa a contagem do tempo.
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/37046202-9a62-464f-ab76-863d7c1728d3)
 
@@ -53,9 +58,9 @@ pauseBtn.style.display = "inline-block"}<code>
 isPaused = true
 pauseBtn.style.display = "none";
 resumeBtn.style.display = "block";
-}<code>
+}</code>
 
-- Continuar: Continua a contagem do tempo após pausar.
+3. Continuar: Continua a contagem do tempo após pausar.
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/2c2a945a-3b92-4a21-93d1-65cb0ff06026)
 
@@ -65,9 +70,9 @@ resumeBtn.style.display = "block";
 isPaused = false;
 pauseBtn.style.display = "block";
 resumeBtn.style.display = "nome";
-}<code>
+}</code>
 
-- Reiniciar: Zera o tempo e permite iniciar novamente.
+4. Reiniciar: Zera o tempo e permite iniciar novamente.
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/278bb387-cbfd-4a50-a697-6f848e3c93a5)
 
@@ -84,7 +89,7 @@ milisecondsEl.textContent = "000";
 startBtn.style.display = "block";
 pauseBtn.style.display = "none";
 resumeBtn.style.display = "none";
-}<code>
+}</code>
 
 ## Tecnologias Utilizadas:
 
@@ -94,12 +99,18 @@ resumeBtn.style.display = "none";
 
 ## Estruturação de Pastas:
 
-A estrutura de pastas foi organizada da seguinte maneira:
+- A estrutura de pastas foi organizada da seguinte maneira:
+
+</br>
+<div style="text-align:center;">
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/eab7fad5-d780-479d-8b98-faf22fd3923a)
 
+</br>
+
 ---
 
+</br>
 Esse README fornece uma descrição clara do projeto, seus objetivos, tecnologias utilizadas e como utilizá-lo, juntamente com os devidos créditos ao criador original do projeto.
 
----
+</div>
