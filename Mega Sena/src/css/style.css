@@ -43,6 +43,13 @@ main {
   min-height: 250px;
 }
 
+main div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
 main button {
   cursor: pointer;
   background-color: transparent;
