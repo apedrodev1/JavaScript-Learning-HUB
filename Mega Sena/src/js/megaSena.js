@@ -31,7 +31,7 @@ console.log(numeros);
 
 sortearNumeros();
 
-// Dividir o array em sub-arrays
+// Dividir o array de números em sub-arrays
 function chunk(array, chunkSize) {
     const chunkedArray = [];
     for (let i = 0; i < array.length; i += chunkSize) {
