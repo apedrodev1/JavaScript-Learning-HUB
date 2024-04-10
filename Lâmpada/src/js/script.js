@@ -1,4 +1,4 @@
-const lamp = document.getElementById("lamp");
+const lamp = document.getElementsByClassName("lamp")[0]; // Alterado para pegar o primeiro elemento do array retornado
 
 function isLampBroken() {
     return lamp.src.includes('quebrada');
@@ -22,18 +22,12 @@ function lampBroken() {
 
 document.querySelectorAll('.btn button').forEach(button => {
     button.addEventListener('click', () => {
-        switch (button.id) {
-            case 'turnOn':
-                lampOn();
-                break;
-            case 'turnOff':
-                lampOff();
-                break;
-            case 'restartBtn':
-                lampBroken();
-                break;
-            default:
-                break;
+        if (button.classList.contains('turnOn')) {
+            lampOn();
+        } else if (button.classList.contains('turnOff')) {
+            lampOff();
+        } else if (button.classList.contains('restartBtn')) {
+            lampBroken();
         }
     });
 });
