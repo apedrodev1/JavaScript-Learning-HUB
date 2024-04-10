@@ -64,9 +64,12 @@ Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiênc
 }</code>
 
 </br>
-<div style="text-align:center;">
+</br>
+<div style="text-align:center;"
+
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/357c7f7c-6aef-479e-808f-31d64eea7f0d)
-</div>
+
+></div>
 
 
 ## Tecnologias Utilizadas
