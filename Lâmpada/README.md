@@ -1,6 +1,6 @@
 # Projeto Lâmpada
 
-Este projeto consiste na criação de uma lâmpada interativa utilizando HTML, CSS e JavaScript. A lâmpada pode ser ligada, desligada e quebrada por meio de botões na interface, além de acender ao passar o mouse sobre ela.
+Este projeto consiste na criação de uma lâmpada interativa em um plano de fundo que é coerente a ideia. Utilizando HTML, CSS e JavaScript. A lâmpada pode ser ligada, desligada e quebrada por meio de botões estilizados na interface, além de acender ao passar o mouse sobre ela.
 
 </br>
 Sendo uma reprodução do mini projeto de uma lâmpada disponível no YouTube, criado pelo canal [Fernando Leonid](https://www.youtube.com/watch?v=4r0zOW9Zn-Y) e disponibilizado no [repositório do GitHub](https://github.com/fernandoleonid/mini-projetos-js/tree/master/01-lamp).
