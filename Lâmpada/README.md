@@ -52,6 +52,15 @@ Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiênc
 
 <code>function lampBroken() {
     lamp.src = "./src/media/img/quebrada.jpg";
+    buttons.forEach(button => {
+        button.disabled = true;
+        button.style.cursor = 'not-allowed';
+        button.style.opacity = '0.5';
+        button.style.pointerEvents = 'none';
+    });
+    setTimeout(() => {
+        alert("You broke Einstein, dude 😢! Please refresh the page.");
+    }, 100);
 }</code>
 
 
