@@ -15,7 +15,7 @@ Este projeto consiste em uma página web que simula uma lâmpada interativa. O u
  2. **Desligar:** Clique no botão "Desligar" para apagar a lâmpada.
  3. **Quebrar:** Dê um duplo clique na lâmpada para quebrá-la.
 </br>
-Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiência interativa ao usuário. Além disso, as transições suaves entre as imagens da lâmpada e os botões estilizados conforme as boas práticas de IHC tornam a experiência mais agradável e intuitiva.
+Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiência interativa ao usuário. Além disso, as transições suaves entre as imagens da lâmpada e os botões estilizados conforme as boas práticas de IHC tornam a experiência mais agradável e intuitiva, assim como o plano de fundo.
 
 # Acesa: 
 
