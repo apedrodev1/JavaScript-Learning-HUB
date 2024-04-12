@@ -6,6 +6,9 @@ const pauseBtn = document.querySelector("#pauseBtn");
 const resumeBtn = document.querySelector("#resumeBtn");
 const restartBtn = document.querySelector("#restartBtn");
 
+const formatTime = time => time < 10 ? `0${time}` : time;
+const formatMiliseconds = time => time < 100 ? `${time}`.padstart(3, "0") : time;
+
 let interval;
 let minutes = 0;
 let seconds = 0;
@@ -16,6 +19,9 @@ startBtn.addEventListener("click", startTimer)
 pauseBtn.addEventListener("click", pauseTimer)
 resumeBtn.addEventListener("click", resumeTimer)
 restartBtn.addEventListener("click", restartTimer)
+
+//bug: inciar > pausar > reiniciar > não inicia de novo, precisa dar f5 - VER
+// o cronometro para quando a pagina e minimizada - VER - talvez alguma bliblioteca em js resolva 
 
 function startTimer() {
 
@@ -76,12 +82,3 @@ function restartTimer() {
     resumeBtn.style.display = "none";
 
 }
-
-function formatTime(time) {
-    return time < 10 ? `0${time}` : time;
-}
-
-function formatMiliseconds(time) {
-    return time < 100 ? `${time}`.padstart(3, "0") : time;
-}
-
