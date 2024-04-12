@@ -44,14 +44,6 @@ sortearNumeros();
 
 // Obtenha a entrada de alternância do tema
 const themeToggle = document.querySelector('.switch input[type="checkbox"]');
-// Função que irá mudar o tema com base em se a alternância do tema está marcada ou não
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-        document.documentElement.setAttribute("data-theme", "light");
-    }
-}
 // Adicione um ouvinte de evento ao alternador de tema, o que mudará o tema
 themeToggle.addEventListener("change", switchTheme, false);
 
