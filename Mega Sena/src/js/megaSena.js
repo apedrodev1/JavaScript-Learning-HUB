@@ -62,7 +62,6 @@ if (currentTheme) {
 // #endregion
 
 function sortearNumeros() {
-    // otimizar essa funcao mais tarde
     for (i = 0; i < 6; i++) {
         let numeroSorteado = Math.round(Math.random() * 59 + 1); //Math.floor tentar mais tarde
 
@@ -199,16 +198,16 @@ btn.addEventListener("click", function () {
     location.reload();
 });
 
-function switchTheme(e) {
+function switchTheme(e) { //modo noturno
     if (e.target.checked) {
         document.documentElement.setAttribute("data-theme", "dark");
 
-        // Defina a preferência de tema do usuário como escuro
+
         localStorage.setItem("theme", "dark");
     } else {
         document.documentElement.setAttribute("data-theme", "light");
 
-        // Defina a preferência de tema do usuário como claro
+
         localStorage.setItem("theme", "light");
     }
 }
