@@ -20,8 +20,7 @@ pauseBtn.addEventListener("click", pauseTimer)
 resumeBtn.addEventListener("click", resumeTimer)
 restartBtn.addEventListener("click", restartTimer)
 
-//bug: inciar > pausar > reiniciar > não inicia de novo, precisa dar f5 - VER
-// o cronometro para quando a pagina e minimizada - VER - talvez alguma bliblioteca em js resolva 
+// o cronometro para quando a pagina e minimizada por default - Definir se mesmo minimizada o tempo continua
 
 function startTimer() {
 
@@ -38,7 +37,10 @@ function startTimer() {
                 minutes++;
                 seconds = 0;
             }
-            // if (minutes === 60) { feature horas
+
+            // Lógica feature horas
+            //
+            // if (minutes === 60) {              
             //     hours++;
             //     minutes = 0;
             //     seconds = 0;
@@ -68,6 +70,7 @@ function resumeTimer() {
 }
 
 function restartTimer() {
+    isPaused = false;
     clearInterval(interval);
     minutes = 0;
     seconds = 0;
@@ -80,5 +83,4 @@ function restartTimer() {
     startBtn.style.display = "block";
     pauseBtn.style.display = "none";
     resumeBtn.style.display = "none";
-
 }
