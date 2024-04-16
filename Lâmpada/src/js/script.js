@@ -1,21 +1,9 @@
 const lamp = document.getElementsByClassName("lamp")[0];
 const buttons = document.querySelectorAll('.btn');
 
-function isLampBroken() {
-    return lamp.src.includes('quebrada');
-}
-
-function lampOn() {
-    if (!isLampBroken()) {
-        lamp.src = './src/media/img/ligada.jpg';
-    }
-}
-
-function lampOff() {
-    if (!isLampBroken()) {
-        lamp.src = './src/media/img/desligada.jpg';
-    }
-}
+const isLampBroken = () => lamp.src.includes('quebrada');
+const lampOn = () => !isLampBroken() ? lamp.src = './src/media/img/ligada.jpg' : null;
+const lampOff = () => !isLampBroken() ? lamp.src = './src/media/img/desligada.jpg' : null;
 
 function lampBroken() {
     lamp.src = "./src/media/img/quebrada.jpg";
@@ -29,7 +17,6 @@ function lampBroken() {
         // console.error("You broke Einstein, dude 😢! Please refresh the page."); tentar passar como erro, para que o usuario tenha o acesso mais facil do botao refresh
         alert("You broke Einstein, dude 😢! Please refresh the page.");
     }, 100);
-
 }
 
 document.querySelectorAll('.btn button').forEach(button => {
