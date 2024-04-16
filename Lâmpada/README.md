@@ -14,8 +14,12 @@ Este projeto consiste em uma página web que simula uma lâmpada interativa. O u
  1. **Ligar:** Clique no botão "Ligar" para acender a lâmpada.
  2. **Desligar:** Clique no botão "Desligar" para apagar a lâmpada.
  3. **Quebrar:** Dê um duplo clique na lâmpada para quebrá-la.
+
 </br>
+
 Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiência interativa ao usuário. Além disso, as transições suaves entre as imagens da lâmpada e os botões estilizados conforme as boas práticas de IHC tornam a experiência mais agradável e intuitiva, assim como o plano de fundo.
+
+</br>
 
 # Acesa: 
 
@@ -24,12 +28,9 @@ Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiênc
 
 - Função lampOn em script.js: 
 
-<code>function lampOn() {
-    if (!isLampBroken()) {
-        lamp.src = './src/media/img/ligada.jpg';
-    }
-}</code>
+<code>const lampOn = () => !isLampBroken() ? lamp.src = './src/media/img/ligada.jpg' : null;</code>
 
+</br>
 
 # Apagada: 
 
@@ -38,12 +39,9 @@ Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiênc
 
 - Função lampOff em script.js:
 
-<code>function lampOff() {
-    if (!isLampBroken()) {
-        lamp.src = './src/media/img/desligada.jpg';
-    }
-}</code>
+<code>const lampOff = () => !isLampBroken() ? lamp.src = './src/media/img/desligada.jpg' : null;</code>
 
+</br>
 
 # Quebrada:
 
