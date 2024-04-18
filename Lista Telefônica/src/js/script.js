@@ -11,14 +11,14 @@ while (true) {
             continue;
         }
 
-        let surName = prompt("E qual é o seu sobrenome?");
+        let surName = prompt("E qual é o seu sobrenome, " + firstName, "?");
 
         let phoneNumber;
         while (true) {
             phoneNumber = prompt("Agora, por favor, insira o seu telefone:");
             if (!phoneNumber) {
                 alert("O número de telefone é obrigatório!");
-            } else if (!phoneNumber.match(/^\d{11}$/)) {
+            } else if (!phoneNumber.replace(/\s/g, '').match(/^\d{11}$/)) {
                 alert("Por favor, insira um número de telefone válido (11 dígitos).");
             } else {
                 break;
