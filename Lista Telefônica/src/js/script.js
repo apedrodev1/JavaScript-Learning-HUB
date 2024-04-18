@@ -1,26 +1,26 @@
 const contacts = {};
 
 while (true) {
-    let resposta = prompt("Olá, deseja cadastrar seu contato? (0 - Não, 1 - Sim)");
+    let response = prompt("Hey Stranger! Would You like to register with us? (0 - No, 1 - Yes)");
 
-    if (resposta === '1') {
+    if (response === '1') {
         const contactID = Math.random().toString(36).substring(2, 11);
 
-        let firstName = prompt("Por favor, insira seu primeiro nome: ");
+        let firstName = prompt("Please enter your first name: ");
         if (!firstName) {
-            alert("O primeiro nome é obrigatório!");
+            alert("First name is required!");
             continue;
         }
 
-        let surName = prompt("E qual é o seu sobrenome, " + firstName, "?");
+        let surName = prompt("And what is your last name, " + firstName + "?");
 
         let phoneNumber;
         while (true) {
-            phoneNumber = prompt("Agora, por favor, insira o seu telefone:");
+            phoneNumber = prompt("Now, please enter your phone number:");
             if (!phoneNumber) {
-                alert("O número de telefone é obrigatório!");
+                alert("Phone number is required!");
             } else if (!phoneNumber.replace(/\s/g, '').match(/^\d{11}$/)) {
-                alert("Por favor, insira um número de telefone válido (11 dígitos).");
+                alert("Please enter a valid phone number (11 digits).");
             } else {
                 break;
             }
@@ -28,9 +28,9 @@ while (true) {
 
         let emailAdress;
         while (true) {
-            emailAdress = prompt("E o seu e-mail:");
+            emailAdress = prompt("And your e-mail:");
             if (emailAdress && !emailAdress.includes('@')) {
-                alert("Por favor, insira um endereço de e-mail válido.");
+                alert("Please enter a valid email address.");
             } else {
                 break;
             }
@@ -45,13 +45,13 @@ while (true) {
 
         contacts[contactID] = contato;
 
-        alert("Muito obrigado, " + firstName + "! Seu contato foi cadastrado no nosso banco de dados! Seu número de indentificação é: " + contactID);
-    } else if (resposta === '0') {
-        alert("Cadastro cancelado.");
+        alert("Thank you very much, " + firstName + "! Your contact has been registered in our database! Your identification number is: " + contactID);
+    } else if (response === '0') {
+        alert("Registration canceled.");
         break;
     } else {
-        alert("Opção inválida. Por favor, digite 0 para Não ou 1 para Sim.");
+        alert("Invalid option. Please enter 0 for No or 1 for Yes.");
     }
 }
 
-console.log("Contatos cadastrados:", contacts);
+console.log("Registered contacts:", contacts);
