@@ -21,16 +21,18 @@ while (true) {
             } else if (!phoneNumber.match(/^\d{11}$/)) {
                 alert("Por favor, insira um número de telefone válido (11 dígitos).");
             } else {
-                break; // O número de telefone é válido, então saia do loop
+                break;
             }
         }
 
-        let emailAdress = prompt("E o seu e-mail:");
-
-
-        if (emailAdress && !emailAdress.includes('@')) {
-            alert("Por favor, insira um endereço de e-mail válido.");
-            continue;
+        let emailAdress;
+        while (true) {
+            emailAdress = prompt("E o seu e-mail:");
+            if (emailAdress && !emailAdress.includes('@')) {
+                alert("Por favor, insira um endereço de e-mail válido.");
+            } else {
+                break;
+            }
         }
 
         let contato = {
