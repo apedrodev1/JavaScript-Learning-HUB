@@ -13,15 +13,16 @@ while (true) {
 
         let surName = prompt("E qual é o seu sobrenome?");
 
-        let phoneNumber = prompt("Agora, por favor, insira o seu telefone:");
-        if (!phoneNumber) {
-            alert("O número de telefone é obrigatório!");
-            continue;
-        }
-
-        if (!phoneNumber.match(/^\d{10}$/)) {
-            alert("Por favor, insira um número de telefone válido (10 dígitos).");
-            continue;
+        let phoneNumber;
+        while (true) {
+            phoneNumber = prompt("Agora, por favor, insira o seu telefone:");
+            if (!phoneNumber) {
+                alert("O número de telefone é obrigatório!");
+            } else if (!phoneNumber.match(/^\d{11}$/)) {
+                alert("Por favor, insira um número de telefone válido (11 dígitos).");
+            } else {
+                break; // O número de telefone é válido, então saia do loop
+            }
         }
 
         let emailAdress = prompt("E o seu e-mail:");
@@ -33,6 +34,7 @@ while (true) {
         }
 
         let contato = {
+            ID: contactID,
             fullName: firstName + " " + surName,
             phoneNumber: phoneNumber,
             emailAdress: emailAdress
