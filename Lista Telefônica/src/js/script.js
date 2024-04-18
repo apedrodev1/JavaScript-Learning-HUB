@@ -1,10 +1,11 @@
 const contacts = {};
-const contactID = Math.random().toString(36).substring(2, 11);
 
 while (true) {
     let resposta = prompt("Olá, deseja cadastrar seu contato? (0 - Não, 1 - Sim)");
 
     if (resposta === '1') {
+        const contactID = Math.random().toString(36).substring(2, 11);
+
         let firstName = prompt("Por favor, insira seu primeiro nome: ");
         if (!firstName) {
             alert("O primeiro nome é obrigatório!");
