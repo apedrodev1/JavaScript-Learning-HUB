@@ -254,6 +254,7 @@ criarPalavraSecreta();
 montarPalavraNaTela();
 
 
+
 function criarPalavraSecreta() {
     const indexPalavra = parseInt(Math.random() * palavras.length)
 
@@ -285,48 +286,19 @@ function montarPalavraNaTela() {
     }
 }
 
-// function mudarStyleLetra(tecla) {
-//     document.getElementById(tecla).style.background = "#c71585";
-//     document.getElementById(tecla).style.color = "#fff";
-
-// }
-
 function verificaLetraEscolhida(letra) {
     if (tentativas > 0) {
 
         mudarStyleLetra("tecla-" + letra);
     }
-
-
-
-
 }
 
-function comparaListas(letra) {
-    const pos = palavraSecretaSorteada.indexOf(letra) //rever aula 09 e 10 - entender
-    if (pos < 0) {
-        tentativas--;
-        //imagem de erro
-        //verificar se tentativas ainda e maior do 0
-    }
-    else {
-        for (i = 0; i < palavraSecretaSorteada.length; i++) {
-            if (palavraSecretaSorteada[i] == letra) {
-                listaDinamica[i] = letra;
-            }
-        }
-    }
-    let vitoria = true;
-    for (i = 0; i < palavraSecretaSorteada.length; i++) {
-        if (palavraSecretaSorteada[i] != listaDinamica[i]) {
-            vitoria = false;
-        } if (vitoria == true) {
-            // abreModal("PARABÉNS!", "Você venceu...");
-            tentativas = 0;
-            //piscarBotaoJogarNovamente(true);
-
-        }
-    }
+function mudarStyleLetra(tecla) {
+    document.getElementById(tecla).style.background = "#c71585";
+    document.getElementById(tecla).style.color = "#fff";
 }
+
+
+
 
 
