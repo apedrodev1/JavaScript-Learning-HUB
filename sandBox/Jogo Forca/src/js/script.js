@@ -250,45 +250,42 @@ let listaDinamica = [];
 let palavraSecretaCategoria;
 let palavraSecretaSorteada;
 
-criarPalavraSecreta();
-montarPalavraNaTela();
 
+criarPalavraSecreta();
 function criarPalavraSecreta() {
     const indexPalavra = parseInt(Math.random() * palavras.length)
 
     palavraSecretaSorteada = palavras[indexPalavra].nome;
     palavraSecretaCategoria = palavras[indexPalavra].categoria;
-
-    console.log(palavraSecretaSorteada);
-    console.log(palavraSecretaCategoria)
 }
 
+
+montarPalavraNaTela();
 function montarPalavraNaTela() {
-    const categoria = document.getElementById("categoria"); //tentar usar o .getElementByClass depois
+    const categoria = document.getElementById("categoria");
     categoria.innerHTML = palavraSecretaCategoria;
 
-    const palavraTela = document.getElementById("palavraSecreta"); //tentar usar o .getElementByClass depois
+    const palavraTela = document.getElementById("palavraSecreta");
     palavraTela.innerHTML = "";
 
     for (i = 0; i < palavraSecretaSorteada.length; i++) {
         if (listaDinamica[i] == undefined) {
             if (palavraSecretaSorteada[i] == " ") {
-                listaDinamica[i] = "&nbsp;";
-                palavraTela.innerHTML = palavraTela.innerHTML + "<div id='letras'>" + listaDinamica[i] + "</div>"
+                listaDinamica[i] = "&nbsp;"
+                palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
             }
             else {
                 listaDinamica[i] = "&nbsp;"
-                palavraTela.innerHTML = palavraTela.innerHTML + "<div id='letras'>" + listaDinamica[i] + "</div>"
+                palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
             }
         }
     }
 }
 
 function verificaLetraEscolhida(letra) {
+    //document.getElementById('tecla-' + letra).disabled = true;
     if (tentativas > 0) {
-
         mudarStyleLetra("tecla-" + letra);
-
         comparaListas(letra);
         montarPalavraNaTela();
     }
@@ -304,6 +301,10 @@ function comparaListas(letra) {
     if (posicao < 0) {
         tentativas--;
         carregaImgForca();
+        if (tentativas == 0) {
+            abreModal()
+        }
+
         //verificar se ainda tem tentativas // mensagem que errou
     } else {
         for (i = 0; i < palavraSecretaSorteada.length; i++) {
@@ -353,6 +354,12 @@ function carregaImgForca() {
             break;
 
     }
+}
+
+function abreModal() {
+    $('#myModal').modal({
+        show: true
+    });
 }
 
 
