@@ -259,23 +259,31 @@ function criarPalavraSecreta() {
     palavraSecretaCategoria = palavras[indexPalavra].categoria;
 }
 
-
 montarPalavraNaTela();
 function montarPalavraNaTela() {
     const categoria = document.getElementById("categoria");
     categoria.innerHTML = palavraSecretaCategoria;
 
-    const palavraTela = document.getElementById("palavraSecreta");
+    const palavraTela = document.getElementById("palavra-secreta");
     palavraTela.innerHTML = "";
 
     for (i = 0; i < palavraSecretaSorteada.length; i++) {
         if (listaDinamica[i] == undefined) {
             if (palavraSecretaSorteada[i] == " ") {
-                listaDinamica[i] = "&nbsp;"
-                palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
+                listaDinamica[i] = " ";
+                palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letrasEspaco'>" + listaDinamica[i] + "</div>"
             }
             else {
                 listaDinamica[i] = "&nbsp;"
+                palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
+            }
+        }
+        else {
+            if (palavraSecretaSorteada[i] == " ") {
+                listaDinamica[i] = " ";
+                palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letrasEspaco'>" + listaDinamica[i] + "</div>"
+            }
+            else {
                 palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
             }
         }
@@ -360,7 +368,15 @@ function abreModal() {
     $('#myModal').modal({
         show: true
     });
+
+    let bntReiniciar = document.querySelector("#btnReiniciar")
+    bntReiniciar.addEventListener("click", function () {
+        jogarNovamente = false;
+        location.reload();
+    });
 }
+
+
 
 
 
