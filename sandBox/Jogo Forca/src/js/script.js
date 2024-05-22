@@ -250,8 +250,8 @@ let listaDinamica = [];
 let palavraSecretaCategoria;
 let palavraSecretaSorteada;
 
-montarPalavraNaTela();
 criarPalavraSecreta();
+montarPalavraNaTela();
 
 
 function criarPalavraSecreta() {
@@ -260,7 +260,6 @@ function criarPalavraSecreta() {
     palavraSecretaSorteada = palavras[indexPalavra].nome;
     palavraSecretaCategoria = palavras[indexPalavra].categoria;
 }
-
 
 function montarPalavraNaTela() {
     const categoria = document.getElementById("categoria");
@@ -293,7 +292,7 @@ function montarPalavraNaTela() {
 }
 
 function verificaLetraEscolhida(letra) {
-    //document.getElementById('tecla-' + letra).disabled = true;
+    document.getElementById('tecla-' + letra).disabled = true;
     if (tentativas > 0) {
         mudarStyleLetra("tecla-" + letra);
         comparaListas(letra);
