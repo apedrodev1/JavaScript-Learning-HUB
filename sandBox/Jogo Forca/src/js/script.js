@@ -246,6 +246,7 @@ const palavras = [
 ]
 
 let tentativas = 6;
+let restart = true;
 let listaDinamica = [];
 let palavraSecretaCategoria;
 let palavraSecretaSorteada;
@@ -259,6 +260,8 @@ function criarPalavraSecreta() {
 
     palavraSecretaSorteada = palavras[indexPalavra].nome;
     palavraSecretaCategoria = palavras[indexPalavra].categoria;
+
+    console.log(palavraSecretaSorteada);
 }
 
 function montarPalavraNaTela() {
@@ -310,13 +313,14 @@ function mudarStyleLetra(tecla, condicao) {
     }
 }
 
-function comparaListas(letra) {
+async function comparaListas(letra) {
     const posicao = palavraSecretaSorteada.indexOf(letra);
     if (posicao < 0) {
         tentativas--;
         carregaImgForca();
         if (tentativas == 0) {
             abreModal("OPS!, não foi dessa vez... A palavra secreta era <br>" + palavraSecretaSorteada);
+            piscarBotao();
         }
 
     } else {
@@ -338,50 +342,66 @@ function comparaListas(letra) {
     if (vitoria == true) {
         abreModal("PARABÉNS! Você venceu...");
         tentativas = 0;
+        piscarBotao();
+    } {
+    }
+
+    async function piscarBotao() {
+        while (restart == true) {
+            document.getElementById("btnReiniciar").style.backgroundColor = 'red';
+            document.getElementById("btnReiniciar").style.scale = 1.3;
+            await atraso(500);
+            document.getElementById("btnReiniciar").style.backgroundColor = 'yellow';
+            document.getElementById("btnReiniciar").style.scale = 1;
+            await atraso(500);
+        }
+    }
+
+    async function atraso(tempo) { //otimizar isso 
+        return new Promise(x => setTimeout(x, tempo));
+    }
+
+    function carregaImgForca() {
+        switch (tentativas) {
+            case 5:
+                document.getElementById("imagem").style.background = "url('./src/media/img/forca01.png')";
+                break;
+
+            case 4:
+                document.getElementById("imagem").style.background = "url('./src/media/img/forca02.png')";
+                break;
+            case 3:
+                document.getElementById("imagem").style.background = "url('./src/media/img/forca03.png')";
+                break;
+            case 2:
+                document.getElementById("imagem").style.background = "url('./src/media/img/forca04.png')";
+                break;
+            case 1:
+                document.getElementById("imagem").style.background = "url('./src/media/img/forca05.png')";
+                break;
+            case 0:
+                document.getElementById("imagem").style.background = "url('./src/media/img/forca06.png')";
+                break;
+
+            default:
+                document.getElementById("imagem").style.background = "url('./src/media/img/forca.png')";
+                break;
+
+        }
+    }
+
+    function abreModal() {
+        $('#myModal').modal({
+            show: true
+        });
+
+        let bntReiniciar = document.querySelector("#btnReiniciar")
+        bntReiniciar.addEventListener("click", function () {
+            restart = false;
+            location.reload();
+        });
     }
 }
-
-function carregaImgForca() {
-    switch (tentativas) {
-        case 5:
-            document.getElementById("imagem").style.background = "url('./src/media/img/forca01.png')";
-            break;
-
-        case 4:
-            document.getElementById("imagem").style.background = "url('./src/media/img/forca02.png')";
-            break;
-        case 3:
-            document.getElementById("imagem").style.background = "url('./src/media/img/forca03.png')";
-            break;
-        case 2:
-            document.getElementById("imagem").style.background = "url('./src/media/img/forca04.png')";
-            break;
-        case 1:
-            document.getElementById("imagem").style.background = "url('./src/media/img/forca05.png')";
-            break;
-        case 0:
-            document.getElementById("imagem").style.background = "url('./src/media/img/forca06.png')";
-            break;
-
-        default:
-            document.getElementById("imagem").style.background = "url('./src/media/img/forca.png')";
-            break;
-
-    }
-}
-
-function abreModal() {
-    $('#myModal').modal({
-        show: true
-    });
-
-    let bntReiniciar = document.querySelector("#btnReiniciar")
-    bntReiniciar.addEventListener("click", function () {
-        jogarNovamente = false;
-        location.reload();
-    });
-}
-
 
 
 
