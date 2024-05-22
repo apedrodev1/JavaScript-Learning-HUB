@@ -250,8 +250,10 @@ let listaDinamica = [];
 let palavraSecretaCategoria;
 let palavraSecretaSorteada;
 
-
+montarPalavraNaTela();
 criarPalavraSecreta();
+
+
 function criarPalavraSecreta() {
     const indexPalavra = parseInt(Math.random() * palavras.length)
 
@@ -259,12 +261,12 @@ function criarPalavraSecreta() {
     palavraSecretaCategoria = palavras[indexPalavra].categoria;
 }
 
-montarPalavraNaTela();
+
 function montarPalavraNaTela() {
     const categoria = document.getElementById("categoria");
     categoria.innerHTML = palavraSecretaCategoria;
 
-    const palavraTela = document.getElementById("palavra-secreta");
+    const palavraTela = document.getElementById("palavraSecreta");
     palavraTela.innerHTML = "";
 
     for (i = 0; i < palavraSecretaSorteada.length; i++) {
@@ -300,7 +302,7 @@ function verificaLetraEscolhida(letra) {
 }
 
 function mudarStyleLetra(tecla) {
-    document.getElementById(tecla).style.background = "#c71585" //mudar para class depois
+    document.getElementById(tecla).style.background = "#c71585"; //mudar para class depois
     document.getElementById(tecla).style.color = "#fff";
 }
 
