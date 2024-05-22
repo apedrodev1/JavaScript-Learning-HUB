@@ -38,14 +38,21 @@ body {
   margin-top: 30px;
 }
 
-#letras {
+.letras {
   width: 16px;
   text-align: center;
   border-bottom: 2px solid #8b008b;
   color: #fff;
   padding: 2px;
-  margin-left: 2px; /* Colocar em um atributo so  */
-  margin-right: 2px;
+  margin: 0 2px 0 2px;
+}
+
+.letrasEspaco {
+  width: 16px;
+  text-align: center;
+  color: #fff;
+  padding: 2px;
+  margin: 0 2px 0 2px;
 }
 
 #teclado {
@@ -64,6 +71,10 @@ body {
   color: #8b008b;
   font-family: "Ubuntu", sans-serif;
   font-weight: 900;
+}
+
+#teclas button:disabled {
+  cursor: not-allowed;
 }
 
 #teclas button:hover {
