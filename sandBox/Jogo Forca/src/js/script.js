@@ -276,7 +276,7 @@ function montarPalavraNaTela() {
             }
             else {
                 listaDinamica[i] = "&nbsp;"
-                palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
+                palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>" //verificar se essa dupla verificacao de espacos nao pode ser otimizada
             }
         }
         else {
@@ -294,15 +294,20 @@ function montarPalavraNaTela() {
 function verificaLetraEscolhida(letra) {
     document.getElementById('tecla-' + letra).disabled = true;
     if (tentativas > 0) {
-        mudarStyleLetra("tecla-" + letra);
+        mudarStyleLetra("tecla-" + letra, false);
         comparaListas(letra);
         montarPalavraNaTela();
     }
 }
 
-function mudarStyleLetra(tecla) {
-    document.getElementById(tecla).style.background = "#c71585"; //mudar para class depois
-    document.getElementById(tecla).style.color = "#fff";
+function mudarStyleLetra(tecla, condicao) {
+    if (condicao == false) {
+        document.getElementById(tecla).style.background = "#c71585"; //mudar para class depois
+        document.getElementById(tecla).style.color = "#fff";
+    } else {
+        document.getElementById(tecla).style.background = "#008000"; //mudar para class depois
+        document.getElementById(tecla).style.color = "#fff";
+    }
 }
 
 function comparaListas(letra) {
@@ -311,11 +316,11 @@ function comparaListas(letra) {
         tentativas--;
         carregaImgForca();
         if (tentativas == 0) {
-            abreModal()
+            abreModal("OPS!, não foi dessa vez... A palavra secreta era <br>" + palavraSecretaSorteada);
         }
 
-        //verificar se ainda tem tentativas // mensagem que errou
     } else {
+        mudarStyleLetra("tecla-" + letra, true);
         for (i = 0; i < palavraSecretaSorteada.length; i++) {
             if (palavraSecretaSorteada[i] == letra) {
                 listaDinamica[i] = letra;
@@ -331,7 +336,7 @@ function comparaListas(letra) {
     }
 
     if (vitoria == true) {
-        //mensagem ganhou
+        abreModal("PARABÉNS! Você venceu...");
         tentativas = 0;
     }
 }
