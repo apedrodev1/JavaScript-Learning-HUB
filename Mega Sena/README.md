@@ -1,16 +1,20 @@
-Este projeto é um clássico jogo da Forca implementado usando HTML, CSS, JavaScript e Bootstrap. O jogo permite que os jogadores adivinhem uma palavra oculta sugerindo letras dentro de um certo número de tentativas. Ele apresenta uma interface amigável estilizada com Bootstrap, design responsivo para vários dispositivos e elementos interativos impulsionados por JavaScript. Os jogadores recebem feedback sobre as tentativas corretas e incorretas, e o jogo exibe a palavra e uma mensagem de vitória ou derrota no final. Este projeto visa proporcionar uma maneira divertida e envolvente de praticar habilidades de codificação e aprender os fundamentos do desenvolvimento web
+# Projeto Mega Sena 
+
+Este projeto é um simulador de apostas na Mega-Sena, desenvolvido com JavaScript, Bootstrap, HTML e CSS. Ele permite que os usuários façam apostas selecionando entre 6 a 20 números, com os valores reais e atualizados da loteria federal brasileira em março de 2024. O sistema gera aleatoriamente uma combinação de 6 números e verifica quantos desses números coincidem com os números apostados pelo usuário. O layout é responsivo, oferecendo uma experiência de usuário otimizada em dispositivos móveis e desktop, e inclui um modo escuro como uma funcionalidade adicional para melhorar a legibilidade e a usabilidade em ambientes com pouca luz. O código JavaScript gerencia a lógica do jogo, desde a seleção dos números até a verificação dos acertos e a exibição dos resultados. Ele também inclui funcionalidades para alterar o tema entre claro e escuro, armazenando a preferência do usuário no localStorage para manter a configuração entre sessões. Este projeto oferece uma interface intuitiva e interativa, proporcionando uma experiência de simulação realista e envolvente para os jogadores que desejam testar a sorte na Mega-Sena.
 </br>
 
-Sendo uma reprodução de um jogo infantil, disponível no YouTube, criado pelo canal [Agnaldo Guimarães](https://www.youtube.com/watch?v=OvxbtRLUgXY&list=PLUPt90PJkVdU5kHy_QHmJi0MY_Zgw7CJV) e disponibilizado no [repositório do GitHub](https://github.com/agnaldoguima/jogoDaForca).
+Sendo uma reprodução de um jogo infantil, disponível no YouTube, criado pelo canal [Agnaldo Guimarães](https://www.youtube.com/watch?v=4UNtrBobL3A&list=PLUPt90PJkVdWd9Fys25FvGgvUg6W_X4f2) e disponibilizado no [repositório do GitHub](https://github.com/agnaldoguima/MegaSena).
+
 
 ## Descrição:
-O Jogo da Forca em JavaScript é um projeto clássico de programação que utiliza conceitos básicos da linguagem para criar uma experiência interativa e divertida. Através da manipulação do DOM, eventos, lógica e arrays, o jogo simula a dinâmica tradicional, desafiando o jogador a adivinhar uma palavra secreta letra por letra.
+Este projeto é um simulador de apostas da Mega-Sena, onde o jogador pode escolher entre 6 a 20 números, comparando com um sorteio aleatório. Inclui um layout responsivo, suporte a modo escuro, e usa JavaScript para gerenciar a lógica do jogo.
 
 ## Tecnologias Utilizadas:
 
 - HTML,
 - CSS,
-- JavaScript
+- JavaScript,
+- Bootsrap
 
 
 ## Estruturação de Pastas:
@@ -37,6 +41,9 @@ O Jogo da Forca em JavaScript é um projeto clássico de programação que utili
   </a>
   <br>
   </p>
+
+
+  ## Melhorias propostas em megaSena_V2.js
   
   ---
   
