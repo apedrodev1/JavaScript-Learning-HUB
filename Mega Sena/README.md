@@ -17,13 +17,14 @@ Este projeto é um simulador de apostas da Mega-Sena, onde o jogador pode escolh
 - Bootsrap
 
 
+
+
+
 ## Estruturação de Pastas:
-<p>
-<a href="https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/0717bbca-4c42-4847-bf71-4b56bba07d32">
-<img src="https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/0717bbca-4c42-4847-bf71-4b56bba07d32" alt="## Estruturação de Pastas">
-</a>
-<br>
-</p>
+<p> 
+  <img src="https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/3801b87a-8337-4ba1-91f4-b2fc73c97351" alt="Estruturacao de pastas">
+ </p>
+
  
 ## Como Utilizar:
 
@@ -35,13 +36,13 @@ Este projeto é um simulador de apostas da Mega-Sena, onde o jogador pode escolh
 
 # Layout do projeto:
 
-<p align="center">
-  <a href="https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/d20b11ba-d465-4bb8-b1a4-86e76c3f191b">
-    <img src="https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/d20b11ba-d465-4bb8-b1a4-86e76c3f191b" alt="Layout Final">
-  </a>
+<p align="center"> 
+   <img src="https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/21f97b85-7901-4203-b1ea-ffbeaedf3ed4" alt="Layout Final"  width="45%" height="650px">
+  <img src="https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/a5c5d4a3-5524-45e2-ae8e-af5d37595d05" alt="Layout Final" width="45%" height="650px" style="margin-left: 10px;">  
   <br>
   </p>
 
+  </br>
 
   ## Melhorias propostas em megaSena_V2.js
   
