@@ -45,7 +45,7 @@ Este projeto é um simulador de apostas da Mega-Sena, onde o jogador pode escolh
 
   </br>
 
-  ## Melhorias propostas em megaSena_V2.js
+  ## Melhorias propostas em megaSena_V2.js:
   
   ---
   
