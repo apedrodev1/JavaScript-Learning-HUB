@@ -26,8 +26,12 @@ O Jogo da Forca em JavaScript é um projeto clássico de programação que utili
  
 ## Como Utilizar:
 
-1. Clone este repositório em seu ambiente local,
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/Jogo%20Forca
 2. Abra o arquivo `index.html` em seu navegador web,
+<br/>
+
 3. Se divirta!
 
 </br>
