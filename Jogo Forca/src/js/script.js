@@ -243,13 +243,22 @@ const palavras = [
         nome: "PANICO NA TV",
         categoria: "TV E CINEMA"
     },
-]
+]           // apagar em script_V2.js 
 
 let tentativas = 6;
 let restart = true;
 let listaDinamica = [];
 let palavraSecretaCategoria;
 let palavraSecretaSorteada;
+
+// fetch('palavrasDict.json')
+//     .then(response => response.json())              criar um script_V2.js 
+//     .then(data => {
+//         palavras = data;
+//         criarPalavraSecreta();
+//         montarPalavraNaTela();
+//     })
+//     .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
 
 criarPalavraSecreta();
 montarPalavraNaTela();
