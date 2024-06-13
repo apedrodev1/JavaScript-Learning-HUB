@@ -17,9 +17,6 @@ Este projeto é um simulador de apostas da Mega-Sena, onde o jogador pode escolh
 - Bootsrap
 
 
-
-
-
 ## Estruturação de Pastas:
 <p> 
   <img src="https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/3801b87a-8337-4ba1-91f4-b2fc73c97351" alt="Estruturacao de pastas">
@@ -28,8 +25,11 @@ Este projeto é um simulador de apostas da Mega-Sena, onde o jogador pode escolh
  
 ## Como Utilizar:
 
-1. Clone este repositório em seu ambiente local,
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/Mega%20Sena
 2. Abra o arquivo `index.html` em seu navegador web,
+<br/>
 3. Se divirta!
 
 </br>
