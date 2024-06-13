@@ -30,6 +30,7 @@ Este projeto é um simulador de apostas da Mega-Sena, onde o jogador pode escolh
    git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/Mega%20Sena
 2. Abra o arquivo `index.html` em seu navegador web,
 <br/>
+
 3. Se divirta!
 
 </br>
