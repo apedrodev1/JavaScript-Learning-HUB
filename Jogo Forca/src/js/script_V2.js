@@ -11,6 +11,7 @@ fetch('palavrasDict.json')
         palavras = data;
         criarPalavraSecreta();
         montarPalavraNaTela();
+        criarTeclado();
     })
     .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
 
@@ -158,3 +159,19 @@ function piscarBotao() {
         botao.style.background = botao.style.background === "#00ff00" ? "#ff0000" : "#00ff00";
     }, 500);
 }
+
+function criarTeclado() {
+    const alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const tecladoDiv = document.getElementById("teclado");
+    tecladoDiv.innerHTML = '';
+
+    alfabeto.forEach(letra => {
+        const botao = document.createElement("button");
+        botao.innerHTML = letra;
+        botao.id = "tecla-" + letra;
+        botao.className = "tecla";
+        botao.addEventListener("click", () => verificaLetraEscolhida(letra));
+        tecladoDiv.appendChild(botao);
+    });
+}
+
