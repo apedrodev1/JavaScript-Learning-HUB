@@ -5,7 +5,7 @@ let palavraSecretaCategoria;
 let palavraSecretaSorteada;
 let palavras = [];
 
-fetch('palavrasDict.json')
+fetch('../palavrasDict.json')
     .then(response => response.json())
     .then(data => {
         palavras = data;
@@ -161,17 +161,14 @@ function piscarBotao() {
 }
 
 function criarTeclado() {
-    const alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    const tecladoDiv = document.getElementById("teclado");
-    tecladoDiv.innerHTML = '';
-
-    alfabeto.forEach(letra => {
-        const botao = document.createElement("button");
-        botao.innerHTML = letra;
-        botao.id = "tecla-" + letra;
-        botao.className = "tecla";
-        botao.addEventListener("click", () => verificaLetraEscolhida(letra));
-        tecladoDiv.appendChild(botao);
+    const teclado = document.getElementById("teclado");
+    const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    letras.forEach(letra => {
+        const btn = document.createElement("button");
+        btn.classList.add("tecla");
+        btn.id = `tecla-${letra}`;
+        btn.textContent = letra;
+        btn.onclick = () => verificaLetraEscolhida(letra);
+        teclado.appendChild(btn);
     });
 }
-
