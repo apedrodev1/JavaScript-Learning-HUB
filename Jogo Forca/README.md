@@ -49,7 +49,7 @@ O Jogo da Forca em JavaScript é um projeto clássico de programação que utili
 </br>
 
 ## 1 - Organização e otimização do código:
-Criação de um arquivo `.json` para armazenar o dicionario `const = palavras` auxiliando na organização e na manutenção do seu código, mantendo o arquivo JavaScript mais limpo e focado na lógica do jogo, enquanto os dados ficam separados.
+Criação de um arquivo `.json` para armazenar o dicionario `const = palavras` auxiliando na organização e na manutenção do seu código, mantendo o arquivo JavaScript mais limpo e focado na lógica do jogo, enquanto os dados ficam separados. Facilitando assim a inserção de novas palavras. 
 
 
 
