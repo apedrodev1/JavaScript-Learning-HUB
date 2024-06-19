@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100..800&display=swap');
+*{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+
+body{
+    font-family: 'Anek Malayan';
+}
+
+table {
+    width: 100vw;
+    background-color: #10502f;
+    color: #fff;
+
+}
