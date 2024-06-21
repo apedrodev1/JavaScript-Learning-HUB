@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"> </div>
+    <h1>Conversor de <span>texto</span> para <span>audio</span></h1>
+    <p>Digite um texto ou envie algum arquivo para ser lido:</p>
+    <div id="entradaDeConteudo">
+      <textarea placeholder ="Digite algo..." id="entradaDeTexto"></textarea> 
+      <div>
+        <label for="uploadArquivo" id="arquivoLabel"></label>
+        <input type="file" id="uploadArquivo" accept=".txt">
+      </div>
+    </div>
+    <div class="acoes">
+        <div class="acaoBox">
+            <p>Selecione a voz:</p>
+            <select id="selcaoVoz"></select>
+        </div>
+        <div class="acaoBox">
+            <p>Clique para ouvir!</p>
+            <button id="ouvirBtn">Ouvir</button>
+        </div>
+        <div class="acaoBox">
+            <p>Obtenha um arquivo do conteudo:</p>
+            <button id="baixarTextoBtn">Baixar Texto</button>
+        </div>
+    </div>
+    <script src="./src/js/scrpit.js"></script>
+</body>
+</html>
