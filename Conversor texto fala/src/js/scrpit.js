@@ -57,3 +57,20 @@ botaoBaixarTexto.addEventListener("click", () => {
     URL.revokeObjectURL(url);
 
 });
+
+//upload arquivo
+
+uploadArquivo.addEventListener("change", (event) => {
+    const arquivo = event.target.files[0]
+
+    if (arquivo) {
+        const leitor = new FileReader()
+
+        leitor.onload = (e) => {
+            entradaTexto.value = e.target.result;
+        };
+
+        leitor.readAsText(arquivo);
+    }
+
+});
