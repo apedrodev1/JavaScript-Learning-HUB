@@ -1,8 +1,5 @@
 # Conversor de texto para áudio
 
-
-
-
 Sendo uma reprodução de uma página estática, disponível no YouTube, criado pelo canal [Matheus Bastiti](https://www.youtube.com/watch?v=n_vmS00Az2w) e disponibilizado no [repositório do GitHub](https://github.com/matheusbattisti/conversor_texto_para_audio_js)
 
 
