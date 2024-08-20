@@ -30,6 +30,9 @@ Sendo uma reprodução de uma página estática, disponível no YouTube, criado 
 
 </br>
 
+
+
+  
 # Layout do projeto:
 
 <p align="center"> 
