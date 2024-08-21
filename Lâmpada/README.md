@@ -92,4 +92,6 @@ A estrutura de pastas foi organizada da seguinte maneira:
 ---
 
 
+
+
 Esse README fornece uma descrição clara do projeto, seus objetivos, tecnologias utilizadas e como utilizá-lo, juntamente com os devidos créditos ao criador original do projeto.
