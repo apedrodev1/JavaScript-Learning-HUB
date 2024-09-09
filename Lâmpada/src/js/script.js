@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 const lamp = document.getElementsByClassName("lamp")[0];
 const buttons = document.querySelectorAll('.btn');
 
@@ -33,3 +34,5 @@ document.querySelectorAll('.btn button').forEach(button => {
 
 lamp.addEventListener("mouseover", lampOn);
 lamp.addEventListener("dblclick", lampBroken);
+    
+}
