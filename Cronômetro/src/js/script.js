@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 const minutesEl = document.querySelector("#minutes");
 const secondsEl = document.querySelector("#seconds");
 const milisecondsEl = document.querySelector("#miliseconds");
@@ -83,4 +85,5 @@ function restartTimer() {
     startBtn.style.display = "block";
     pauseBtn.style.display = "none";
     resumeBtn.style.display = "none";
+}
 }
