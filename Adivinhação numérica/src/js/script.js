@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 const randomNumbers = [];
 while (randomNumbers.length < 9) {
     const randomNumber = Math.floor(Math.random() * 10) + 1;
@@ -90,3 +91,4 @@ function soltou(e) {
     }
 }
 input.addEventListener('keyup', soltou);
+}
