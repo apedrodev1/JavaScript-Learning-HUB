@@ -1,6 +1,6 @@
 let log = new Log(document.querySelector('.log'));
 let char = new Knight('Sir Pedro');
-let monster = new LittleMonster();
+let monster = new BigMonster();
 
 const stage = new Stage(
     char,
