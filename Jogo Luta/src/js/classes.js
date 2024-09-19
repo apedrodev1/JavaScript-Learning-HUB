@@ -4,6 +4,7 @@ class Character {
     maxLife = 1;
     attack = 0;
     defense = 0;
+    alive = true; //variavel que verifica se o personagem esta ou nao vivo
 
     constructor(name) {
         this.name = name;
@@ -24,6 +25,7 @@ class Knight extends Character {
         this.attack = 10;
         this.defense = 8;
         this.maxLife = this.life;
+        this.alive = this.alive;
     }
 }
 
@@ -34,16 +36,18 @@ class Sorcerer extends Character {
         this.attack = 15;
         this.defense = 3;
         this.maxLife = this.life;
+        this.alive = this.alive;
     }
 }
 
 class LittleMonster extends Character {
     constructor() {
         super('Little Monster');
-        this.life = 40;
+        this.life = 60;
         this.attack = 5;
         this.defense = 4;
         this.maxLife = this.life
+        this.alive = this.alive;
     }
 }
 
@@ -54,15 +58,17 @@ class BigMonster extends Character {
         this.attack = 16;
         this.defense = 5;
         this.maxLife = this.life
+        this.alive = this.alive;
     }
 }
 
 class Stage {
-    constructor(fighter1, fighter2, fighter1El, fighter2El) {
+    constructor(fighter1, fighter2, fighter1El, fighter2El, logObject) {
         this.fighter1 = fighter1;
         this.fighter2 = fighter2;
         this.fighter1El = fighter1El;
         this.fighter2El = fighter2El;
+        this.log = logObject;
 
     }
 
@@ -89,7 +95,7 @@ class Stage {
 
     doAttack(attacking, attacked) {
         if (attacking.life <= 0 || attacked.life <= 0) { //condicao de vitoria ou derrota
-            console.log('Atacando cachorro morto');
+            this.log.addMessage('Atacando cachorro morto');
             return;
         }
 
@@ -101,15 +107,30 @@ class Stage {
 
         if (actualAttack > actualDefense) {
             attacked.life -= actualAttack;
-            console.log(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`)
+            this.log.addMessage(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`);
         } else {
-            console.log(`${attacked.name} defendeu o ataque`);
+            this.log.addMessage(`${attacked.name} defendeu o ataque`);
         }
 
-        // console.log(`${attacking.name} esta atacando ${attacked.name}`)
+        // this.log.addMessage(`${attacking.name} esta atacando ${attacked.name}`)
 
 
         this.update();
 
+    }
+}
+
+class Log {
+    list = [];
+
+    constructor(listEl) {
+        this.listEl = listEl;
+    }
+
+    addMessage(msg) {
+        this.list.push(msg);
+        let li = document.createElement('li');
+        li.innerText = msg;
+        this.listEl.appendChild(li); // Adiciona o <li> à lista
     }
 }
