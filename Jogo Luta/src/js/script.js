@@ -6,6 +6,7 @@ const stage = new Stage(
     monster,
     document.querySelector('#char'),
     document.querySelector('#monster')
+
 );
 
 stage.start();
