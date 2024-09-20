@@ -27,17 +27,17 @@ class Stage {
 
     }
 
+
     update() {
-        //Fighter 1
-        this.fighter1El.querySelector('.name').innerHTML = `${this.fighter1.name} - ${this.fighter1.life} HP`;
+        // Fighter 1
+        this.fighter1El.querySelector('.name').innerHTML = `${this.fighter1.name} - ${this.fighter1.life.toFixed(2)} HP`;
         let f1Pct = (this.fighter1.life / this.fighter1.maxLife) * 100;
         this.fighter1El.querySelector('.bar').style.width = `${f1Pct.toFixed(2)}%`;
 
-        //Fighter 2
-        this.fighter2El.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life} HP`;
+        // Fighter 2
+        this.fighter2El.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life.toFixed(2)} HP`;
         let f2Pct = (this.fighter2.life / this.fighter2.maxLife) * 100;
         this.fighter2El.querySelector('.bar').style.width = `${f2Pct.toFixed(2)}%`;
-
     }
 
     doAttack(attacking, attacked) {
@@ -45,8 +45,8 @@ class Stage {
             return;
         }
 
-        let attackFactor = (Math.random() * 2).toFixed(2);
-        let defenseFactor = (Math.random() * 2).toFixed(2);
+        let attackFactor = parseFloat((Math.random() * 2).toFixed(2));
+        let defenseFactor = parseFloat((Math.random() * 2).toFixed(2));
 
         let actualAttack = attacking.attack * attackFactor;
         let actualDefense = attacked.defense * defenseFactor;
