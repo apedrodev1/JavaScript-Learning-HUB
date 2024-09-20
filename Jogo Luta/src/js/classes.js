@@ -21,8 +21,7 @@ class Stage {
 
         //evento healButton
         this.fighter1El.querySelector('.healButton').addEventListener('click', () => this.doHeal(this.fighter1));
-
-        this.fighter2El.querySelector('.healButton').addEventListener('click', () => this.fighter2);
+        this.fighter2El.querySelector('.healButton').addEventListener('click', () => this.doHeal(this.fighter2));
 
 
     }
@@ -61,16 +60,23 @@ class Stage {
         // Verificação do fim da luta
         if (attacked.life <= 0) {
             this.log.addMessage(`${attacked.name} foi derrotado!`);
-            this.endFight(attacking.name); // Chama a função para terminar a luta
-            return; // Finaliza a função se um dos jogadores foi derrotado
+            this.endFight(attacking.name);
+            return;
         }
 
         this.update();
     }
 
+    doHeal(fighter) { // settar cura para utiizar apenas 4x
+        let healAmount = Math.floor(Math.random() * 10) + 5;
+        fighter.life = Math.min(fighter.maxLife, fighter.life + healAmount); // Cura, mas não ultrapassa a vida máxima
+
+        this.log.addMessage(`${fighter.name} curou ${healAmount} HP.`);
+        this.update(); // Atualiza a barra de vida
+    }
+
     endFight(winnerName) {
         this.log.addMessage(`${winnerName} venceu a luta!`);
-        // Desabilitar botões de ataque
         this.fighter1El.querySelector('.attackButton').disabled = true;
         this.fighter2El.querySelector('.attackButton').disabled = true;
 
