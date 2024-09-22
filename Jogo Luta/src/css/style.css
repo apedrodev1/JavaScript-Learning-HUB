@@ -31,60 +31,53 @@ button {
     cursor: pointer;
     color: white;
     border: none;
-    padding: 10px 20px 10px;
+    padding: 10px 20px;
     font-size: 16px;
-    
 }
 
 .attackButton {
-    margin: 10px 20px ;
-    background-color: #e63946;
+    margin: 10px 20px;
+    background-color: #e63946; 
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .attackButton:hover {
-    background-color: #d62828;
+    background-color: #d62828; 
     transform: scale(1.2);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .attackButton:disabled {
-    background-color: #f5a6a6;
+    background-color: #f5a6a6; 
     cursor: not-allowed;
-    opacity: 0.7;
+    opacity: 0.5; 
     box-shadow: none;
 }
 
-.attackButton:disabled:hover {
-    transform: none;  
-    opacity: 0.5;  
-}
-
-
 .healButton {
-    margin: 10px ;
-    background-color: #1f8f80 ;
+    margin: 10px;
+    background-color: #1f8f80; 
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .healButton:hover {
-    background-color: #117368;
+    background-color: #117368; 
     transform: scale(1.2);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .healButton:disabled {
-    background-color: #21867a;
+    background-color: #a6e3e3; 
     cursor: not-allowed;
-    opacity: 0.7;
+    opacity: 0.5; 
     box-shadow: none;
 }
 
 .healButton:disabled:hover {
     transform: none;  
-    opacity: 0.5;  
+    opacity: 0.5; 
 }
 
 .log {
