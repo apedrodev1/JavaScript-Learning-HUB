@@ -13,16 +13,27 @@
 }
 
 .lifeBar {
-    height: 10px;
-    border: 1px, solid #333;
+    height: 20px;
+    border: 2px solid #333; 
     border-radius: 5px;
     margin-bottom: 10px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .lifeBar .bar {
-    height: inherit;
+    height: 100%; 
     background-color: red; 
-    transition: width 0.3s ease; /* Animação suave na mudança de largura */
+    transition: width 0.3s ease; 
+}
+
+.lifeBar .lifeText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    font-weight: bold; 
 }
 
 button {
