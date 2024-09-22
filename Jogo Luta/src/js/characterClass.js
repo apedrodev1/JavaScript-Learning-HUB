@@ -4,10 +4,11 @@ class Character {
     maxLife = 1;
     attack = 0;
     defense = 0;
-    alive = true; //variavel que verifica se o personagem esta ou nao vivo
+    alive = true; // nao esta sendo usada, verificar necessidade depois variavel que verifica se o personagem esta ou nao vivo
 
     constructor(name) {
         this.name = name;
+        this.healingTimes = 4;
     }
 
     get life() {
