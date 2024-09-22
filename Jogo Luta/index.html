@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Pedro Augusto Rocha - https://github.com/apedrodev1">
+    <meta name="description" content="Free Web tutorials"> <!-- preencher -->
+    <meta name="keywords" content="HTML, CSS, JavaScript">
     <link rel="stylesheet" href="./src/css/style.css">
     <title>Document</title>
 </head>
@@ -10,33 +13,36 @@
     
 <div class="fightArea">
     <div id="char">
+        <div class="healChances">----</div>
         <div class="lifeBar">
             <div class="bar"  style="width: 10%;"></div>
         </div>
-    <strong class="name">--</strong>
-    <div>
-        <button class="attackButton">Attack</button>
-        <button class="healButton">Heal</button> 
+        <strong class="name">--</strong>
+        <div>
+            <button class="attackButton">Attack</button>
+            <button class="healButton">Heal</button> 
 
+        </div>
     </div>
-    </div>
+   
     <div id="monster">
+        <div class="healChances">----</div>
         <div class="lifeBar">
             <div class="bar"  style="width: 10%;"></div>
         </div>
     
-    <strong class="name">--</strong>
-    <div>
-        <button class="attackButton">Attack</button>
-       <button class="healButton">Heal</button> 
-    </div>
+        <strong class="name">--</strong>
+        <div class="actionButtons">
+            <button class="attackButton">Attack</button>
+        <button class="healButton">Heal</button> 
+        </div>
     </div>
 </div>
 
 <ul class="log">
 
 </ul>
-
+    <script src="./src/js/controllers.js"></script>
     <script src="./src/js/classes.js"></script>
     <script src="./src/js/characterClass.js"></script>
     <script src="./src/js/script.js"></script>
