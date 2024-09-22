@@ -1,31 +1,77 @@
 class Stage {
-    constructor(fighter1, fighter2, fighter1El, fighter2El, logObject) {
+    constructor(fighter1, fighter2, fighter1El, fighter2El, logObject, controllers) {
         this.fighter1 = fighter1;
         this.fighter2 = fighter2;
         this.fighter1El = fighter1El;
         this.fighter2El = fighter2El;
         this.log = logObject;
         this.isGameOver = false;
-
+        this.controllers = controllers;
     }
 
     start() {
         this.update();
-
-
-        //Evento attackButton 
-        this.fighter1El.querySelector('.attackButton').addEventListener('click', () => this.doAttack(this.fighter1, this.fighter2));
-
-        this.fighter2El.querySelector('.attackButton').addEventListener('click', () => this.doAttack(this.fighter2, this.fighter1));
-
-
-        //evento healButton
-        this.fighter1El.querySelector('.healButton').addEventListener('click', () => this.doHeal(this.fighter1));
-        this.fighter2El.querySelector('.healButton').addEventListener('click', () => this.doHeal(this.fighter2));
-
-
+        this.controlTurns();
+        this.controllers.initialize(this);
     }
 
+    controlTurns() {
+        const fighter1AttackButton = this.controllers.fighter1AttackButton;
+        const fighter2AttackButton = this.controllers.fighter2AttackButton;
+        const healer1Button = this.controllers.healer1Button;
+        const healer2Button = this.controllers.healer2Button;
+
+        fighter1AttackButton.disabled = true;
+        fighter2AttackButton.disabled = true;
+        healer1Button.disabled = true;
+        healer2Button.disabled = true;
+
+        let coinFlip = Math.random() < 0.5; // True = P1 começa, False = P2 começa
+        let starter = coinFlip ? fighter1AttackButton : fighter2AttackButton;
+        let message = coinFlip ? 'P1 é cara, P1 começa!' : 'P2 é coroa, P2 começa!';
+
+        // Adiciona mensagem ao log
+        this.log.addMessage(message);
+
+        // Delay antes de ativar o botão de ataque do jogador que começa
+        setTimeout(() => {
+            starter.disabled = false;
+        }, 2000); // Delay de 2 segundos
+
+        // Adiciona event listeners para os botões de ataque e cura do jogador 1
+        fighter1AttackButton.addEventListener('click', () => {
+            fighter1AttackButton.disabled = true;
+            fighter2AttackButton.disabled = false;
+
+            healer1Button.disabled = true;
+            healer2Button.disabled = false;
+        });
+
+        healer1Button.addEventListener('click', () => {
+            fighter1AttackButton.disabled = true;
+            fighter2AttackButton.disabled = false;
+
+            healer1Button.disabled = true;
+            healer2Button.disabled = false;
+        });
+
+        // Adiciona event listeners para os botões de ataque e cura do jogador 2
+        fighter2AttackButton.addEventListener('click', () => {
+            fighter2AttackButton.disabled = true;
+            fighter1AttackButton.disabled = false;
+
+            healer2Button.disabled = true;
+            healer1Button.disabled = false;
+        });
+
+        healer2Button.addEventListener('click', () => {
+            fighter2AttackButton.disabled = true;
+            fighter1AttackButton.disabled = false;
+
+            healer2Button.disabled = true;
+            healer1Button.disabled = false;
+        });
+    }
 
     update() {
         // Fighter 1
@@ -67,12 +113,27 @@ class Stage {
         this.update();
     }
 
-    doHeal(fighter) { // settar cura para utiizar apenas 4x
-        let healAmount = Math.floor(Math.random() * 10) + 5;
-        fighter.life = Math.min(fighter.maxLife, fighter.life + healAmount); // Cura, mas não ultrapassa a vida máxima
+    doHeal(fighter) {
+        let healingTimes = 4; //corrigir, nao funciona 
 
-        this.log.addMessage(`${fighter.name} curou ${healAmount} HP.`);
-        this.update(); // Atualiza a barra de vida
+        // Verifica se ainda há curas disponíveis
+        while (healingTimes > 0) {
+            let healAmount = Math.floor(Math.random() * 10) + 5;
+            fighter.life = Math.min(fighter.maxLife, fighter.life + healAmount); // Cura, mas não ultrapassa a vida máxima
+
+            this.log.addMessage(`${fighter.name} curou ${healAmount} de HP.`);
+            this.update(); // Atualiza a barra de vida
+
+            
+
+
+
+            healingTimes--; 
+
+             // settar as mudancas graficas com o decremento aqui 
+        }
+
+        return;
     }
 
     endFight(winnerName) {
@@ -83,8 +144,6 @@ class Stage {
         this.fighter1El.querySelector('.healButton').disabled = true;
         this.fighter2El.querySelector('.healButton').disabled = true;
     }
-
-
 }
 
 class Log {
