@@ -11,33 +11,33 @@
 </head>
 <body>
     
-<div class="fightArea">
-    <div id="char">
-        <div class="healChances">----</div>
-        <div class="lifeBar">
-            <div class="bar"  style="width: 10%;"></div>
-        </div>
-        <strong class="name">--</strong>
-        <div>
-            <button class="attackButton">Attack</button>
-            <button class="healButton">Heal</button> 
-
-        </div>
-    </div>
-   
-    <div id="monster">
-        <div class="healChances">----</div>
-        <div class="lifeBar">
-            <div class="bar"  style="width: 10%;"></div>
+    <div class="fightArea">
+        <div id="char" data-fighter="Knight">
+            <div class="healChances">Curas: <span class="healCount">4</span></div>
+            <div class="lifeBar">
+                <div class="bar" style="width: 75%;"></div>
+                <div class="lifeText"> 100 / 100</div>
+            </div>
+            <strong class="name">Sir Pedro</strong>
+            <div>
+                <button class="attackButton">Attack</button>
+                <button class="healButton">Heal</button> 
+            </div>
         </div>
     
-        <strong class="name">--</strong>
-        <div class="actionButtons">
-            <button class="attackButton">Attack</button>
-        <button class="healButton">Heal</button> 
+        <div id="monster" data-fighter="BigMonster">
+            <div class="healChances">Curas: <span class="healCount">4</span></div>
+            <div class="lifeBar">
+                <div class="bar" style="width: 75%;"></div>
+                <div class="lifeText"> 100 / 100</div>
+            </div>
+            <strong class="name">Big Monster</strong>
+            <div class="actionButtons">
+                <button class="attackButton">Attack</button>
+                <button class="healButton">Heal</button> 
+            </div>
         </div>
     </div>
-</div>
 
 <ul class="log">
 
