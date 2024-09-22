@@ -1,15 +1,24 @@
+
+
+let fighter1El = document.querySelector('#char');
+let fighter2El = document.querySelector('#monster');
+
 let log = new Log(document.querySelector('.log'));
 let char = new Knight('Sir Pedro');
 let monster = new BigMonster();
 
+let controllers = new Controler(
+    fighter1El,
+    fighter2El
+);
+
 const stage = new Stage(
     char,
     monster,
-    document.querySelector('#char'),
-    document.querySelector('#monster'),
-    log
-
-
+    fighter1El,
+    fighter2El,
+    log,
+    controllers
 );
 
 stage.start();
