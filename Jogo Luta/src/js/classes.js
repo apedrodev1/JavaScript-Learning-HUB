@@ -21,55 +21,79 @@ class Stage {
         const healer1Button = this.controllers.healer1Button;
         const healer2Button = this.controllers.healer2Button;
 
+        // Desativando os botões de ataque e cura e ajustando o cursor no início
         fighter1AttackButton.disabled = true;
         fighter2AttackButton.disabled = true;
         healer1Button.disabled = true;
         healer2Button.disabled = true;
 
+        fighter1AttackButton.style.cursor = 'not-allowed';
+        fighter2AttackButton.style.cursor = 'not-allowed';
+        healer1Button.style.cursor = 'not-allowed';
+        healer2Button.style.cursor = 'not-allowed';
+
+        // Lógica do cara ou coroa para decidir quem começa
         let coinFlip = Math.random() < 0.5; // True = P1 começa, False = P2 começa
         let starter = coinFlip ? fighter1AttackButton : fighter2AttackButton;
+        let starterHealer = coinFlip ? healer1Button : healer2Button;
+        let nonStarter = coinFlip ? fighter2AttackButton : fighter1AttackButton;
+        let nonStarterHealer = coinFlip ? healer2Button : healer1Button;
         let message = coinFlip ? 'P1 é cara, P1 começa!' : 'P2 é coroa, P2 começa!';
 
-        // Adiciona mensagem ao log
         this.log.addMessage(message);
 
-        // Delay antes de ativar o botão de ataque do jogador que começa
+        // Delay de 2.5 segundos antes de comecar a luta // espaco para uma animacao/ contagem regressiva etc  
         setTimeout(() => {
             starter.disabled = false;
-        }, 2000); // Delay de 2 segundos
+            starterHealer.disabled = false;
+            starter.style.cursor = 'pointer';
+            starterHealer.style.cursor = 'pointer';
+        }, 2500);
 
-        // Adiciona event listeners para os botões de ataque e cura do jogador 1
+        // Configuração dos turnos
         fighter1AttackButton.addEventListener('click', () => {
             fighter1AttackButton.disabled = true;
             fighter2AttackButton.disabled = false;
-
             healer1Button.disabled = true;
             healer2Button.disabled = false;
+
+
+            fighter1AttackButton.style.cursor = 'not-allowed';
+            fighter2AttackButton.style.cursor = 'pointer';
+            healer1Button.style.cursor = 'not-allowed';
+            healer2Button.style.cursor = 'pointer';
         });
 
         healer1Button.addEventListener('click', () => {
             fighter1AttackButton.disabled = true;
             fighter2AttackButton.disabled = false;
-
             healer1Button.disabled = true;
             healer2Button.disabled = false;
+
+            healer1Button.style.cursor = 'not-allowed';
+            healer2Button.style.cursor = 'pointer';
         });
 
-        // Adiciona event listeners para os botões de ataque e cura do jogador 2
         fighter2AttackButton.addEventListener('click', () => {
             fighter2AttackButton.disabled = true;
             fighter1AttackButton.disabled = false;
-
             healer2Button.disabled = true;
             healer1Button.disabled = false;
+
+            fighter2AttackButton.style.cursor = 'not-allowed';
+            fighter1AttackButton.style.cursor = 'pointer';
+            healer2Button.style.cursor = 'not-allowed';
+            healer1Button.style.cursor = 'pointer';
         });
 
         healer2Button.addEventListener('click', () => {
             fighter2AttackButton.disabled = true;
             fighter1AttackButton.disabled = false;
-
             healer2Button.disabled = true;
             healer1Button.disabled = false;
+
+            healer2Button.style.cursor = 'not-allowed';
+            healer1Button.style.cursor = 'pointer';
         });
     }
 
@@ -124,13 +148,13 @@ class Stage {
             this.log.addMessage(`${fighter.name} curou ${healAmount} de HP.`);
             this.update(); // Atualiza a barra de vida
 
-            
 
 
 
-            healingTimes--; 
 
-             // settar as mudancas graficas com o decremento aqui 
+            healingTimes--;
+
+            // settar as mudancas graficas com o decremento aqui 
         }
 
         return;
