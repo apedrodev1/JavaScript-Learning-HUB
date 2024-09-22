@@ -1,23 +1,40 @@
 .fightArea{
     display: flex;
-    gap: 20px;
+    gap: 60px;
 }
 
 #char #monster {
     flex: 1;
 }
 
+.healChances {
+    display: flex;
+    margin: 5px 0px 5px;
+}
+
 .lifeBar {
     height: 10px;
     border: 1px, solid #333;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .lifeBar .bar {
     height: inherit;
-    background-color: red; /* Verde para indicar vida */
+    background-color: red; 
     transition: width 0.3s ease; /* Animação suave na mudança de largura */
 }
+
+button {
+    width: 80px;
+    background-color: aqua;
+    text-decoration: none;
+}
+
+.attackbutton {}
+
+.
+
 
 .log {
     border: 1px, dotted #999;
