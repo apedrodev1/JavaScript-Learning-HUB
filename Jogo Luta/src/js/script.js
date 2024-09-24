@@ -1,4 +1,6 @@
-
+import { Stage, Log } from "./classes.js"
+import { Knight, BigMonster } from "./characterClass.js"
+import { Controler } from "./controllers.js"
 
 let fighter1El = document.querySelector('#char');
 let fighter2El = document.querySelector('#monster');
