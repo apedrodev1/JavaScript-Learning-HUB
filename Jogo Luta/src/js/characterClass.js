@@ -1,4 +1,4 @@
-class Character {
+export class Character {
 
     _life = 1;
     maxLife = 1;
@@ -19,7 +19,7 @@ class Character {
     }
 }
 
-class Knight extends Character {
+export class Knight extends Character {
     constructor(name) {
         super(name);
         this.life = 100;
@@ -30,7 +30,7 @@ class Knight extends Character {
     }
 }
 
-class Sorcerer extends Character {
+export class Sorcerer extends Character {
     constructor(name) {
         super(name);
         this.life = 80;
@@ -41,7 +41,7 @@ class Sorcerer extends Character {
     }
 }
 
-class LittleMonster extends Character {
+export class LittleMonster extends Character {
     constructor() {
         super('Little Monster');
         this.life = 60;
@@ -52,7 +52,7 @@ class LittleMonster extends Character {
     }
 }
 
-class BigMonster extends Character {
+export class BigMonster extends Character {
     constructor() {
         super('Big Monster');
         this.life = 120;
