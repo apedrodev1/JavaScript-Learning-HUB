@@ -132,7 +132,7 @@ export class Stage {
         }
     }
 
-    endFight(winnerName) {
+    endFight(winnerName) { // nao funciona - rever
         this.log.addMessage(`${winnerName} venceu a luta!`);
         this.fighter1El.querySelector('.attackButton').disabled = true;
         this.fighter2El.querySelector('.attackButton').disabled = true;
@@ -159,7 +159,7 @@ export class Stage {
             lifeBar.style.backgroundColor = 'red';
         }
 
-        lifeText.textContent = `${fighter.life.toFixed(2)} / ${fighter.maxLife}`; // Atualiza o texto
+        lifeText.textContent = `${fighter.life.toFixed(2)} / ${fighter.maxLife}`; // Atualiza o texto setar cor, branco nao da
     }
 
     updateHearts(el, healingTimes) {
