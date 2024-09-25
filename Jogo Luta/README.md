@@ -24,8 +24,10 @@
 
 ---
 
+
+
 </br>
-Esse README fornece uma descrição clara do projeto, seus objetivos, tecnologias utilizadas e como utilizá-lo.
+--  Esse README fornece uma descrição clara do projeto, seus objetivos, tecnologias utilizadas e como utilizá-lo.
 
 </div>
  
