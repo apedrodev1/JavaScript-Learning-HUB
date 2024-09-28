@@ -141,27 +141,28 @@ export class Stage {
         this.fighter2El.querySelector('.healButton').disabled = true;
     }
 
-    updateLifeBar(fighter) {
+     updateLifeBar(fighter) {
         const lifeBarElement = fighter === this.fighter1 ? this.fighter1El : this.fighter2El;
         const lifeBar = lifeBarElement.querySelector('.bar');
         const lifeText = lifeBarElement.querySelector('.lifeText');
         const lifePercentage = (fighter.life / fighter.maxLife) * 100;
-        console.log(lifePercentage);
-
+    
         lifeBar.style.width = `${lifePercentage}%`;
-
-        // Muda a cor da barra com base na vida
+    
         if (lifePercentage > 50) {
             lifeBar.style.backgroundColor = 'green';
+            lifeText.style.color = 'white'; 
         } else if (lifePercentage > 25) {
             lifeBar.style.backgroundColor = 'yellow';
+            lifeText.style.color = 'black'; 
         } else {
-            lifeBar.style.backgroundColor = 'red';
+            lifeBar.style.backgroundColor = 'red'; 
+            lifeText.style.color = 'black'; 
         }
-
-        lifeText.textContent = `${fighter.life.toFixed(2)} / ${fighter.maxLife}`; // Atualiza o texto setar cor, branco nao da
+    
+        lifeText.textContent = `${fighter.life.toFixed(2)} / ${fighter.maxLife}`; 
     }
-
+    
     updateHearts(el, healingTimes) {
 
         const heartsContainer = el.querySelector(".healChances");
