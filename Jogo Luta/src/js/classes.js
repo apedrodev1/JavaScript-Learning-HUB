@@ -196,5 +196,79 @@ export class Log {
 }
 
 
+// efeito coracoes
+ /* doHeal(fighter) {
+    // Verifica se a vida do fighter está cheia
+    if (fighter.life >= fighter.maxLife) {
+        this.log.addMessage(`${fighter.name} está com a vida cheia e não pode se curar!`);
+        return;
+    }
+
+    // Verifica se ainda há curas disponíveis
+    if (fighter.healingTimes > 0) {
+        let healAmount = Math.floor(Math.random() * 10) + 5; // Cura entre 5 e 15
+        fighter.life = Math.min(fighter.maxLife, fighter.life + healAmount); // Cura, mas não ultrapassa a vida máxima
+
+        this.log.addMessage(`${fighter.name} curou ${healAmount} de HP. Restam ${fighter.healingTimes - 1} curas.`);
+        this.update(); // Atualiza a barra de vida
+
+        fighter.healingTimes--;
+
+        // Manipular o elemento DOM .healChances e aplicar animação
+        const fighterEl = fighter === this.fighter1 ? this.fighter1El : this.fighter2El;
+        
+        // Adiciona o efeito de transição para os corações
+        this.animateHearts(fighterEl, fighter.healingTimes);
+
+        // Desabilita o botão de cura se não houver mais curas disponíveis
+        if (fighter.healingTimes === 0) {
+            this.disableHealButton(fighter);
+            this.log.addMessage(`${fighter.name} não pode mais curar.`);
+        }
+    } else {
+        this.log.addMessage(`${fighter.name} não pode mais curar!`);
+    }
+}
+
+animateHearts(el, healingTimes) {
+    const heartsContainer = el.querySelector(".healChances");
+    
+    // Remove corações existentes com efeito de fade
+    const currentHearts = heartsContainer.querySelectorAll('img');
+    currentHearts.forEach((heart, index) => {
+        heart.style.transition = 'opacity 0.3s ease';
+        heart.style.opacity = '0';
+        
+        // Remove o coração após a animação
+        setTimeout(() => {
+            heart.remove();
+        }, 300 * (index + 1)); // Escalonando a remoção para dar tempo de animação
+    });
+
+    // Adiciona novos corações
+    const heartsImg = Array.from({ length: healingTimes }).map(() => {
+        const img = document.createElement("img");
+        img.setAttribute("src", "./src/assets/img/heart.png");
+        img.setAttribute("width", "15");
+        img.style.opacity = '1'; // Garante que os novos corações sejam visíveis
+        return img;
+    });
+
+    heartsImg.forEach(img => heartsContainer.appendChild(img));
+}
+
+disableHealButton(fighter) {
+    if (fighter === this.fighter1) {
+        this.controllers.healer1Button.disabled = true;
+        this.controllers.healer1Button.style.cursor = 'not-allowed';
+        this.controllers.healer1Button.style.transform = 'scale(1)';
+        this.controllers.healer1Button.style.backgroundColor = '#a6e3e3';
+    } else {
+        this.controllers.healer2Button.disabled = true;
+        this.controllers.healer2Button.style.cursor = 'not-allowed';
+        this.controllers.healer2Button.style.transform = 'scale(1)';
+        this.controllers.healer2Button.style.backgroundColor = '#a6e3e3';
+    }
+} */ 
 
 
