@@ -86,59 +86,22 @@ export class Stage {
         this.update();
     }
 
-    doHeal(fighter) {
-        // Verifica se a vida do fighter está cheia
-        if (fighter.life >= fighter.maxLife) {
-            this.log.addMessage(`${fighter.name} está com a vida cheia e não pode se curar!`);
-            return;
-        }
 
-        // Verifica se ainda há curas disponíveis
-        if (fighter.healingTimes > 0) {
-            let healAmount = Math.floor(Math.random() * 10) + 5; // Cura entre 5 e 15
-            fighter.life = Math.min(fighter.maxLife, fighter.life + healAmount); // Cura, mas não ultrapassa a vida máxima
-
-            this.log.addMessage(`${fighter.name} curou ${healAmount} de HP. Restam ${fighter.healingTimes - 1} curas.`);
-            this.update(); // Atualiza a barra de vida
-
-            fighter.healingTimes--;
-
-            //manipular o elemento DOM .healChances settar coracoes - implementar
-            const fighterEl = fighter === this.fighter1 ? this.fighter1El : this.fighter2El;
-            this.updateHearts(fighterEl, fighter.healingTimes);
-
-            // Desabilita o botão de cura se não houver mais curas disponíveis
-            if (fighter.healingTimes === 0) {
-                if (fighter === this.fighter1) {
-                    this.controllers.healer1Button.disabled = true; // Desabilita o botão de cura do jogador 1
-                    this.controllers.healer1Button.style.cursor = 'not-allowed'; // Desativa o cursor
-                    this.controllers.healer1Button.style.transform = 'scale(1)';
-                    this.controllers.healer1Button.style.backgroundColor = '#a6e3e3';
-                } else {
-                    this.controllers.healer2Button.disabled = true;
-                    this.controllers.healer2Button.style.cursor = 'not-allowed';
-                    this.controllers.healer2Button.style.transform = 'scale(1)';
-                    this.controllers.healer2Button.style.backgroundColor = '#a6e3e3';
-                }
-
-                // if (this.shouldGiveExtraHeal()) {  // chama funcao para conceder mais alguns usos do botao heal durante a luta / implementar mais tarde
-                //     this.giveExtraHeal(fighter, 1);  // Concede 1 uso extra
-                // }
-
-                this.log.addMessage(`${fighter.name} não pode mais curar.`);
-            }
-        } else {
-            this.log.addMessage(`${fighter.name} não pode mais curar!`);
-        }
-    }
-
-    endFight(winnerName) { // nao funciona - rever
+    endFight(winnerName) { 
         this.log.addMessage(`${winnerName} venceu a luta!`);
-        this.fighter1El.querySelector('.attackButton').disabled = true;
-        this.fighter2El.querySelector('.attackButton').disabled = true;
 
-        this.fighter1El.querySelector('.healButton').disabled = true;
-        this.fighter2El.querySelector('.healButton').disabled = true;
+        // Talvez abstrait para métodos no Controler
+        this.controllers.fighter1AttackButton.disabled = true;
+        this.controllers.fighter1AttackButton.style.pointerEvents = "none";
+
+        this.controllers.fighter2AttackButton.disabled = true;
+        this.controllers.fighter2AttackButton.style.pointerEvents = "none";
+
+        this.controllers.healer1Button.disabled = true;
+        this.controllers.healer1Button.style.pointerEvents = "none";
+
+        this.controllers.healer2Button.disabled = true;
+        this.controllers.healer2Button.style.pointerEvents = "none";
     }
 
      updateLifeBar(fighter) {
@@ -177,28 +140,14 @@ export class Stage {
 
         heartsImg.forEach(img => heartsContainer.appendChild(img));
     }
-}
 
-export class Log {
-    list = [];
-
-    constructor(listEl) {
-        this.listEl = listEl;
-    }
-
-    addMessage(msg) {
-        this.list.push(msg);
-        let li = document.createElement('li');
-        li.innerText = msg;
-        this.listEl.appendChild(li);
-        this.listEl.scrollTo(0, this.listEl.scrollHeight)
-    }
-}
-
-
-// efeito coracoes
- /* doHeal(fighter) {
+    // efeito coracoes
+doHeal(fighter) {
     // Verifica se a vida do fighter está cheia
+    if (fighter.life <= 0) { // Condição de vitória ou derrota
+        return;
+    }
+
     if (fighter.life >= fighter.maxLife) {
         this.log.addMessage(`${fighter.name} está com a vida cheia e não pode se curar!`);
         return;
@@ -269,6 +218,28 @@ disableHealButton(fighter) {
         this.controllers.healer2Button.style.transform = 'scale(1)';
         this.controllers.healer2Button.style.backgroundColor = '#a6e3e3';
     }
-} */ 
+} 
+}
+
+export class Log {
+    list = [];
+
+    constructor(listEl) {
+        this.listEl = listEl;
+    }
+
+    addMessage(msg) {
+        this.list.push(msg);
+        let li = document.createElement('li');
+        li.innerText = msg;
+        this.listEl.appendChild(li);
+        this.listEl.scrollTo(0, this.listEl.scrollHeight)
+    }
+
+
+}
+
+
+
 
 
