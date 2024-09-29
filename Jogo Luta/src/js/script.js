@@ -1,7 +1,7 @@
-import { Stage } from "./Stage.js";
-import { Logger } from "./Logger.js";
-import { Knight, BigMonster } from "./characters/index.js";
-import { Controller } from "./Controller.js";
+import { Stage } from "./jogoLuta/Stage.js";
+import { Logger } from "./jogoLuta/Logger.js";
+import { Knight, BigMonster } from "./jogoLuta/characters/index.js";
+import { Controller } from "./jogoLuta/Controller.js";
 
 let fighter1El = document.querySelector("#char");
 let fighter2El = document.querySelector("#monster");
