@@ -14,6 +14,7 @@ function lampBroken() {
         button.style.opacity = '0.5';
         button.style.pointerEvents = 'none';
     });
+
     setTimeout(() => {
         // console.error("You broke Einstein, dude 😢! Please refresh the page."); tentar passar como erro, para que o usuario tenha o acesso mais facil do botao refresh
         alert("You broke Einstein, dude 😢! Please refresh the page.");
