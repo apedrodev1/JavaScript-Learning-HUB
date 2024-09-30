@@ -250,3 +250,41 @@ export class Stage {
         }
     }
 }
+
+
+// funcao dodge 
+ // doAttack(attacking, attacked) {
+    //     if (attacking.life <= 0 || attacked.life <= 0) {
+    //         // Condição de vitória ou derrota
+    //         return;
+    //     }
+
+    //     let attackFactor = parseFloat((Math.random() * 2).toFixed(2));
+    //     let defenseFactor = parseFloat((Math.random() * 2).toFixed(2));
+    //    // let dodgeFactor = parserFloat(Math.random() * 2);    
+
+    //     let actualAttack = (attacking.attack + attacking.accuracy) * attackFactor;
+    //     let actualDefense = (attacked.defense + attacking.speed) * defenseFactor;
+
+    //     if (actualAttack > actualDefense) {
+    //         attacked.life -= actualAttack;
+    //         this.log.addMessage(
+    //             `${attacking.name} causou ${actualAttack.toFixed(
+    //                 2
+    //             )} de dano em ${attacked.name}`
+    //         );
+    //     } if (actualAttack < actualDefense){
+
+    //     }
+    //      else {
+    //         this.log.addMessage(`${attacked.name} defendeu o ataque`); //implementar x de dano, memso no ataque reduzido
+    //     }
+
+    //     // Verificação do fim da luta
+    //     if (attacked.life <= 0) {
+    //         this.log.addMessage(`${attacked.name} foi derrotado!`);
+    //         this.endFight(attacking.name);
+    //     }
+
+    //     this.update();
+    // }
