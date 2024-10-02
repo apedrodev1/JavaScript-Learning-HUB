@@ -23,6 +23,8 @@ export class Stage {
         this.controllers.initialize(this);
         this.updateHearts(this.fighter1El, this.fighter1.healingTimes);
         this.updateHearts(this.fighter2El, this.fighter2.healingTimes);
+
+        //implementar gif da moeda aqui, tentar pegar quem vai ser o starter de controlTurns() e setar o gif correto
     }
 
     controlTurns() {
@@ -37,6 +39,7 @@ export class Stage {
         healer2Button.disabled = true;
 
         // Lógica do cara ou coroa
+        //implementar gif da moeda aqui
         let coinFlip = Math.random() < 0.5; // True = P1 começa, False = P2 começa
         let starter = coinFlip ? fighter1AttackButton : fighter2AttackButton;
         let starterHealer = coinFlip ? healer1Button : healer2Button;
