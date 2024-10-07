@@ -78,35 +78,42 @@ export class Stage {
     }
 
     doAttack(attacking, attacked) {
-        //adicionar a condicao dodge actualAttack = (attack + acurracy * (attackFactor)) = actualDefense = (defense + speed *(defenseFactor))
+        // Verifica se a luta terminou
         if (attacking.life <= 0 || attacked.life <= 0) {
-            // Condição de vitória ou derrota
             return;
         }
+    
 
         let attackFactor = parseFloat((Math.random() * 2).toFixed(2));
         let defenseFactor = parseFloat((Math.random() * 2).toFixed(2));
-
-        let actualAttack = attacking.attack * attackFactor;
-        let actualDefense = attacked.defense * defenseFactor;
+    
+        let actualAttack = (attacking.attack + attacking.accuracy) * attackFactor;
+    
+        let actualDefense = (attacked.defense + attacked.speed) * defenseFactor;
+    
 
         if (actualAttack > actualDefense) {
+            //full ataque
             attacked.life -= actualAttack;
             this.log.addMessage(
-                `${attacking.name} causou ${actualAttack.toFixed(
-                    2
-                )} de dano em ${attacked.name}`
+                `${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`
             );
+        } else if (actualAttack < actualDefense) {
+            // defesa
+            let reducedDamage = actualAttack * 0.5; // A defesa reduz o dano à metade 
+            this.log.addMessage(
+                `${attacked.name} defendeu o ataque, mas ainda sofreu ${reducedDamage.toFixed(2)} de dano.`
+            );
+            // esquiva
         } else {
-            this.log.addMessage(`${attacked.name} defendeu o ataque`);
+            this.log.addMessage(`${attacked.name} esquivou do ataque de ${attacking.name}!`);
         }
-
-        // Verificação do fim da luta
+    
         if (attacked.life <= 0) {
             this.log.addMessage(`${attacked.name} foi derrotado!`);
             this.endFight(attacking.name);
         }
-
+    
         this.update();
     }
 
