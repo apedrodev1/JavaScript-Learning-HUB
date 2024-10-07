@@ -1,11 +1,13 @@
 import { Character } from "./Character.js";
 
 export class BigMonster extends Character {
-    constructor() {
-        super("Big Monster");
-        this.life = 120;
-        this.attack = 16;
-        this.defense = 5;
+    constructor(name) {
+        super(name);
+        this.life = 100;
+        this.attack = 10;
+        this.accuracy = 8;
+        this.defense = 8;
+        this.speed = 9;
         this.maxLife = this.life;
         this.alive = this.alive;
     }
