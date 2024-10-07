@@ -2,7 +2,9 @@ export class Character {
     _life = 1;
     maxLife = 1;
     attack = 0;
+    accuracy = 0;
     defense = 0;
+    speed = 0;
     alive = true; // nao esta sendo usada, verificar necessidade depois variavel que verifica se o personagem esta ou nao vivo
 
     constructor(name) {
