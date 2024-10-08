@@ -92,14 +92,15 @@ export class Stage {
     
         let percentage = (actualDefense / actualAttack) * 100;
     
-        if (percentage > 75) {
+        if (percentage > 90) {
             // Ataque esquivado
             this.log.addMessage(`${attacked.name} esquivou o ataque de ${attacking.name}!`);
-        } else if (percentage > 65) {
-            // Defesa parcial (redução de dano) // nao funciona 
+            
+        } else if (percentage > 55) {
             let reducedDamage = actualAttack * 0.5; // 50% de dano reduzido -- setar menos, ver depois 
             attacked.life -= reducedDamage;
             this.log.addMessage(`${attacked.name} defendeu o ataque, mas tomou ${reducedDamage.toFixed(2)} de dano.`);
+            
         } else {
             // Ataque completo
             attacked.life -= actualAttack;
@@ -186,7 +187,7 @@ export class Stage {
             return;
         }
 
-        // Verifica se ainda há curas disponíveis
+      // curas disponíveis
         if (fighter.healingTimes > 0) {
             let healAmount = Math.floor(Math.random() * 10) + 5; // Cura entre 5 e 15
             fighter.life = Math.min(fighter.maxLife, fighter.life + healAmount); // Cura, mas não ultrapassa a vida máxima
@@ -196,7 +197,7 @@ export class Stage {
                     fighter.healingTimes - 1
                 } curas.`
             );
-            this.update(); // Atualiza a barra de vida
+            this.update(); 
 
             fighter.healingTimes--;
 
@@ -229,7 +230,7 @@ export class Stage {
             // Remove o coração após a animação
             setTimeout(() => {
                 heart.remove();
-            }, 300 * (index + 1)); // Escalonando a remoção para dar tempo de animação
+            }, 300 * (index + 1)); // Escalonando para dar tempo de animação
         });
 
         // Adiciona novos corações
