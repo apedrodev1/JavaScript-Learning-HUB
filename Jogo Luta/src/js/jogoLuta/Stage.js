@@ -111,7 +111,7 @@ export class Stage {
     
         if (attacked.life <= 0) {
             this.log.addMessage(`${attacked.name} foi derrotado!`);
-            this.endFight(attacking.name);
+            this.endFight(attacking.name); //talvez aqui se corrija o erro da control turns, se eu desabilitar os botoes e chamar a classe css que os deixa opaco, talvez seja uma saida / ver depois  
         }
     
         this.update();
@@ -262,8 +262,8 @@ export class Stage {
 }
 
 
-// funcao dodge 
- // doAttack(attacking, attacked) {
+// funcao original doAttack
+ // doAttack(attacking, attacked) {      
     //     if (attacking.life <= 0 || attacked.life <= 0) {
     //         // Condição de vitória ou derrota
     //         return;
