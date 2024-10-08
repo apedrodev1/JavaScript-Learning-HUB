@@ -1,4 +1,4 @@
-import { Character } from "../Character";
+import { Character } from "../Individual figures/Character.js";
 
 export class Assissin extends Character {
     constructor(name) {

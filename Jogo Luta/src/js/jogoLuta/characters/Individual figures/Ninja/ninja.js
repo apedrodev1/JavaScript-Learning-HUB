@@ -1,6 +1,6 @@
-import { Character } from "../Character";
+import { Character } from "../Individual figures/Character.js";
 
-export class Ninja extends Character {
+export class Ninja extends Character { //mudar o nome do personagem Barbaro talvez
     constructor(name) {
         super(name);
         this.life = 110;

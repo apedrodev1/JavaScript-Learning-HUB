@@ -100,7 +100,7 @@ export class Stage {
             );
         } else if (actualAttack < actualDefense) {
             // defesa
-            let reducedDamage = actualAttack * 0.5; // A defesa reduz o dano à metade 
+            let reducedDamage = actualAttack * 0.5; // A defesa reduz o dano à metade NAO FUNCIONA 
             this.log.addMessage(
                 `${attacked.name} defendeu o ataque, mas ainda sofreu ${reducedDamage.toFixed(2)} de dano.`
             );
