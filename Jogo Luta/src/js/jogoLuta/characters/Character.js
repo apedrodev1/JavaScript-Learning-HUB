@@ -1,4 +1,4 @@
-export class Character {
+export class Character { //apos correcao colocar o arquivo dentro da pasta Individual figures e alterar o nome para mainClassCharacter
     _life = 1;
     maxLife = 1;
     attack = 0;
