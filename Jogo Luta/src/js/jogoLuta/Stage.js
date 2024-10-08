@@ -92,9 +92,9 @@ export class Stage {
     
         let percentage = (actualDefense / actualAttack) * 100;
     
-        if (percentage > 90) {
+        if (percentage > 95) {
             // Ataque esquivado
-            this.log.addMessage(`${attacked.name} esquivou o ataque de ${attacking.name}!`);
+            this.log.addMessage(`${attacked.name} esquivou do ataque de ${attacking.name}!`);
             
         } else if (percentage > 55) {
             let reducedDamage = actualAttack * 0.5; // 50% de dano reduzido -- setar menos, ver depois 
