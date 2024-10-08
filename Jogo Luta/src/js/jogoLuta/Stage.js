@@ -77,44 +77,42 @@ export class Stage {
         this.updateLifeBar(this.fighter2);
     }
 
-    doAttack(attacking, attacked) {
-        // Verifica se a luta terminou
+    doAttack(attacking, attacked) {      
         if (attacking.life <= 0 || attacked.life <= 0) {
             return;
         }
     
-
-        let attackFactor = parseFloat((Math.random() * 2).toFixed(2));
-        let defenseFactor = parseFloat((Math.random() * 2).toFixed(2));
+        // Fatores de ataque e defesa
+        let attackFactor = parseFloat((Math.random() * 2).toFixed(2)); 
+        let defenseFactor = parseFloat((Math.random() * 2).toFixed(2)); 
     
+       
         let actualAttack = (attacking.attack + attacking.accuracy) * attackFactor;
-    
         let actualDefense = (attacked.defense + attacked.speed) * defenseFactor;
     
-
-        if (actualAttack > actualDefense) {
-            //full ataque
-            attacked.life -= actualAttack;
-            this.log.addMessage(
-                `${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`
-            );
-        } else if (actualAttack < actualDefense) {
-            // defesa
-            let reducedDamage = actualAttack * 0.5; // A defesa reduz o dano à metade NAO FUNCIONA 
-            this.log.addMessage(
-                `${attacked.name} defendeu o ataque, mas ainda sofreu ${reducedDamage.toFixed(2)} de dano.`
-            );
-            // esquiva
+        let percentage = (actualDefense / actualAttack) * 100;
+    
+        if (percentage > 75) {
+            // Ataque esquivado
+            this.log.addMessage(`${attacked.name} esquivou o ataque de ${attacking.name}!`);
+        } else if (percentage > 65) {
+            // Defesa parcial (redução de dano) // nao funciona 
+            let reducedDamage = actualAttack * 0.5; // 50% de dano reduzido -- setar menos, ver depois 
+            attacked.life -= reducedDamage;
+            this.log.addMessage(`${attacked.name} defendeu o ataque, mas tomou ${reducedDamage.toFixed(2)} de dano.`);
         } else {
-            this.log.addMessage(`${attacked.name} esquivou do ataque de ${attacking.name}!`);
+            // Ataque completo
+            attacked.life -= actualAttack;
+            this.log.addMessage(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}.`);
         }
     
+       
         if (attacked.life <= 0) {
             this.log.addMessage(`${attacked.name} foi derrotado!`);
-            this.endFight(attacking.name); //talvez aqui se corrija o erro da control turns, se eu desabilitar os botoes e chamar a classe css que os deixa opaco, talvez seja uma saida / ver depois  
+            this.endFight(attacking.name);
         }
     
-        this.update();
+        this.update(); 
     }
 
     endFight(winnerName) {
