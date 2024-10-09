@@ -6,11 +6,15 @@ import { Controller } from "./jogoLuta/Controller.js";
 let fighter1El = document.querySelector("#char"); //p1 alterar no final 
 let fighter2El = document.querySelector("#monster"); //p2
 
+const playAgainButton = document.getElementById('playAgain');
+
+
 let log = new Logger(document.querySelector(".log"));
 let char = new Knight("Sir Pedro"); //ta precisando passar o nome, pq nao sei 
 let monster = new BigMonster("Monstro"); // se nao passa, fica undefined
 
-let controllers = new Controller(fighter1El, fighter2El);
+
+let controllers = new Controller(fighter1El, fighter2El, playAgainButton);
 
 const stage = new Stage(
     char,
