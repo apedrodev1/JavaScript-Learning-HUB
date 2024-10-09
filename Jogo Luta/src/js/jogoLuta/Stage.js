@@ -5,12 +5,15 @@ export class Stage {
         fighter1El,
         fighter2El,
         logObject,
-        controllers
+        controllers,
+        playAgain
     ) {
         this.fighter1 = fighter1;
         this.fighter2 = fighter2;
         this.fighter1El = fighter1El;
         this.fighter2El = fighter2El;
+        this.playAgain = playAgain;
+
         this.log = logObject;
         this.isGameOver = false;
         this.controllers = controllers;
@@ -131,6 +134,10 @@ export class Stage {
 
         this.controllers.healer2Button.disabled = true;
         this.controllers.healer2Button.style.pointerEvents = "none";
+
+
+        this.controllers.showPlayAgainButton();
+
     }
 
     updateLifeBar(fighter) {
