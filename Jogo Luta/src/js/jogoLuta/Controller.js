@@ -1,7 +1,8 @@
 export class Controller {
-    constructor(fighter1El, fighter2El) {
+    constructor(fighter1El, fighter2El, playAgainButton) {
         this.fighter1El = fighter1El;
         this.fighter2El = fighter2El;
+        this.playAgain = playAgainButton;
 
         this.fighter1AttackButton =
             this.fighter1El.querySelector(".attackButton");
@@ -72,4 +73,25 @@ export class Controller {
             this.fighter2AttackButton.style.cursor = "not-allowed";
         });
     }
+
+    //ver se essa funcao ficara aqui ou na classe stage 
+
+    showPlayAgainButton() {
+        this.playAgain.style.display = "block";
+
+        this.playAgain.addEventListener('click', () => {
+            this.reloadPage();
+        });
+    }
+
+    reloadPage() {
+        window.location.reload();
+    }
+
+    changeCaracters() {
+        //volta ao index
+    }
+
 }
+
+
