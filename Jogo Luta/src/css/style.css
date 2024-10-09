@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bilbo&display=swap');
+
 .fightArea{
     display: flex;
     gap: 60px;
@@ -22,8 +25,7 @@
 }
 
 .lifeBar .bar {
-    height: 100%; 
-    background-color: red; 
+    height: 100%;  
     transition: width 0.3s ease; 
 }
 
@@ -48,13 +50,13 @@ button {
 
 .attackButton {
     margin: 10px 20px;
-    background-color: #e63946; 
+    background-color: #d63939; 
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .attackButton:hover {
-    background-color: #d62828; 
+    background-color: #c62828; 
     transform: scale(1.2);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
@@ -81,14 +83,11 @@ button {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.healButton:disabled {
+.healButton:disabled, .healButton:disabled:hover  {
+    box-shadow: none;
     background-color: #a6e3e3; 
     cursor: not-allowed;
     opacity: 0.5; 
-    box-shadow: none;
-}
-
-.healButton:disabled:hover {
     transform: none;  
     opacity: 0.5; 
 }
@@ -108,7 +107,39 @@ button {
 }
 
 .log {
-    border: 3px, dotted #999;
+    font-family: "Uncial Antiqua", serif;
+    font-size: 20px;
+    line-height: 1.8; 
+    border: 2px dotted #555;
+    border-radius: 5px;
+    background-image: url('../assets/img/backgroundLog.jpg'); 
+    background-size: cover; 
+    background-position: center; 
     height: 200px;
-    overflow: scroll;
+    overflow: hidden; /* Remove a barra de rolagem */
+    padding: 20px;
+    position: relative; 
+    color: #333; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); 
+
+
+    /* pensar no efeito typewriter */
+}
+
+.log ul {
+    padding: 0;
+    margin: 0; 
+    
+}
+
+.log li {
+    margin-left: 20px; 
+    margin-right: 20px; 
+    padding: 5px 0; 
+    list-style-type: none;
+    
+}
+
+.log::-webkit-scrollbar {
+    display: none; 
 }
