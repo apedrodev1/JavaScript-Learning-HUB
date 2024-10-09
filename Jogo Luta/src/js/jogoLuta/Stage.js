@@ -244,7 +244,7 @@ export class Stage {
         const heartsImg = Array.from({ length: healingTimes }).map(() => {
             const img = document.createElement("img");
             img.setAttribute("src", "./src/assets/img/heart.png");
-            img.setAttribute("width", "15");
+            img.setAttribute("width", "15"); //ver tamanho coracao e margim-bottom
             img.style.opacity = "1"; // Garante que os novos corações sejam visíveis
             return img;
         });
