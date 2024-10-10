@@ -1,8 +1,10 @@
 export class Controller {
-    constructor(fighter1El, fighter2El, playAgainButton) {
+    constructor(fighter1El, fighter2El, playAgainButton, changeCharacters) {
         this.fighter1El = fighter1El;
         this.fighter2El = fighter2El;
         this.playAgain = playAgainButton;
+        this.changeCaracters = changeCharacters;
+
 
         this.fighter1AttackButton =
             this.fighter1El.querySelector(".attackButton");
@@ -89,7 +91,7 @@ export class Controller {
     }
 
     changeCaracters() {
-        //volta ao index
+        this.playAgain.style.display = "block";
     }
 
 }
