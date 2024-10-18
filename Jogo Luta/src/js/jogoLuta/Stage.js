@@ -6,13 +6,14 @@ export class Stage {
         fighter2El,
         logObject,
         controllers,
-        playAgain
+
     ) {
         this.fighter1 = fighter1;
         this.fighter2 = fighter2;
         this.fighter1El = fighter1El;
         this.fighter2El = fighter2El;
         this.playAgain = playAgain;
+        this.changeCharacters = changeCharacters;
 
         this.log = logObject;
         this.isGameOver = false;
@@ -80,43 +81,43 @@ export class Stage {
         this.updateLifeBar(this.fighter2);
     }
 
-    doAttack(attacking, attacked) {      
+    doAttack(attacking, attacked) {
         if (attacking.life <= 0 || attacked.life <= 0) {
             return;
         }
-    
+
         // Fatores de ataque e defesa
-        let attackFactor = parseFloat((Math.random() * 2).toFixed(2)); 
-        let defenseFactor = parseFloat((Math.random() * 2).toFixed(2)); 
-    
-       
+        let attackFactor = parseFloat((Math.random() * 2).toFixed(2));
+        let defenseFactor = parseFloat((Math.random() * 2).toFixed(2));
+
+
         let actualAttack = (attacking.attack + attacking.accuracy) * attackFactor;
         let actualDefense = (attacked.defense + attacked.speed) * defenseFactor;
-    
+
         let percentage = (actualDefense / actualAttack) * 100;
-    
+
         if (percentage > 95) {
             // Ataque esquivado
             this.log.addMessage(`${attacked.name} esquivou do ataque de ${attacking.name}!`);
-            
+
         } else if (percentage > 55) {
             let reducedDamage = actualAttack * 0.5; // 50% de dano reduzido -- setar menos, ver depois 
             attacked.life -= reducedDamage;
             this.log.addMessage(`${attacked.name} defendeu o ataque, mas tomou ${reducedDamage.toFixed(2)} de dano.`);
-            
+
         } else {
             // Ataque completo
             attacked.life -= actualAttack;
             this.log.addMessage(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}.`);
         }
-    
-       
+
+
         if (attacked.life <= 0) {
             this.log.addMessage(`${attacked.name} foi derrotado!`);
             this.endFight(attacking.name);
         }
-    
-        this.update(); 
+
+        this.update();
     }
 
     endFight(winnerName) {
@@ -137,6 +138,7 @@ export class Stage {
 
 
         this.controllers.showPlayAgainButton();
+        this.controllers.changeCharacters();
 
     }
 
@@ -160,9 +162,8 @@ export class Stage {
             lifeText.style.color = "black";
         }
 
-        lifeText.textContent = `${fighter.life.toFixed(2)} / ${
-            fighter.maxLife
-        }`;
+        lifeText.textContent = `${fighter.life.toFixed(2)} / ${fighter.maxLife
+            }`;
     }
 
     updateHearts(el, healingTimes) {
@@ -194,17 +195,16 @@ export class Stage {
             return;
         }
 
-      // curas disponíveis
+        // curas disponíveis
         if (fighter.healingTimes > 0) {
             let healAmount = Math.floor(Math.random() * 10) + 5; // Cura entre 5 e 15
             fighter.life = Math.min(fighter.maxLife, fighter.life + healAmount); // Cura, mas não ultrapassa a vida máxima
 
             this.log.addMessage(
-                `${fighter.name} curou ${healAmount} de HP. Restam ${
-                    fighter.healingTimes - 1
+                `${fighter.name} curou ${healAmount} de HP. Restam ${fighter.healingTimes - 1
                 } curas.`
             );
-            this.update(); 
+            this.update();
 
             fighter.healingTimes--;
 
@@ -266,41 +266,3 @@ export class Stage {
         }
     }
 }
-
-
-// funcao original doAttack
- // doAttack(attacking, attacked) {      
-    //     if (attacking.life <= 0 || attacked.life <= 0) {
-    //         // Condição de vitória ou derrota
-    //         return;
-    //     }
-
-    //     let attackFactor = parseFloat((Math.random() * 2).toFixed(2));
-    //     let defenseFactor = parseFloat((Math.random() * 2).toFixed(2));
-    //    // let dodgeFactor = parserFloat(Math.random() * 2);    
-
-    //     let actualAttack = (attacking.attack + attacking.accuracy) * attackFactor;
-    //     let actualDefense = (attacked.defense + attacking.speed) * defenseFactor;
-
-    //     if (actualAttack > actualDefense) {
-    //         attacked.life -= actualAttack;
-    //         this.log.addMessage(
-    //             `${attacking.name} causou ${actualAttack.toFixed(
-    //                 2
-    //             )} de dano em ${attacked.name}`
-    //         );
-    //     } if (actualAttack < actualDefense){
-
-    //     }
-    //      else {
-    //         this.log.addMessage(`${attacked.name} defendeu o ataque`); //implementar x de dano, memso no ataque reduzido
-    //     }
-
-    //     // Verificação do fim da luta
-    //     if (attacked.life <= 0) {
-    //         this.log.addMessage(`${attacked.name} foi derrotado!`);
-    //         this.endFight(attacking.name);
-    //     }
-
-    //     this.update();
-    // }
