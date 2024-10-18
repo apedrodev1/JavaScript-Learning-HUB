@@ -120,6 +120,17 @@ button {
     transform: scale(1.05); 
 }
 
+#closeGame{
+    margin: 20px;
+    background-color: #d63939; 
+}
+
+
+#closeGame:hover {
+    background-color: #c62828; 
+    transform: scale(1.2);
+}
+
 .control {
     position: relative;
     padding-top: 1.5rem;
