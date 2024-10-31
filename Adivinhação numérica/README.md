@@ -1,15 +1,14 @@
-# Calculando médias
+# Adivinhação numérica
 
 
 
-## Descrição: utilizando oop
+## Descrição: 
 
 ## Como Utilizar:
 
 1. Clone este repositório em seu ambiente local.
-2. Abra o arquivo `index.html` na sua IDE.
-3. Abra o terminal e inicie o programa com o comando: `python index.py`
-4. Experimente interagir ... 
+2. Abra o arquivo `index.html`.
+3. Experimente interagir ... 
 
 
 ## Estruturação de Pastas:
