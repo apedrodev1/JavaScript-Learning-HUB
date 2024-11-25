@@ -6,7 +6,7 @@ Este projeto consiste na criação de uma lâmpada interativa em uma página est
 
 Sendo uma reprodução do mini projeto de uma lâmpada disponível no YouTube, criado pelo canal [Fernando Leonid](https://www.youtube.com/watch?v=4r0zOW9Zn-Y) e disponibilizado no [repositório do GitHub](https://github.com/fernandoleonid/mini-projetos-js/tree/master/01-lamp).
 
-## Descrição
+## Descrição:
 
 Este projeto consiste em uma página web que simula uma lâmpada interativa. O usuário pode interagir com a lâmpada de três maneiras diferentes:
 </br>
@@ -71,23 +71,29 @@ Ao passar o mouse sobre a lâmpada, ela se acende, proporcionando uma experiênc
 ></div>
 
 
-## Tecnologias Utilizadas
+## Tecnologias Utilizadas:
 
 - HTML
 - CSS
 - JavaScript
 
-## Como Utilizar
+  </br>
+
+## Como Utilizar:
 
 1. Clone este repositório em seu ambiente local.
 2. Abra o arquivo `index.html` em seu navegador web.
 3. Experimente interagir com os botões para ligar, desligar e quebrar a lâmpada.
 
-## Estruturação de Pastas
+   </br>
+
+## Estruturação de Pastas:
 
 A estrutura de pastas foi organizada da seguinte maneira:
 
 ![image](https://github.com/apedrodev1/JavaScript-Learning-HUB/assets/104085801/9a804a65-5732-4e52-ac8c-b71288cbb34f)
+
+</br>
 
 ---
 
