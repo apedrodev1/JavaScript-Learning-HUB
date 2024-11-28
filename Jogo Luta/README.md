@@ -1,5 +1,6 @@
 # Jogo de luta em JavaScript
 
+classe = " nome da classe" hidden no html - css: .hidden {display : none}; depois captura e exibe o " nome da classe"  no js, botao jogar novamente e voltar.  
 
 
 ## Descrição: utilizando oop
