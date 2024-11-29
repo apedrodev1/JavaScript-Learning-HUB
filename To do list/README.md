@@ -12,7 +12,7 @@ Sendo uma reprodução de um gerenciador de tarefas, disponível no YouTube, cri
 ## Como utilizar: 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/Jogo%20Forca
+   https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/To%20do%20list
 2. Abra o arquivo `index.php` ...,
 <br/>
 
@@ -32,3 +32,14 @@ Sendo uma reprodução de um gerenciador de tarefas, disponível no YouTube, cri
 
 
 ## CRUD:
+
+
+
+
+ ---
+  
+  <br>
+  <p align="center">
+  Esse README fornece uma descrição clara do projeto, seus objetivos, tecnologias utilizadas e como utilizá-lo, juntamente com os devidos créditos ao criador original do projeto.
+</p>
+
