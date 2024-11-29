@@ -22,6 +22,8 @@ Sendo uma reprodução de um gerenciador de tarefas, disponível no YouTube, cri
 
 
 ## Estruturação de pastas:
+![image](https://github.com/user-attachments/assets/ad40ac58-3f42-4963-b742-bb6856aa1a00)
+
 
 
 
@@ -32,6 +34,50 @@ Sendo uma reprodução de um gerenciador de tarefas, disponível no YouTube, cri
 
 
 ## CRUD:
+- Create:
+<code><?php
+
+require_once('../database/conn.php');
+
+$description = filter_input(INPUT_POST,  'description');
+
+if ($description) {
+    $sql = $pdo->prepare("INSERT INTO task (description) VALUES (:description)");
+    $sql->bindValue(':description', $description);
+    $sql->execute();
+
+    header('Location: ../index.php');
+    exit;
+} else {
+    header('Location: ../index.php');
+    exit;
+}</code>
+</br>
+
+- Delete:
+ <code><?php
+
+require_once('../database/conn.php');
+
+$id = filter_input(INPUT_GET, 'id');
+
+if ($id) {
+    $sql = $pdo->prepare('DELETE FROM task WHERE id = :id');
+    $sql->bindValue(':id', $id);
+    $sql->execute();
+
+    header('Location: ../index.php');
+    exit;
+} else {
+    header('Location: ../index.php');
+    exit;
+}</code>
+</br>
+- Update:
+  <code> </code>
+  </br>
+- Update-progress:
+ <code> </code>
 
 
 
