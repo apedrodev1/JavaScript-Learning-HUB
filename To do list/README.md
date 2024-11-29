@@ -4,10 +4,31 @@ Sendo uma reprodução de um gerenciador de tarefas, disponível no YouTube, cri
 
 ## Descrição:
 
+
+
+## Layout do projeto:
+
+
+## Como utilizar: 
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/Jogo%20Forca
+2. Abra o arquivo `index.php` ...,
+<br/>
+
+3. Se divirta!
+
+</br>
+
+
+## Estruturação de pastas:
+
+
+
 ## Linguagens usadas:
-- PHP
-- JS
+- PHP,
+- JS,
 - CSS
 
 
-## CRUD
+## CRUD:
