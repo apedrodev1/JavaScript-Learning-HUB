@@ -13,6 +13,9 @@ Este projeto é uma aplicação web simples de lista de tarefas (TO DO List), de
 
 ## Layout do projeto:
 
+![image](https://github.com/user-attachments/assets/3d80ae70-6b62-4731-a58b-587751e67572)
+
+
 
 ## Como utilizar: 
 1. Clone o repositório:
@@ -24,6 +27,7 @@ Este projeto é uma aplicação web simples de lista de tarefas (TO DO List), de
 - Importe o arquivo to-do-list.sql (disponível na pasta /database) para estruturar a tabela necessária.
 
 3. Atualize as credenciais de conexão no arquivo conn.php:
+   
 <code>$hostname = 'localhost';
 $database = 'to-do-list';
 $username = 'root';
@@ -56,12 +60,10 @@ $password = ''; // Atualize caso tenha senha configurada no seu MySQL</code>
 <code><?php
 require_once('../database/conn.php');
 $description = filter_input(INPUT_POST,  'description');
-
 if ($description) {
     $sql = $pdo->prepare("INSERT INTO task (description) VALUES (:description)");
     $sql->bindValue(':description', $description);
     $sql->execute();
-
     header('Location: ../index.php');
     exit;
 } else {
@@ -85,26 +87,20 @@ if ($description) {
 - Atualiza a descrição.
 
 <code><?php
-
 require_once('../database/conn.php');
-
 $description = filter_input(INPUT_POST, 'description');
 $id = filter_input(INPUT_POST, 'id');
-
 if ($description && $id) {
     $sql = $pdo->prepare("UPDATE task SET description = :description WHERE id = :id");
     $sql->bindValue(':description', $description);
     $sql->bindValue(':id', $id);
     $sql->execute();
-
     header('Location: ../index.php');
     exit;
 } else {
     header('Location: ../index.php');
     exit;
 }</code>
-
-
 
 
 - Atualiza o status:
@@ -116,16 +112,12 @@ if ($description && $id) {
 - Implementado em actions/delete.php.
 
 <code><?php
-
 require_once('../database/conn.php');
-
 $id = filter_input(INPUT_GET, 'id');
-
 if ($id) {
     $sql = $pdo->prepare('DELETE FROM task WHERE id = :id');
     $sql->bindValue(':id', $id);
     $sql->execute();
-
     header('Location: ../index.php');
     exit;
 } else {
