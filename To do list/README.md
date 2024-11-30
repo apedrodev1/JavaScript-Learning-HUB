@@ -1,7 +1,5 @@
 # TO DO LIST - Projeto.
 
-Sendo uma reprodução de um gerenciador de tarefas, disponível no YouTube, criado pelo canal [Larissa Kichi](https://www.youtube.com/watch?v=7KWpDC12X7U) e disponibilizado no [repositório do GitHub](https://github.com/Larissakich/to-do-list-php).
-
 ## Descrição:
 
 Este projeto é uma aplicação web simples de lista de tarefas (TO DO List), desenvolvida para prática e aprendizado de tecnologias como PHP, JavaScript, e CSS. Ele implementa um sistema CRUD completo (Create, Read, Update e Delete), permitindo que o usuário:
@@ -56,9 +54,7 @@ $password = ''; // Atualize caso tenha senha configurada no seu MySQL</code>
 - Implementado em actions/create.php:
 
 <code><?php
-
 require_once('../database/conn.php');
-
 $description = filter_input(INPUT_POST,  'description');
 
 if ($description) {
