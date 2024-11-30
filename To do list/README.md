@@ -147,10 +147,3 @@ if ($id) {
 
 
 
-
-  
-  <br>
-  <p align="center">
-  Esse README fornece uma descrição clara do projeto, seus objetivos, tecnologias utilizadas e como utilizá-lo, juntamente com os devidos créditos ao criador original do projeto.
-</p>
-
