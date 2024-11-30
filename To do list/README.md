@@ -29,9 +29,9 @@ Este projeto é uma aplicação web simples de lista de tarefas (TO DO List), de
 3. Atualize as credenciais de conexão no arquivo conn.php:
    
 <code>$hostname = 'localhost';
-$database = 'to-do-list';
-$username = 'root';
-$password = ''; // Atualize caso tenha senha configurada no seu MySQL</code>
+      $database = 'to-do-list';
+      $username = 'root';
+      $password = ''; // Atualize caso tenha senha configurada no seu MySQL</code>
 
 
 4. Abra o arquivo index.php no navegador (utilizando um servidor local como XAMPP, WAMP ou LAMP).
@@ -104,10 +104,28 @@ if ($description && $id) {
 
 
 - Atualiza o status:
-<code>[text](actions/update-progress.php)</code> 
+<code><?php
 
+require_once('../database/conn.php');
 
+$id = filter_input(INPUT_POST, 'id');
+$completed = filter_input(INPUT_POST, 'completed');
+if ($id && $completed) {
+    $sql = $pdo->prepare("UPDATE task SET completed = :completed WHERE id = :id");
+    $sql->bindValue(':completed', $completed);
+    $sql->bindValue(':id', $id);
+    $sql->execute();
+    echo json_encode(['success' => true]);
+    exit;
+} else {
+    echo json_encode(['success' => false]);
+    exit;
+}
+</code> 
+
+<br>
 ## Delete
+
 - Remove tarefas indesejadas.
 - Implementado em actions/delete.php.
 
@@ -125,7 +143,7 @@ if ($id) {
     exit;
 }</code>
 
-
+<br>
  ---
   
   <br>
