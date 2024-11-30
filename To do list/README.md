@@ -124,6 +124,7 @@ if ($id && $completed) {
 </code> 
 
 <br>
+
 ## Delete
 
 - Remove tarefas indesejadas.
