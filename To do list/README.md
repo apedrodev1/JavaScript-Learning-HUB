@@ -35,7 +35,7 @@ Este projeto é uma aplicação web simples de lista de tarefas (TO DO List), de
 
 3. Atualize as credenciais de conexão no arquivo conn.php:
    
-<code>$hostname = 'localhost';
+- <code>$hostname = 'localhost';
       $database = 'to-do-list';
       $username = 'root';
       $password = ''; // Atualize caso tenha senha configurada no seu MySQL</code>
