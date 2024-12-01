@@ -1,6 +1,9 @@
 # TO DO LIST - Projeto.
 Sendo uma reprodução de um gerenciador de tarefas, disponível no YouTube, criado pelo canal [Larissa Kichi](https://www.youtube.com/watch?v=7KWpDC12X7U) e disponibilizado no [repositório do GitHub](https://github.com/Larissakich/to-do-list-php).
 
+<br>
+
+
 ## Descrição:
 
 Este projeto é uma aplicação web simples de lista de tarefas (TO DO List), desenvolvida para prática e aprendizado de tecnologias como PHP, JavaScript, e CSS. Ele implementa um sistema CRUD completo (Create, Read, Update e Delete), permitindo que o usuário:
@@ -11,11 +14,14 @@ Este projeto é uma aplicação web simples de lista de tarefas (TO DO List), de
 - Exclua tarefas concluídas ou desnecessárias.
 - O objetivo principal do projeto é aprender a integrar o frontend com o backend, aplicando manipulações de DOM, requisições AJAX e interações com um banco de dados MySQL.
 
+<br>
+
 
 ## Layout do projeto:
 
 ![image](https://github.com/user-attachments/assets/3d80ae70-6b62-4731-a58b-587751e67572)
 
+<br>
 
 
 ## Como utilizar: 
@@ -44,6 +50,7 @@ Este projeto é uma aplicação web simples de lista de tarefas (TO DO List), de
 ## Estruturação de pastas:
 ![image](https://github.com/user-attachments/assets/ad40ac58-3f42-4963-b742-bb6856aa1a00)
 
+<br>
 
 
 ## Linguagens usadas:
@@ -52,11 +59,12 @@ Este projeto é uma aplicação web simples de lista de tarefas (TO DO List), de
 - JavaScript (jQuery): Interações dinâmicas no frontend, como envio de formulários e atualização do DOM.
 - CSS: Estilização do layout responsivo e moderno.
 
+<br>
 
 ## CRUD:
 ## Create
 - Adiciona novas tarefas à lista.
-- Implementado em actions/create.php:
+- Implementado em [create.php](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/create.php):
 
 <code><?php
 require_once('../database/conn.php');
@@ -77,7 +85,7 @@ if ($description) {
 
 ## Read
 - Exibe todas as tarefas no frontend.
-- As tarefas são carregadas a partir do banco de dados no index.php.
+- As tarefas são carregadas a partir do banco de dados no ['index.php'](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/index.php).
 
 <br>
 
@@ -85,7 +93,7 @@ if ($description) {
 - Atualiza a descrição ou o status de conclusão de uma tarefa.
 - Implementado em:
 
-- Atualiza a descrição.
+- Atualiza a descrição, (['update'](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/update.php)):
 
 <code><?php
 require_once('../database/conn.php');
@@ -104,11 +112,12 @@ if ($description && $id) {
 }</code>
 
 
-- Atualiza o status:
+<br>
+
+
+- Atualiza o status, (['update-progress'](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/update-progress.php)):
 <code><?php
-
 require_once('../database/conn.php');
-
 $id = filter_input(INPUT_POST, 'id');
 $completed = filter_input(INPUT_POST, 'completed');
 if ($id && $completed) {
@@ -121,15 +130,14 @@ if ($id && $completed) {
 } else {
     echo json_encode(['success' => false]);
     exit;
-}
-</code> 
+}</code> 
 
 <br>
 
 ## Delete
 
 - Remove tarefas indesejadas.
-- Implementado em actions/delete.php.
+- Implementado em: (['delete.php'](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/delete.php)):
 
 <code><?php
 require_once('../database/conn.php');
