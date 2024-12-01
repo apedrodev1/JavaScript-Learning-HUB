@@ -62,6 +62,7 @@ if ($sql->rowCount() > 0) {
               type="text"
               name="description"
               placeholder="Edit your task here"
+              autocomplete="off"
               value="<?= $task['description'] ?>">
             <button type="submit" class="form-button confirm-button">
               <i class="fa-solid fa-check"></i>

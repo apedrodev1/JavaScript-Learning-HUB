@@ -35,7 +35,7 @@ $(document).ready(function () {
                 }
             },
             error: function () {
-                alert('Ocorreu um erro ao editar a tarefa.');
+                //alert('Ocorreu um erro ao editar a tarefa.'); erro ao riscar a tarefa
             }
 
 
