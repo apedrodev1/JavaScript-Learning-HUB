@@ -116,7 +116,8 @@ if ($description && $id) {
 
 
 - Atualiza o status, (['update-progress'](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/update-progress.php)):
-<code><?php
+<code>
+<?php
 require_once('../database/conn.php');
 $id = filter_input(INPUT_POST, 'id');
 $completed = filter_input(INPUT_POST, 'completed');
