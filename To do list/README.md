@@ -85,7 +85,7 @@ if ($description) {
 
 ## Read
 - Exibe todas as tarefas no frontend.
-- As tarefas são carregadas a partir do banco de dados no ['index.php'](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/index.php).
+- As tarefas são carregadas a partir do banco de dados no [index.php](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/index.php).
 
 <br>
 
@@ -93,7 +93,7 @@ if ($description) {
 - Atualiza a descrição ou o status de conclusão de uma tarefa.
 - Implementado em:
 
-- Atualiza a descrição, (['update'](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/update.php)):
+- Atualiza a descrição, [update](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/update.php):
 
 <code><?php
 require_once('../database/conn.php');
@@ -115,7 +115,7 @@ if ($description && $id) {
 <br>
 
 
-- Atualiza o status, (['update-progress'](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/update-progress.php)):
+- Atualiza o status, [update-progress](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/update-progress.php):
 
 <code><?php
 require_once('../database/conn.php');
@@ -138,7 +138,7 @@ if ($id && $completed) {
 ## Delete
 
 - Remove tarefas indesejadas.
-- Implementado em: (['delete.php'](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/delete.php)):
+- Implementado em: [delete.php](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/To%20do%20list/actions/delete.php):
 
 <code><?php
 require_once('../database/conn.php');
