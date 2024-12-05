@@ -17,7 +17,6 @@ classe = " nome da classe" hidden no html - css: .hidden {display : none}; depoi
 - A estrutura de pastas foi organizada da seguinte maneira:
 
 
-
 </br>
 <div style="text-align:center;">
 
@@ -28,14 +27,11 @@ classe = " nome da classe" hidden no html - css: .hidden {display : none}; depoi
 ---
 
 
-
 </br>
 --  Esse README fornece uma descrição clara do projeto, seus objetivos, tecnologias utilizadas e como utilizá-lo.
 
 </div>
  
 
-
- 
 
 
