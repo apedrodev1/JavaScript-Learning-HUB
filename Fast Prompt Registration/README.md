@@ -72,7 +72,6 @@ The following flowchart describes the registration steps:
 
 <div align="center">
   <img 
-   (https://github.com/user-attachments/assets/42d44232-813e-4a2d-a982-860a0cab029b)
     src="./assets/img/README img/use_case_diagram.png"
     alt="Use Case Diagram" 
     width="400" 
