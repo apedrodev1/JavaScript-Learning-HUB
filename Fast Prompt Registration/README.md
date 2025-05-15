@@ -2,7 +2,7 @@
 
 ## 📝 Description
 
-This project provides a quick and easy prompt-based user registration system, designed especially for prize draws and giveaways. Built with JavaScript, HTML, and CSS, it uses modern ES6+ practices, OOP, and modular code to keep the registration process **short, straightforward, and efficient**.
+This project provides a quick and easy prompt-based user registration system, designed primarily for prize draws and giveaways. It can also be adapted for newsletters and discount coupons. Built with JavaScript, HTML, and CSS, it follows modern ES6+ standards, uses Object-Oriented Programming (OOP), and applies modular code practices to keep the registration process short, straightforward, and efficient.
 
 ---
 
@@ -11,7 +11,7 @@ This project provides a quick and easy prompt-based user registration system, de
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/fast-prompt-registration.git
+git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/Fast%20Prompt%20Registration
 ```
 
 ### Open the Project
@@ -29,9 +29,29 @@ git clone https://github.com/yourusername/fast-prompt-registration.git
 
 ## 🧩 Use Case Diagram
 
-![Use Case Diagram](./assets/use-case-diagram.png)
+![Use Case Diagram](./assets/img/User%20Access%20Use%20Case%20Diagram.png)
 
 ---
+
+## UML Diagram
+
+```
++-----------------+
+|     User        |
++-----------------+
+| - id: string    |
+| - email: string |
+| - birthDate: Date |
++-----------------+
+| + constructor(fullName, email, birthDate) |
+| + generateID(): string                   |
+| + getAge(): number                       |
+| + isAdult(): boolean                     |
++-----------------+
+
+```
+---
+
 
 ## ✨ Features
 
@@ -79,5 +99,7 @@ project-root/
 ├── css/
 │   └── style.css             # Styles for pages
 └── assets/
-    └── use-case-diagram.png # Use case diagram image
+    └── img                   # Image content used on front end
+
+
 ```
