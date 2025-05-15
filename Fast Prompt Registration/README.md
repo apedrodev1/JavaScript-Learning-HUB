@@ -46,7 +46,7 @@ The following flowchart describes the registration steps:
 
 ## 🧩 Use Case Diagram
 
-![Use Case Diagram](./assets/img/User%20Access%20Use%20Case%20Diagram.png)
+![Use Case Diagram](./assets/img/README%20img/User%20Access%20Use%20Case%20Diagram.png)
 
 ---
 
