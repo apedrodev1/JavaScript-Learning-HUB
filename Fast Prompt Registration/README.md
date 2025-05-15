@@ -22,10 +22,27 @@ git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/Fast%2
 ### Start Registration
 
 - Click the button on the main page to navigate to the registration screen.
-- Follow the prompts that will ask for your full name, email, birthdate, and agreement to terms.
-- If all validations pass, you will receive a unique ID confirmation.
+
+Colocar detalhamento do botao
 
 ---
+
+## 🔄 User Registration Flow
+
+The following flowchart describes the registration steps:
+
+1. User enters their **first name**.
+2. Then enters **last name**.
+3. System asks for **birth date** and checks if the user is at least 18.
+   - If **underage**, a message is shown and the process ends.
+4. If eligible, the user provides an **email**.
+5. The system asks for **acceptance of terms**.
+   - If not accepted, a message is shown and the process ends.
+6. If accepted, a **confirmation message** is displayed.
+
+![User Registration Flow](./assets/img/README%20img/flow%20diagram.png)
+
+
 
 ## 🧩 Use Case Diagram
 
@@ -36,18 +53,21 @@ git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/Fast%2
 ## UML Diagram
 
 ```
-+-----------------+
-|     User        |
-+-----------------+
-| - id: string    |
-| - email: string |
-| - birthDate: Date |
-+-----------------+
-| + constructor(fullName, email, birthDate) |
-| + generateID(): string                   |
-| + getAge(): number                       |
-| + isAdult(): boolean                     |
-+-----------------+
++------------------------------+
+|           User              |
++------------------------------+
+| - id: string                |
+| - firstName: string         |
+| - lastName: string          |
+| - email: string             |
+| - birthDate: Date           |
++------------------------------+
+| + constructor(firstName, lastName, email, birthDate) |
+| + generateID(): string                             |
+| + getAge(): number                                 |
+| + isAdult(): boolean                               |
+| + getFullName(): string                            |
++------------------------------+
 
 ```
 ---
@@ -99,7 +119,8 @@ project-root/
 ├── css/
 │   └── style.css             # Styles for pages
 └── assets/
-    └── img                   # Image content used on front end
-
+    └── img                   
+        └── front end img     # Image content used on front end
+        └── README img        # Image content used on README.md
 
 ```

@@ -8,7 +8,7 @@ class User {
 
     generateID() {
         // Gera um ID aleatório com 9 caracteres
-        return Math.random().toString(36).substring(2, 11);
+        return Math.random().toString(36).substring(2, 11)
     }
 
     getAge() {
