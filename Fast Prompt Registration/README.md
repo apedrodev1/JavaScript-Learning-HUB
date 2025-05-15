@@ -1,10 +1,14 @@
 # 🚀 Fast Prompt Registration
 
+</br>
+
 ## 📝 Description
 
 This project provides a quick and easy prompt-based user registration system, designed primarily for prize draws and giveaways. It can also be adapted for newsletters and discount coupons. Built with JavaScript, HTML, and CSS, it follows modern ES6+ standards, uses Object-Oriented Programming (OOP), and applies modular code practices to keep the registration process short, straightforward, and efficient.
 
 ---
+
+</br>
 
 ## ⚙️ How to Use
 
@@ -27,30 +31,62 @@ Colocar detalhamento do botao
 
 ---
 
+</br>
+
 ## 🔄 User Registration Flow
 
 The following flowchart describes the registration steps:
 
 1. User enters their **first name**.
+
 2. Then enters **last name**.
+
 3. System asks for **birth date** and checks if the user is at least 18.
    - If **underage**, a message is shown and the process ends.
+
 4. If eligible, the user provides an **email**.
+
 5. The system asks for **acceptance of terms**.
    - If not accepted, a message is shown and the process ends.
+
 6. If accepted, a **confirmation message** is displayed.
 
-![User Registration Flow](./assets/img/README%20img/flow%20diagram.png)
+</br>
+</br>
 
+<div align="center">
+  <img 
+    src="./assets/img/README img/flow_diagram.png"
+    alt="User Registration Flow" 
+    width="300" 
+    style="border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"
+  />
+</div>
 
+</br>
 
 ## 🧩 Use Case Diagram
 
-![Use Case Diagram](./assets/img/README%20img/User%20Access%20Use%20Case%20Diagram.png)
+</br>
+
+<div align="center">
+  <img 
+    src="./assets/img/README img/use_case_diagram.png"
+    alt="Use Case Diagram" 
+    width="400" 
+    style="border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"
+  />
+</div>
+
+</br>
 
 ---
 
+</br>
+
 ## UML Diagram
+
+</br>
 
 ```
 +------------------------------+
@@ -72,6 +108,7 @@ The following flowchart describes the registration steps:
 ```
 ---
 
+</br>
 
 ## ✨ Features
 
@@ -84,6 +121,8 @@ The following flowchart describes the registration steps:
 
 ---
 
+</br>
+
 ## 🔧 Technologies
 
 - JavaScript (ES6 Modules)
@@ -91,6 +130,8 @@ The following flowchart describes the registration steps:
 - Optional backend with PHP for storing registrations (future)
 
 ---
+
+</br>
 
 ## 🔮 Future Improvements
 
@@ -102,7 +143,11 @@ The following flowchart describes the registration steps:
 
 ---
 
+</br>
+
 ## 🗂️ Folder Structure
+
+</br>
 
 ```
 project-root/
