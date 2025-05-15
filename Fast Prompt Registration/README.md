@@ -55,7 +55,7 @@ The following flowchart describes the registration steps:
 </br>
 
 <p align="center">
-  <img src="./assets/img/README img/flow_diagram.png" alt="User Registration Flow" width="300">
+  <img src="./assets/img/README img/flow_diagram.png" alt="User Registration Flow" width="400">
 </p>
 
 </br>
@@ -65,7 +65,7 @@ The following flowchart describes the registration steps:
 </br>
 
 <p align="center">
-  <img src="./assets/img/README img/use_case_diagram.png" alt="Use Case Diagram" width="400">
+  <img src="./assets/img/README img/use_case_diagram.png" alt="Use Case Diagram" width="300">
 </p>
 
 </br>
