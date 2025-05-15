@@ -27,7 +27,7 @@ git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/Fast%2
 
 - Click the button on the main page to navigate to the registration screen.
 
-Colocar detalhamento do botao
+Colocar detalhamento do botao (nome, foto, localizacao na tela)
 
 ---
 
@@ -170,3 +170,6 @@ project-root/
         └── README img        # Image content used on README.md
 
 ```
+</br>
+
+---
