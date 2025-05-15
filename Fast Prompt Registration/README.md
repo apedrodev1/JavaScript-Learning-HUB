@@ -58,7 +58,7 @@ The following flowchart describes the registration steps:
   <img 
     src="./assets/img/README img/flow_diagram.png"
     alt="User Registration Flow" 
-    width="300" 
+    width="400" 
     style="border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"
   />
 </div>
