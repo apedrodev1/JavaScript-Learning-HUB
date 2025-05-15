@@ -1,4 +1,4 @@
-import User from './classes/User.js';
+import User from '../classes/user.js';
 import {
     validateName,
     validateEmail,
