@@ -1,4 +1,4 @@
-# 🚀 Fast Prompt Registration
+# 🚀 **QuickPrompt SignUp 
 
 </br>
 
@@ -33,6 +33,21 @@ Colocar detalhamento do botao (nome, foto, localizacao na tela)
 
 </br>
 
+## 🧩 Use Case Diagram
+
+</br>
+
+<p align="center">
+  <img src="./assets/img/README img/use_case_diagram.png" alt="Use Case Diagram" width="400">
+</p>
+
+</br>
+
+---
+
+
+</br>
+
 ## 🔄 User Registration Flow
 
 The following flowchart describes the registration steps:
@@ -59,20 +74,53 @@ The following flowchart describes the registration steps:
 </p>
 
 </br>
-
-## 🧩 Use Case Diagram
-
-</br>
-
-<p align="center">
-  <img src="./assets/img/README img/use_case_diagram.png" alt="Use Case Diagram" width="400">
-</p>
-
 </br>
 
 ---
+<br>
 
-</br>
+## ⚙️ Program Flow
+
+<br>
+
+1. **Initial Prompt** 
+- [`main_function`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/Fast%20Prompt%20Registration/js/functions/mainFunction.js#L6))
+   - Displays: "Would you like to register for the prize draw?"
+   - If user declines: show exit message and end program.
+
+<br>
+
+2. **User Data Collection** 
+- [`collectUserInfo`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/Fast%20Prompt%20Registration/js/functions/mainFunction.js#L12))
+   - First Name → validated with `validateName()`
+   - Last Name → validated with `validateName()`
+   - Birthdate → validated with `validateBirthDate()`
+     - If user is underage: show message and end program.
+   - Email → validated with `validateEmail()`
+
+<br>
+
+3. **Terms Acceptance**
+- [`handleTermsAcceptance()`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/Fast%20Prompt%20Registration/js/functions/mainFunction.js#L15))
+
+   - Opens confirmation dialog (or link to terms).
+   - If user declines: a second confirmation is shown.
+   - If still declined: program ends.
+
+<br>
+
+4. **Final Confirmation** 
+
+- [`showConfirmationMessage(user)`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/Fast%20Prompt%20Registration/js/functions/mainFunction.js#L21))
+   - Displays:
+     - Full name
+     - Generated lucky number (user ID)
+     - Registered email for future contact
+
+
+<br>
+
+--- 
 
 ## UML Diagram
 
@@ -161,4 +209,21 @@ project-root/
 ```
 </br>
 
----
+--- 
+</br>
+
+
+## 🆚 V2 Version – Refactored Flow
+
+
+</br>
+
+Take a look at [Version 2](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/Fast%20Prompt%20Registration/READMEV2.md). — a more compact and streamlined approach using centralized validation. While V1 focuses on modularity, V2 simplifies the flow for better use in small projects like this one.
+
+
+</br>
+
+## 🎉 Thanks for checking out!
+Feel free to open issues or contribute.
+
+
