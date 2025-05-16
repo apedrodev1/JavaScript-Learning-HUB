@@ -1,10 +1,6 @@
-import User from '../classes/user.js';
-import {
-    validateName,
-    validateEmail,
-    validateBirthDate
-} from '../utils/validations.js';
-
+import { collectUserInfo } from './collectUserInfo.js';
+import { handleTermsAcceptance } from './terms/handleTerms.js';
+import { showConfirmation } from './confirmation.js';
 
 export default function main_function() {
     const answer = prompt("Hello! Would you like to register for the prize draw? (1 - Yes, 0 - No)");
@@ -13,58 +9,14 @@ export default function main_function() {
         return;
     }
 
-    // First Name
-    const firstName = prompt("Please enter your first name:");
-    const firstNameValidation = validateName(firstName);
-    if (!firstNameValidation.isValid) {
-        alert(firstNameValidation.error);
-        return;
-    }
+    const user = collectUserInfo();
+    if (!user) return;
 
-    // Last Name
-    const lastName = prompt("Now enter your last name:");
-    const lastNameValidation = validateName(lastName);
-    if (!lastNameValidation.isValid) {
-        alert(lastNameValidation.error);
-        return;
-    }
-
-    // Birthdate
-    const birthDate = prompt("Enter your birthdate (YYYY-MM-DD):");
-    const birthValidation = validateBirthDate(birthDate);
-    if (!birthValidation.isValid) {
-        alert(birthValidation.error);
-        return;
-    }
-
-    // Email
-    const email = prompt("Please enter your email:");
-    const emailValidation = validateEmail(email);
-    if (!emailValidation.isValid) {
-        alert(emailValidation.error);
-        return;
-    }
-
-    const fullName = `${firstNameValidation.value} ${lastNameValidation.value}`;
-    const user = new User(fullName, emailValidation.value, birthValidation.value);
-
-    if (!user.isAdult()) {
-        alert("Only participants aged 18 or older can register.");
-        return;
-    }
-
-    alert(
-        `Thank you for registering!\n` +
-        `Name: ${user.fullName}\n` +
-        `Email: ${user.email}\n` +
-        `Age: ${user.getAge()}`
-    );
-
-    const accept = confirm("Do you agree with the terms and conditions?\n(Lorem ipsum dolor sit amet...)");
-    if (!accept) {
+    const accepted = handleTermsAcceptance();
+    if (!accepted) {
         alert("You must accept the terms to participate.");
         return;
     }
 
-    alert("You're in! Good luck!");
+    showConfirmation(user);
 }
