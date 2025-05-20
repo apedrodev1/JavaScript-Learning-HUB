@@ -1,11 +1,11 @@
-import User from '../classes/user.js';
+import User from '../../classes/user.js';
 import {
     validateName,
     validateEmail,
     validateBirthDate
-} from '../utils/validations.js';
+} from '../../utils/validations.js';
 
-import { promptAndValidate } from '../utils/promptsAndValidations.js';
+import { promptAndValidate } from '../../utils/promptsAndValidations.js';
 
 export function collectUserInfo() {
     const firstName = promptAndValidate("Enter your first name:", validateName);
