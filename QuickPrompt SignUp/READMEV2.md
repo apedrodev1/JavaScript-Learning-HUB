@@ -81,10 +81,10 @@ Both approaches work well depending on project scale and your priorities. For qu
 
 ## 📎 Links to Source Files
 
-- [`main_function.js`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js))
+- [`main_function.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js)
 
 
-- [`main_functionV2.js`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunctionV2.js))
+- [`main_functionV2.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunctionV2.js)
 
 
 
