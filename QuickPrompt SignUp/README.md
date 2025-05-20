@@ -122,7 +122,7 @@ The following flowchart describes the registration steps:
 
 4. **Final Confirmation** 
 
-- [`showConfirmationMessage(user)`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L21))
+- [`showConfirmationMessage(user)`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L21)
    - Displays:
      - Full name
      - Generated lucky number (user ID)
