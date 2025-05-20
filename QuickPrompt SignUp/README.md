@@ -12,22 +12,33 @@ This project provides a quick and easy prompt-based user registration system, de
 
 ## ⚙️ How to Use
 
+</br>
+
 ### Clone the Repository
 
+
 ```bash
-git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/tree/main/Fast%20Prompt%20Registration
+
+git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp
+
 ```
+</br>
 
 ### Open the Project
 
 - Open `index.html` with a local server (e.g., Live Server on VS Code).
 - The main page shows a simple interface with a button to enter the prize draw.
 
+</br>
+</br>
+
 ### Start Registration
 
 - Click the button on the main page to navigate to the registration screen.
 
 Colocar detalhamento do botao (nome, foto, localizacao na tela)
+
+</br>
 
 ---
 
@@ -74,7 +85,7 @@ The following flowchart describes the registration steps:
 </p>
 
 </br>
-</br>
+
 
 ---
 <br>
@@ -84,14 +95,14 @@ The following flowchart describes the registration steps:
 <br>
 
 1. **Initial Prompt** 
-- [`main_function`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/Fast%20Prompt%20Registration/js/functions/mainFunction.js#L6))
+- [`main_function`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L6))
    - Displays: "Would you like to register for the prize draw?"
    - If user declines: show exit message and end program.
 
 <br>
 
 2. **User Data Collection** 
-- [`collectUserInfo`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/Fast%20Prompt%20Registration/js/functions/mainFunction.js#L12))
+- [`collectUserInfo`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L12))
    - First Name → validated with `validateName()`
    - Last Name → validated with `validateName()`
    - Birthdate → validated with `validateBirthDate()`
@@ -101,7 +112,7 @@ The following flowchart describes the registration steps:
 <br>
 
 3. **Terms Acceptance**
-- [`handleTermsAcceptance()`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/Fast%20Prompt%20Registration/js/functions/mainFunction.js#L15))
+- [`handleTermsAcceptance()`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L15))
 
    - Opens confirmation dialog (or link to terms).
    - If user declines: a second confirmation is shown.
@@ -111,7 +122,7 @@ The following flowchart describes the registration steps:
 
 4. **Final Confirmation** 
 
-- [`showConfirmationMessage(user)`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/Fast%20Prompt%20Registration/js/functions/mainFunction.js#L21))
+- [`showConfirmationMessage(user)`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L21))
    - Displays:
      - Full name
      - Generated lucky number (user ID)
@@ -218,12 +229,15 @@ project-root/
 
 </br>
 
-Take a look at [Version 2](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/Fast%20Prompt%20Registration/READMEV2.md). — a more compact and streamlined approach using centralized validation. While V1 focuses on modularity, V2 simplifies the flow for better use in small projects like this one.
+Take a look at [Version 2](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/READMEV2.md). — a more compact and streamlined approach using centralized validation. While V1 focuses on modularity, V2 simplifies the flow for better use in small projects like this one.
 
 
 </br>
 
 ## 🎉 Thanks for checking out!
+
+</br>
+
 Feel free to open issues or contribute.
 
 
