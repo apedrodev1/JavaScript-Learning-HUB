@@ -95,14 +95,14 @@ The following flowchart describes the registration steps:
 <br>
 
 1. **Initial Prompt** 
-- [`main_function`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L6))
+- [`main_function`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L6)
    - Displays: "Would you like to register for the prize draw?"
    - If user declines: show exit message and end program.
 
 <br>
 
 2. **User Data Collection** 
-- [`collectUserInfo`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L12))
+- [`collectUserInfo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L12)
    - First Name → validated with `validateName()`
    - Last Name → validated with `validateName()`
    - Birthdate → validated with `validateBirthDate()`
@@ -112,7 +112,7 @@ The following flowchart describes the registration steps:
 <br>
 
 3. **Terms Acceptance**
-- [`handleTermsAcceptance()`]((https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L15))
+- [`handleTermsAcceptance()`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L15)
 
    - Opens confirmation dialog (or link to terms).
    - If user declines: a second confirmation is shown.
