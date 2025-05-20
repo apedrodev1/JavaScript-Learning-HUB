@@ -1,10 +1,13 @@
-import { collectUserInfo } from './collectUserInfo.js';
+import { getStartConfirmation } from './flow/getStart.js';
+import { collectUserInfo } from './flow/collectUserInfo.js';
 import { handleTermsAcceptance } from './terms/handleTerms.js';
-import { showConfirmation } from './confirmation.js';
+import { showConfirmation } from './flow/confirmation.js';
+
+
 
 export default function main_function() {
-    const answer = prompt("Hello! Would you like to register for the prize draw? (1 - Yes, 0 - No)");
-    if (answer !== '1') {
+    const wantsToRegister = getStartConfirmation();
+    if (!wantsToRegister) {
         alert("No problem. Come back whenever you want!");
         return;
     }
