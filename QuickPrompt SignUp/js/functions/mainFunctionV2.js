@@ -1,6 +1,6 @@
 // File: js/functions/main_functionV2.js
 
-import { promptAndValidate } from '../utils/promptAndValidate.js';
+import { promptAndValidate } from '../utils/promptsAndValidations.js';
 import {
     validateName,
     validateEmail,
