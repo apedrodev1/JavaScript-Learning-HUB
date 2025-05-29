@@ -1,76 +1,69 @@
-# ⚙️ QuickPrompt SignUp  — Architecture Comparison
-</br>
+# ⚙️ QuickPrompt SignUp — Architecture Comparison
 
 ## 📋 Overview
 
-This document compares two architectural approaches to the main registration flow in the **QuickPrompt SignUp** project. The goal is to showcase the pros and cons of each approach and provide clean, maintainable code examples for each version.
+This document compares two architectural approaches to the main registration flow in the **QuickPrompt SignUp** project. The goal is to showcase the strengths and trade-offs of each version while providing clean, maintainable code examples.
 
 ---
-</br>
 
-## 🧱 Version 1 — Modular, Function-Based  [`main_function.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js)
-
+## 🧱 Version 1 — Modular, Function-Based [`main_function.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js)
 
 ### ✅ Pros
- - Highly modular — each responsibility lives in its own function/module.
-
- -  Easier to maintain, update, and test parts individually.
-
- - Cleaner, more readable main_functionV2 focused on flow control.
-
- - Encourages reusability and separation of concerns.
-
-</br>
+- Highly modular — each responsibility lives in its own function/module.
+- Easier to maintain, test, and refactor.
+- Cleaner `main_function` focused on flow orchestration.
+- Encourages reusability and separation of concerns.
 
 ### ❌ Cons
-- Slightly more complex project structure.
+- Slightly more complex structure.
+- Requires understanding of imports and modular design.
+- More files to manage — possibly overkill for small-scale scripts.
 
-- Requires understanding of module imports and function delegation.
+---
 
- - More files to manage (may be overkill for very simple apps).
-
-
-</br>
-
-## 🧩 Version 2 — Monolithic (Refactored)  [`main_functionV2.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunctionV2.js)
+## 🧩 Version 2 — Monolithic (Refactored) [`main_functionV2.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunctionV2.js)
 
 ### ✅ Pros
-- Simple and straightforward — easy to follow step-by-step.
-
-- All logic centralized in one place.
-
-- Good for small, quick scripts or prototypes.
+- Simple and straightforward — logic is centralized.
+- Easier for beginners or quick prototype development.
+- Fewer files, easier initial setup.
 
 ### ❌ Cons
-- Harder to maintain or extend as the codebase grows.
+- Harder to maintain as logic grows.
+- Difficult to test functions in isolation.
+- Repetitive code and limited separation of concerns.
 
-- Difficult to test individual parts in isolation.
-
-- Repetitive validation and prompt code inline reduces readability.
-
-
-
-</br>
-</br>
+---
 
 ## 🆚 Summary
 
+| Aspect            | Version 1 (Modular)                  | Version 2 (Monolithic)            |
+| ----------------- | ------------------------------------ | --------------------------------- |
+| Code organization | Multiple reusable functions/modules  | Single procedural function        |
+| Readability       | High — clear and logical flow        | Lower — cluttered as it grows     |
+| Maintainability   | Easier to extend or debug            | Harder over time                  |
+| Testing           | Functions can be tested in isolation | Requires full execution           |
+| Learning curve    | Slightly steeper (modular JS)        | Very accessible                   |
+| Scalability       | High — good for long-term projects   | Limited to small apps/scripts     |
+
+---
+
+## 📖 Code-Level Documentation — JSDoc
+
+This project follows the [JSDoc](https://jsdoc.app/) standard for in-code documentation.
+
+To generate automatic documentation:
+
+```bash
+npm install -g jsdoc
+jsdoc ./js/functions/mainFunctionV2.js -d docs
+```
+
 </br>
 
-
-| Aspect            | Version 1 (Modular)                  |  Version (Monolithic)            |
-| ----------------- | --------------------------------     | -------------------------------- |
-| Code organization | Multiple dedicated functions/modules |Single function                   | 
-| Readability       | Higher, flow is clear and concise    |Lower, all inline                 | 
-| Maintainability   | Easier with separated concerns       | Difficult as code grows          |   
-| Testing           | Easier, test functions independently | Harder to isolate and test parts |  
-| Learning curve    | Slightly higher, requires modular JS | Lower for beginners              |  
-| Scalability       | High, good for bigger projects       | Limited                          |
-
-
-</br>
 
 ## 🔧 Final Notes
+
 </br>
 
 If you plan to expand, add features, or work collaboratively, Version 1 offers better maintainability, readability, and testability.
