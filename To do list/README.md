@@ -17,6 +17,8 @@ Este projeto é uma aplicação web simples de lista de tarefas (TO DO List), de
 <br>
 
 
+
+
 ## Layout do projeto:
 
 ![image](https://github.com/user-attachments/assets/3d80ae70-6b62-4731-a58b-587751e67572)
