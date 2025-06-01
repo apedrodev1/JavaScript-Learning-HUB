@@ -62,20 +62,6 @@ In addition to the README, this project uses **[JSDoc](./docs/monolithic/index.h
 
 </br>
 
-## 📖 Code-Level Documentation — JSDoc
-
-This project follows the [JSDoc](https://jsdoc.app/) standard for in-code documentation.
-
-To generate automatic documentation:
-
-```bash
-npm install -g jsdoc
-jsdoc ./js/functions/mainFunctionV2.js -d docs
-```
-This generates HTML docs inside the docs/ folder for easy navigation.
-
-</br>
-
 
 ## 🔧 Final Notes
 
@@ -83,7 +69,6 @@ This generates HTML docs inside the docs/ folder for easy navigation.
 
 If you plan to expand, add features, or work collaboratively, Version 1 offers better maintainability, readability, and testability.
 
-Both approaches work well depending on project scale and your priorities. For quick prototypes or very small scripts, Version 2 is perfectly fine.
 
 </br>
 
