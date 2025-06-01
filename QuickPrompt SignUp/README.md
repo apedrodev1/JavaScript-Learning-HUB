@@ -167,6 +167,7 @@ The following flowchart describes the registration steps:
 - **Prompt-based Registration:** Quick inputs via JavaScript prompt dialogs, optimized for speed.
 - **Confirmation & Agreement:** Displays confirmation message and requires acceptance of terms.
 - **Simple UI:** Clean, minimal pages focusing on usability and flow.
+- **JSDoc Documentation:** Auto-generated technical documentation using [JSDoc](./docs/modular/index.html).
 
 ---
 
