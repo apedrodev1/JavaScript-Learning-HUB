@@ -24,6 +24,21 @@ git clone https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickP
 ```
 </br>
 
+## 📖 Code-Level Documentation — JSDoc
+
+This project follows the [JSDoc](https://jsdoc.app/) standard for in-code documentation.
+
+To generate automatic documentation:
+
+```bash
+npm install -g jsdoc
+jsdoc ./js/functions/mainFunction.js -d docs
+jsdoc ./js/functions/mainFunctionV2.js -d docs
+```
+This generates HTML docs inside the docs/ folder for easy navigation.
+
+</br>
+
 ### Open the Project
 
 - Open `index.html` with a local server (e.g., Live Server on VS Code).
