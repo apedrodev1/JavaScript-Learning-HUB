@@ -6,6 +6,8 @@
 
 This document compares two architectural approaches to the main registration flow in the **QuickPrompt SignUp** project. The goal is to showcase the strengths and trade-offs of each version while providing clean, maintainable code examples.
 
+In addition to the README, this project uses **[JSDoc](./docs/monolithic/index.html)** to generate full API documentation for the monolithic version.
+
 ---
 </br>
 
