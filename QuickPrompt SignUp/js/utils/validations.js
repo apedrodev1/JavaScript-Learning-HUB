@@ -1,5 +1,17 @@
+/**
+ * Validation utilities for user input.
+ *
+ * @module validations
+ */
+
 import { capitalize } from "./helpers.js";
 
+/**
+ * Validates start input (1 or 0).
+ *
+ * @param {string} input - User input.
+ * @returns {{ isValid: boolean, error?: string }}
+ */
 export function validateStartInput(input) {
     if (input !== '1' && input !== '0') {
         return {
@@ -11,7 +23,12 @@ export function validateStartInput(input) {
     return { isValid: true };
 }
 
-
+/**
+ * Validates a name string.
+ *
+ * @param {string} name - Name to validate.
+ * @returns {{ isValid: boolean, error?: string, value?: string }}
+ */
 export function validateName(name) {
     if (!name || typeof name !== 'string') {
         return { isValid: false, error: "Name is required." };
@@ -33,14 +50,17 @@ export function validateName(name) {
     return { isValid: true, value: capitalized };
 }
 
-
-
+/**
+ * Validates a birth date in DD/MM/YYYY format.
+ *
+ * @param {string} birthDate - Birth date input.
+ * @returns {{ isValid: boolean, error?: string, value?: string }}
+ */
 export function validateBirthDate(birthDate) {
     if (!birthDate || typeof birthDate !== 'string') {
         return { isValid: false, error: "Birthdate is required." };
     }
 
-    // Aceita apenas formato dd/mm/yyyy
     const dateRegex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
     const match = birthDate.match(dateRegex);
 
@@ -51,10 +71,8 @@ export function validateBirthDate(birthDate) {
     const day = parseInt(match[1], 10);
     const month = parseInt(match[2], 10) - 1;
     const year = parseInt(match[3], 10);
-
     const dateObj = new Date(year, month, day);
 
-    // Valida a existência da data (ex: 30/02 é inválido)
     if (
         dateObj.getFullYear() !== year ||
         dateObj.getMonth() !== month ||
@@ -68,11 +86,15 @@ export function validateBirthDate(birthDate) {
         return { isValid: false, error: "Birthdate cannot be in the future." };
     }
 
-    return { isValid: true, value: dateObj.toISOString().split('T')[0] }; // ISO string para padronizar internamente
+    return { isValid: true, value: dateObj.toISOString().split('T')[0] };
 }
 
-
-
+/**
+ * Validates an email address.
+ *
+ * @param {string} email - Email to validate.
+ * @returns {{ isValid: boolean, error?: string, value?: string }}
+ */
 export function validateEmail(email) {
     if (!email || typeof email !== 'string') {
         return { isValid: false, error: "Email is required." };
@@ -84,7 +106,6 @@ export function validateEmail(email) {
         return { isValid: false, error: "Email length must be between 5 and 254 characters." };
     }
 
-    // Regex mais completo, ainda leve
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (!emailRegex.test(trimmed)) {

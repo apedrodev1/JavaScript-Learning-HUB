@@ -1,3 +1,9 @@
+/**
+ * Collects and validates user information.
+ *
+ * @module collectUserInfo
+ */
+
 import User from '../../classes/user.js';
 import {
     validateName,
@@ -5,6 +11,12 @@ import {
     validateBirthDate
 } from '../../utils/validations.js';
 
+/**
+ * Prompts user for name, email, and birthdate, validates them,
+ * and returns a User object.
+ *
+ * @returns {User|null} Valid user object or null if underage.
+ */
 export function collectUserInfo() {
     let firstName;
     while (true) {

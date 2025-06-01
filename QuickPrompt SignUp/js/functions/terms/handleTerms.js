@@ -1,8 +1,18 @@
+/**
+ * Handles user interaction with terms and conditions.
+ *
+ * @module handleTerms
+ */
+
+/**
+ * Asks the user if they want to view the terms and confirms their agreement.
+ *
+ * @returns {boolean} True if the user accepts the terms, false otherwise.
+ */
 export function handleTermsAcceptance() {
     const viewTerms = confirm("Would you like to view the terms and conditions before proceeding?\n(Link: termsAndConditions.html)");
 
     if (viewTerms) {
-        // ✅ Abrir o link logo após o clique do usuário
         window.open('./termsAndConditions.html', '_blank');
     }
 

@@ -1,10 +1,21 @@
+/**
+ * Main application flow controller.
+ * Handles registration flow: start confirmation, user data collection,
+ * terms acceptance, and final registration confirmation.
+ *
+ * @module mainFunction
+ */
+
 import { getStartConfirmation } from './flow/getStart.js';
 import { collectUserInfo } from './flow/collectUserInfo.js';
 import { handleTermsAcceptance } from './terms/handleTerms.js';
 import { showConfirmation } from './flow/confirmation.js';
 
-
-
+/**
+ * Executes the full registration workflow.
+ * If user accepts, their information is collected, terms are presented,
+ * and a confirmation message is shown.
+ */
 export default function main_function() {
     const wantsToRegister = getStartConfirmation();
     if (!wantsToRegister) {
