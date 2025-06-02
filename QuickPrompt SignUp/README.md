@@ -214,24 +214,40 @@ The following flowchart describes the registration steps:
 
 </br>
 
+
 ```
 project-root/
-├── index.html                # Main page with prize draw button
-├── registration.html         # Registration page with prompt flow
+├── index.html                         # Página principal com botão de inscrição
+├── screenTwo.js                       # Entry point que executa a função principal
+├── package.json                       # Configuração do projeto Node + JSDoc
+├── package-lock.json                  # Lockfile do Node
+├── README.md                          # Documentação principal (monolítica)
+├── READMEv2.md                        # Documentação comparativa modular vs monolítica
+├── docs/                              # Documentação JSDoc
+│   ├── modular/                       # Documentação da versão modular
+│   └── monolithic/                    # Documentação da versão monolítica
+├── php/
+│   └── register.php                   # Endpoint PHP para armazenar os dados
 ├── js/
-│   ├── screenTwo.js          # Entry point for registration page
-│   ├── functions/
-│   │   └── main_function.js  # Main prompt registration logic
 │   ├── classes/
-│   │   └── User.js           # User class with ID and age methods
-│   └── utils/
-│       └── validations.js    # Input validation utilities
-├── css/
-│   └── style.css             # Styles for pages
-└── assets/
-    └── img                   
-        └── front end img     # Image content used on front end
-        └── README img        # Image content used on README.md
+│   │   └── User.js                    # Classe User: ID, idade, encapsulamento de dados
+│   ├── data/
+│   │   └── user.json                  # Armazenamento temporário (mock)
+│   ├── functions/
+│   │   ├── mainFunction.js           # Versão modular do fluxo principal
+│   │   ├── mainFunctionV2.js         # Versão monolítica do fluxo principal
+│   │   ├── flow/
+│   │   │   ├── collectUserInfo.js    # Coleta de dados via prompt
+│   │   │   ├── confirmation.js       # Mensagem final de confirmação
+│   │   │   └── getStart.js           # Confirmação inicial de participação
+│   │   ├── terms/
+│   │   │   ├── handleTerms.js        # Lógica de aceite dos termos
+│   │   │   └── termsAndConditions.html # Página com os termos exibidos ao usuário
+│   ├── utils/
+│   │   ├── validations.js            # Funções de validação de entrada
+│   │   └── helpers.js                # Funções utilitárias auxiliares
+└── node_modules/                     # Dependências do Node.js
+
 
 ```
 </br>
