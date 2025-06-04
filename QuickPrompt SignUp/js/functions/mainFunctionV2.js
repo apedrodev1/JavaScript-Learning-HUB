@@ -168,17 +168,18 @@ function promptAndValidate(promptMessage, validationFunction) {
 function handleTermsAcceptance() {
     const viewTerms = confirm("Would you like to view the terms and conditions before proceeding?\n(Link: termsAndConditions.html)");
     if (viewTerms) {
-        window.open('./termsAndConditions.html', '_blank');
+        window.open('./terms/termsAndConditions.html', '_blank');
     }
-    let accept = confirm("Do you agree with the terms and conditions?");
-    if (!accept) {
-        accept = confirm("You must accept the terms to participate.\nDo you accept now?");
-        if (!accept) {
-            alert("You must accept the terms to participate.");
-            return false;
-        }
+
+    const agree = confirm("Do you agree with the terms and conditions?");
+    if (agree) return true;
+
+    const retry = confirm("You must accept the terms to participate.\nDo you accept now?");
+    if (retry) {
+        return confirm("Do you agree with the terms and conditions?");
     }
-    return true;
+
+    return false;
 }
 
 /**
