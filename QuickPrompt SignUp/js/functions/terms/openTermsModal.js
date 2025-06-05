@@ -1,29 +1,29 @@
-/**
- * Displays the terms and conditions in an in-page modal using an iframe.
- *
- * @module modalUtils
- */
-
-/**
- * Opens the modal with the embedded terms and waits for it to be closed.
- *
- * @async
- * @function
- * @returns {Promise<void>} Resolves when the modal is closed by the user.
- */
 export function openTermsModal() {
     return new Promise((resolve) => {
         const modal = document.getElementById('termsModal');
         const closeBtn = document.getElementById('closeTermsBtn');
+        const acceptBtn = document.getElementById('acceptTermsBtn');
 
         modal.style.display = 'flex';
 
-        const handleClose = () => {
+        const handleAccept = () => {
+            cleanup();
             modal.style.display = 'none';
+            resolve(true);
+        };
+
+        const handleClose = () => {
+            cleanup();
+            modal.style.display = 'none';
+            resolve(false);
+        };
+
+        const cleanup = () => {
             closeBtn.removeEventListener('click', handleClose);
-            resolve();
+            acceptBtn.removeEventListener('click', handleAccept);
         };
 
         closeBtn.addEventListener('click', handleClose);
+        acceptBtn.addEventListener('click', handleAccept);
     });
 }
