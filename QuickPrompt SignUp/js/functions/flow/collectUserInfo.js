@@ -57,18 +57,27 @@ export function collectUserInfo() {
         const validation = validateBirthDate(input);
         if (validation.isValid) {
             birthDate = validation.value;
+
+            const tempUser = new User(`${firstName} ${lastName}`, email, birthDate);
+            const age = tempUser.getAge();
+
+            if (age === null || age > 100) {
+                alert(`🤔 Are you really ${age} years old? Please, enter your birthdate again.`);
+                continue;
+            }
+
+            if (!tempUser.isAdult()) {
+                alert("Only participants aged 18 or older can register.");
+                return null;
+            }
+
             break;
         }
+
         alert(validation.error);
     }
 
     const fullName = `${firstName} ${lastName}`;
-    const user = new User(fullName, email, birthDate);
-
-    if (!user.isAdult()) {
-        alert("Only participants aged 18 or older can register.");
-        return null;
-    }
-
-    return user;
+    return new User(fullName, email, birthDate);
 }
+
