@@ -30,11 +30,13 @@ class User {
     /**
      * Calculates the user's age.
      *
-     * @returns {number} Age in years.
+     * @returns {number|null} Age in years, or null if birthdate is invalid.
      */
     getAge() {
-        const today = new Date();
         const birth = new Date(this.birthDate);
+        if (isNaN(birth)) return null;
+
+        const today = new Date();
         let age = today.getFullYear() - birth.getFullYear();
         const m = today.getMonth() - birth.getMonth();
 
@@ -51,7 +53,8 @@ class User {
      * @returns {boolean} True if adult, false otherwise.
      */
     isAdult() {
-        return this.getAge() >= 18;
+        const age = this.getAge();
+        return age !== null && age >= 18;
     }
 }
 
