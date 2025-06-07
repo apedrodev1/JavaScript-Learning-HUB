@@ -49,9 +49,13 @@ This generates HTML docs inside the docs/ folder for easy navigation.
 
 ### Start Registration
 
-- Click the button on the main page to navigate to the registration screen.
+- On the main page click the button above to navigate to the registration screen.
 
-Colocar detalhamento do botao (nome, foto, localizacao na tela)
+<p align="center">
+  <img src="./assets/img/README img/go_to_program" alt="Use Case Diagram" width="400">
+</p>
+
+</br>
 
 </br>
 
