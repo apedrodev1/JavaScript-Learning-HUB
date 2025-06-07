@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS quickprompt;
+
+USE quickprompt;
+
+CREATE TABLE IF NOT EXISTS users (
+    id VARCHAR(20) PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(254) NOT NULL,
+    birth_date DATE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
