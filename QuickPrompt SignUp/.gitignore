@@ -1,0 +1,15 @@
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar node_modules
+node_modules/
+
+# Ignorar logs
+*.log
+
+# Ignorar dependências do PHP
+vendor/
+
+# Ignorar arquivos temporários
+*.tmp
+*.cache
