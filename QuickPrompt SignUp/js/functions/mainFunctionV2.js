@@ -24,14 +24,15 @@ class User {
 
     /**
      * Calculates the user's age.
-     * @returns {number} Age in years.
+     * @returns {number|null} Age in years or null if invalid.
      */
     getAge() {
         const today = new Date();
         const birth = new Date(this.birthDate);
+        if (isNaN(birth.getTime())) return null;
+
         let age = today.getFullYear() - birth.getFullYear();
         const m = today.getMonth() - birth.getMonth();
-
         if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
             age--;
         }
@@ -198,7 +199,7 @@ function showConfirmation(user) {
 /**
  * Main function to handle the full registration flow.
  */
-function mainFunctionV2() {
+export default async function mainFunctionV2() {
     while (true) {
         const start = prompt("Hello! Would you like to register for the prize draw? (1 - Yes, 0 - No)");
         const validation = validateStartInput(start);
@@ -215,16 +216,28 @@ function mainFunctionV2() {
 
     const firstName = promptAndValidate("Enter your first name:", validateName);
     const lastName = promptAndValidate("Enter your last name:", validateName);
-    const birthDateISO = promptAndValidate("Enter your birthdate (DD/MM/YYYY):", validateBirthDate);
 
-    const fullName = `${firstName} ${lastName}`;
-    const tempUser = new User(fullName, "", birthDateISO);
+    let birthDateISO;
+    while (true) {
+        birthDateISO = promptAndValidate("Enter your birthdate (DD/MM/YYYY):", validateBirthDate);
 
-    if (!tempUser.isAdult()) {
-        alert("Only participants aged 18 or older can register.");
-        return;
+        const tempUser = new User(`${firstName} ${lastName}`, "", birthDateISO);
+        const age = tempUser.getAge();
+
+        if (age === null || age > 100) {
+            alert(`🤔 Are you really ${age} years old? Please, enter your birthdate again.`);
+            continue;
+        }
+
+        if (!tempUser.isAdult()) {
+            alert("Only participants aged 18 or older can register.");
+            return;
+        }
+
+        break;
     }
 
+    const fullName = `${firstName} ${lastName}`;
     const email = promptAndValidate("Enter your email:", validateEmail);
     const user = new User(fullName, email, birthDateISO);
 
@@ -237,4 +250,5 @@ function mainFunctionV2() {
     showConfirmation(user);
 }
 
-export default mainFunctionV2;
+// Call the function (remove this line if you'll call it externally)
+// mainFunctionV2();
