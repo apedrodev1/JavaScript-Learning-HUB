@@ -2,11 +2,6 @@
  * User class to represent a participant in the prize draw.
  */
 class User {
-    /**
-     * @param {string} fullName - Full name of the user.
-     * @param {string} email - User email.
-     * @param {string} birthDateISO - Birthdate in ISO format (YYYY-MM-DD).
-     */
     constructor(fullName, email, birthDateISO) {
         this.id = this.generateID();
         this.fullName = fullName;
@@ -14,18 +9,10 @@ class User {
         this.birthDate = birthDateISO;
     }
 
-    /**
-     * Generates a unique ID for the user.
-     * @returns {string} Random alphanumeric ID.
-     */
     generateID() {
         return Math.random().toString(36).substring(2, 11);
     }
 
-    /**
-     * Calculates the user's age.
-     * @returns {number|null} Age in years or null if invalid.
-     */
     getAge() {
         const today = new Date();
         const birth = new Date(this.birthDate);
@@ -39,20 +26,11 @@ class User {
         return age;
     }
 
-    /**
-     * Checks if the user is 18 or older.
-     * @returns {boolean} True if adult, false otherwise.
-     */
     isAdult() {
         return this.getAge() >= 18;
     }
 }
 
-/**
- * Capitalizes the first letter of each word in a name.
- * @param {string} name - The name to be capitalized.
- * @returns {string} Capitalized name.
- */
 function capitalize(name) {
     return name
         .toLowerCase()
@@ -61,11 +39,6 @@ function capitalize(name) {
         .join(' ');
 }
 
-/**
- * Validates user input for starting the process.
- * @param {string} input - User input ('1' or '0').
- * @returns {Object} Validation result.
- */
 function validateStartInput(input) {
     if (input !== '1' && input !== '0') {
         return { isValid: false, error: "Invalid input. Please enter 1 (Yes) or 0 (No)." };
@@ -73,11 +46,6 @@ function validateStartInput(input) {
     return { isValid: true };
 }
 
-/**
- * Validates name input.
- * @param {string} name - Name input.
- * @returns {Object} Validation result with capitalized name if valid.
- */
 function validateName(name) {
     if (!name || typeof name !== 'string') {
         return { isValid: false, error: "Name is required." };
@@ -93,11 +61,6 @@ function validateName(name) {
     return { isValid: true, value: capitalize(trimmed) };
 }
 
-/**
- * Validates birthdate input.
- * @param {string} birthDate - Input date in DD/MM/YYYY format.
- * @returns {Object} Validation result with ISO string if valid.
- */
 function validateBirthDate(birthDate) {
     if (!birthDate || typeof birthDate !== 'string') {
         return { isValid: false, error: "Birthdate is required." };
@@ -125,11 +88,6 @@ function validateBirthDate(birthDate) {
     return { isValid: true, value: dateObj.toISOString().split('T')[0] };
 }
 
-/**
- * Validates email input.
- * @param {string} email - Email input.
- * @returns {Object} Validation result with trimmed email if valid.
- */
 function validateEmail(email) {
     if (!email || typeof email !== 'string') {
         return { isValid: false, error: "Email is required." };
@@ -145,12 +103,6 @@ function validateEmail(email) {
     return { isValid: true, value: trimmed };
 }
 
-/**
- * Prompts user for input and validates it.
- * @param {string} promptMessage - Message to show in the prompt.
- * @param {function} validationFunction - Function used to validate input.
- * @returns {string} Validated and formatted input.
- */
 function promptAndValidate(promptMessage, validationFunction) {
     while (true) {
         const input = prompt(promptMessage);
@@ -163,23 +115,63 @@ function promptAndValidate(promptMessage, validationFunction) {
 }
 
 /**
- * Handles the acceptance of terms and conditions.
- * @returns {boolean} True if accepted, false otherwise.
+ * Opens a modal and resolves the user's choice.
+ * @returns {Promise<boolean>} Resolves true if accepted, false if closed.
  */
-function handleTermsAcceptance() {
-    const viewTerms = confirm("Would you like to view the terms and conditions before proceeding?\n(Link: termsAndConditions.html)");
-    if (viewTerms) {
-        window.open('./terms/termsAndConditions.html', '_blank');
+function openTermsModal() {
+    return new Promise((resolve) => {
+        const modal = document.getElementById('termsModal');
+        const closeBtn = document.getElementById('closeTermsBtn');
+        const acceptBtn = document.getElementById('acceptTermsBtn');
+
+        modal.style.display = 'flex';
+
+        const handleAccept = () => {
+            cleanup();
+            modal.style.display = 'none';
+            resolve(true);
+        };
+
+        const handleClose = () => {
+            cleanup();
+            modal.style.display = 'none';
+            resolve(false);
+        };
+
+        const cleanup = () => {
+            closeBtn.removeEventListener('click', handleClose);
+            acceptBtn.removeEventListener('click', handleAccept);
+        };
+
+        closeBtn.addEventListener('click', handleClose);
+        acceptBtn.addEventListener('click', handleAccept);
+    });
+}
+
+/**
+ * Handles the acceptance of terms and conditions using modal logic.
+ * @returns {Promise<boolean>} True if accepted, false otherwise.
+ */
+async function handleTermsAcceptance() {
+    const wantsToView = confirm("Would you like to view the terms and conditions before proceeding?");
+    if (wantsToView) {
+        const acceptedInModal = await openTermsModal();
+        if (acceptedInModal) return true;
+
+        alert("⚠️ You must accept the terms to participate.");
+        const agreeAfterClose = confirm("Do you agree with the terms and conditions?");
+        if (agreeAfterClose) return true;
+
+        return false;
     }
 
-    const agree = confirm("Do you agree with the terms and conditions?");
-    if (agree) return true;
+    const agrees = confirm("Do you agree with the terms and conditions? ❗ Without even reading them?");
+    if (agrees) return true;
 
-    const retry = confirm("You must accept the terms to participate.\nDo you accept now?");
-    if (retry) {
-        return confirm("Do you agree with the terms and conditions?");
-    }
+    const retry = confirm("⚠️ You must accept the terms to participate. Do you accept now?");
+    if (retry) return true;
 
+    alert("❌ You must accept the terms to participate.");
     return false;
 }
 
@@ -199,7 +191,7 @@ function showConfirmation(user) {
 /**
  * Main function to handle the full registration flow.
  */
-export default async function mainFunctionV2() {
+async function mainFunctionV2() {
     while (true) {
         const start = prompt("Hello! Would you like to register for the prize draw? (1 - Yes, 0 - No)");
         const validation = validateStartInput(start);
@@ -241,14 +233,15 @@ export default async function mainFunctionV2() {
     const email = promptAndValidate("Enter your email:", validateEmail);
     const user = new User(fullName, email, birthDateISO);
 
-    const accepted = handleTermsAcceptance();
+    const accepted = await handleTermsAcceptance();
     if (!accepted) {
         alert("You must accept the terms to participate.");
         return;
     }
 
     showConfirmation(user);
+
+
 }
 
-// Call the function (remove this line if you'll call it externally)
-// mainFunctionV2();
+export default mainFunctionV2;
