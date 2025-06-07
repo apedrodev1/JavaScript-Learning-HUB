@@ -7,7 +7,7 @@
  * Once testing is complete, it will switch to import and execute the modular mainFunction (v1).
  */
 
-import mainFunction from './functions/mainFunction.js';
+import mainFunctionV2 from './functions/mainFunctionV2.js';
 
 // Execute the main registration flow (monolithic version for now)
-mainFunction();
+mainFunctionV2();
