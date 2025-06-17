@@ -47,23 +47,61 @@ This generates HTML docs inside the docs/ folder for easy navigation.
 </br>
 </br>
 
-### Start Registration
+## 🎯 **Start Registration**
 
-- On the main page click the button above to navigate to the registration screen.
+To start the registration process for the giveaway, there are **three buttons** available on the main page that will redirect you to the registration screen (**screenTwo**). These buttons are intentionally placed in key sections of the website to make navigation easier for users.
+
+> ⚠️ **Important:** The order of the images below matches the order of the buttons in the HTML structure.
+
+---
+
+### 🔹 **1 — Top Navigation Bar Button (Join the Giveaway)**
+
+The first button is located in the **top-right corner of the navigation bar**. This is the most accessible option for users as it remains visible while scrolling.
+
+- **Label:** `Join the Giveaway`
+- **Location:** Navigation bar (top-right corner)
+- **Function:** Redirects directly to the registration screen (**screenTwo**).
 
 <p align="center">
   <img src="./assets/img/README img/go_to_program.png" alt="where to click" width="400">
 </p>
 
+---
+
+### 🔹 **2 — Hero Section Button (Join the Giveaway)**
+
+The second button is prominently placed in the **Hero Section**, usually at the center of the main banner. This button serves as a clear call-to-action for users visiting the page.
+
+- **Label:** `Join the Giveaway`
+- **Location:** Hero Section (center of the banner)
+- **Function:** Redirects directly to the registration screen (**screenTwo**).
 
 <p align="center">
   <img src="./assets/img/README img/go_to_program2.png" alt="where to click" width="400">
 </p>
 
+---
+
+### 🔹 **3 — Carousel Button**
+
+The third button is located within one of the **carousel slides**. This offers an additional way for users to navigate to the registration screen while browsing through the carousel content.
+
+- **Label:** `Join the Giveaway` *(or equivalent on the slide)*
+- **Location:** Inside the carousel (depends on the active slide)
+- **Function:** Redirects directly to the registration screen (**screenTwo**).
 
 <p align="center">
   <img src="./assets/img/README img/go_to_program3.png" alt="where to click" width="400">
 </p>
+
+---
+
+## ✅ **Summary:**
+- Any of these three buttons will take users to the **registration screen (screenTwo)**.
+- The buttons are located in the **Top Navigation Bar**, **Hero Section**, and **Carousel Slide**.
+- The order of the images in this README matches exactly the order in the HTML structure.
+
 
 
 
