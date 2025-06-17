@@ -82,7 +82,7 @@ body {
   border-radius: 10px 10px 0 0;
 }
 
-/* Botões dos Cards */
+/* 🛍️ Botões dos Cards */
 .card .btn-add-cart {
   display: inline-flex;
   align-items: center;
@@ -105,7 +105,7 @@ body {
   font-size: 1.2rem;
 }
 
-/* Hover com amarelo */
+/* Hover dos Botões */
 .card .btn-add-cart:hover {
   background-color: var(--primary-color);
   color: var(--dark-color);
@@ -114,35 +114,12 @@ body {
   box-shadow: 0 6px 12px rgba(245, 183, 0, 0.5);
 }
 
-/* Responsividade: centralizar botão abaixo do texto em telas menores */
-@media (max-width: 576px) {
-  .card .card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .card .btn-add-cart {
-    width: 100%;
-    justify-content: center;
-    padding: 12px 0;
-    font-size: 1.1rem;
-    border-radius: 16px;
-  }
-}
-
-/* Responsividade das imagens dos cards */
-@media (max-width: 768px) {
-  .card-img-top {
-    height: 180px;
-  }
-}
-
-@media (max-width: 576px) {
-  .card-img-top {
-    height: 150px;
-  }
+/* 🎯 Ícones dos Títulos (Ex.: $ no H2) */
+.icon-money {
+  color: var(--primary-hover);
+  font-weight: 900;
+  margin-right: 8px;
+  font-size: 1.5em;
 }
 
 /* 🎠 Carrossel */
@@ -174,7 +151,40 @@ footer p {
   margin: 0;
 }
 
-/* 🔧 Responsividade Navbar */
+/* 📱 Responsividade */
+
+/* Responsividade das Imagens dos Cards */
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 150px;
+  }
+}
+
+/* Responsividade dos Botões dos Cards */
+@media (max-width: 576px) {
+  .card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card .btn-add-cart {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    border-radius: 16px;
+  }
+}
+
+/* Responsividade da Navbar */
 @media (max-width: 992px) {
   .navbar .btn {
     margin-top: 10px;
