@@ -60,8 +60,8 @@ To start the registration process for the giveaway, there are **three buttons** 
 The first button is located in the **top-right corner of the navigation bar**. This is the most accessible option for users as it remains visible while scrolling.
 
 - **Label:** `Join the Giveaway`
-- **Location:** Navigation bar (top-right corner)
-- **Function:** Redirects directly to the registration screen (**screenTwo**).
+- **Location:** Header, navigation bar (top-right corner)
+- **Function:** Redirects directly to the registration screen [`screenTwo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/screenTwo.html)
 
 <p align="center">
   <img src="./assets/img/README img/go_to_program.png" alt="where to click" width="400">
@@ -75,7 +75,7 @@ The second button is prominently placed in the **Hero Section**, usually at the 
 
 - **Label:** `Join the Giveaway`
 - **Location:** Hero Section (center of the banner)
-- **Function:** Redirects directly to the registration screen (**screenTwo**).
+- **Function:** Redirects directly to the registration screen [`screenTwo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/screenTwo.html)
 
 <p align="center">
   <img src="./assets/img/README img/go_to_program2.png" alt="where to click" width="400">
@@ -88,8 +88,8 @@ The second button is prominently placed in the **Hero Section**, usually at the 
 The third button is located within one of the **carousel slides**. This offers an additional way for users to navigate to the registration screen while browsing through the carousel content.
 
 - **Label:** `Join the Giveaway` *(or equivalent on the slide)*
-- **Location:** Inside the carousel (depends on the active slide)
-- **Function:** Redirects directly to the registration [`screenTwo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/screenTwo.html)
+- **Location:** At the botton page. Inside the carousel (depends on the active slide)
+- **Function:** Redirects directly to the registration screen [`screenTwo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/screenTwo.html)
 
 <p align="center">
   <img src="./assets/img/README img/go_to_program3.png" alt="where to click" width="400">
@@ -101,8 +101,6 @@ The third button is located within one of the **carousel slides**. This offers a
 - Any of these three buttons will take users to the **registration screen (screenTwo)**.
 - The buttons are located in the **Top Navigation Bar**, **Hero Section**, and **Carousel Slide**.
 - The order of the images in this README matches exactly the order in the HTML structure.
-
-
 
 
 </br>
