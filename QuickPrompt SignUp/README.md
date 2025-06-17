@@ -55,6 +55,18 @@ This generates HTML docs inside the docs/ folder for easy navigation.
   <img src="./assets/img/README img/go_to_program.png" alt="where to click" width="400">
 </p>
 
+
+<p align="center">
+  <img src="./assets/img/README img/go_to_program2.png" alt="where to click" width="400">
+</p>
+
+
+<p align="center">
+  <img src="./assets/img/README img/go_to_program3.png" alt="where to click" width="400">
+</p>
+
+
+
 </br>
 
 </br>
