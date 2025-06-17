@@ -89,7 +89,7 @@ The third button is located within one of the **carousel slides**. This offers a
 
 - **Label:** `Join the Giveaway` *(or equivalent on the slide)*
 - **Location:** Inside the carousel (depends on the active slide)
-- **Function:** Redirects directly to the registration screen (**screenTwo**).
+- **Function:** Redirects directly to the registration [`screenTwo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/screenTwo.html)
 
 <p align="center">
   <img src="./assets/img/README img/go_to_program3.png" alt="where to click" width="400">
