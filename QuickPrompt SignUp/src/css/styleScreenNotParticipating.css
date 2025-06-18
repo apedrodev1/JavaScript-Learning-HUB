@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* 🎨 Paleta Base */
+:root {
+  --primary-color: #f5b700;
+  --primary-hover: #ffda3a;
+  --dark-color: #001f3f;
+  --medium-color: #003366;
+  --light-color: #f8f9fa;
+  --text-color: #ffffff;
+  --danger-color: #d32f2f;
+  --danger-hover: #a62828;
+  --neutral-color: #f0f0f0;
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* 🚀 Navbar */
+.navbar {
+  background-color: var(--dark-color);
+}
+
+.navbar .nav-link {
+  color: var(--text-color);
+  transition: color var(--transition);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--primary-color);
+}
+
+.navbar-brand {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* 🔥 Header */
+h1 {
+  color: var(--danger-color);
+  font-weight: 700;
+}
+
+p.lead {
+  color: var(--medium-color);
+  font-weight: 500;
+}
+
+/* ⏳ Timer Section */
+.timer-section {
+  background-color: var(--danger-color);
+  color: var(--text-color);
+  border-top: 4px solid var(--dark-color);
+  border-bottom: 4px solid var(--dark-color);
+}
+
+.timer-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+.timer-number {
+  background-color: var(--text-color);
+  color: var(--danger-color);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.timer-label {
+  margin-right: 12px;
+  align-self: center;
+  font-weight: 500;
+}
+
+/* 🏆 Prize Cards */
+.prize-card {
+  border: 2px solid var(--danger-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform var(--transition), box-shadow var(--transition);
+  background-color: var(--neutral-color);
+}
+
+.prize-card img {
+  width: 60%; /* Limita o tamanho */
+  display: block;
+  margin: 20px auto 0 auto;
+  background-color: var(--light-color); /* Fundo suave */
+  border-radius: 50%; /* Deixa circular, opcional */
+  padding: 10px;
+}
+
+.prize-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.prize-card img {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  object-fit: contain;
+  width: 100%;
+  max-height: 200px;
+}
+
+.card-title {
+  color: var(--danger-color);
+  font-weight: bold;
+}
+
+.card-text {
+  color: var(--dark-color);
+}
+
+.countdown-box {
+  background-color: var(--neutral-color);
+  border: 2px solid var(--danger-color);
+  border-radius: var(--radius);
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.countdown-box span {
+  color: var(--danger-color);
+  font-size: 2rem;
+  margin: 0 5px;
+}
+
+/* 🎯 Call to Action Button */
+.btn-warning {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-warning:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* 🚩 Footer */
+footer {
+  background-color: var(--dark-color);
+}
+
+footer p {
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 600px) {
+  .prize-card {
+    margin-bottom: 20px;
+  }
+
+  .btn-warning {
+    width: 100%;
+  }
+
+  .timer-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
