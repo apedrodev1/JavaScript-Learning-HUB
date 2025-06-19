@@ -9,5 +9,8 @@
 
 import mainFunctionV2 from './functions/mainFunctionV2.js';
 
+
 // Execute the main registration flow (monolithic version for now)
 mainFunctionV2();
+
+
