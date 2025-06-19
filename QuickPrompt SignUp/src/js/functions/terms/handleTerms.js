@@ -21,7 +21,7 @@ export async function handleTermsAcceptance() {
                 alert('⚠️ You must accept the terms to participate!');
             } else {
                 // ❌ Declined twice — redirect
-                window.location.href = '../../pages/screens/screenNotParticipating.html';
+                window.location.href = './screenNotParticipating.html';
                 return false;
             }
         }
