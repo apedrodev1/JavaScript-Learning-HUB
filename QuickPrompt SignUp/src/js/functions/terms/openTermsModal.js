@@ -1,29 +1,36 @@
+/**
+ * Opens the terms and conditions modal and waits for user interaction.
+ * @returns {Promise<boolean>} - Resolves true if accepted, false if declined.
+ */
 export function openTermsModal() {
     return new Promise((resolve) => {
         const modal = document.getElementById('termsModal');
-        const closeBtn = document.getElementById('closeTermsBtn');
-        const acceptBtn = document.getElementById('acceptTermsBtn');
+        const btnAccept = document.getElementById('acceptTermsBtn');
+        const btnDecline = document.getElementById('closeTermsBtnAlt');
+        const btnClose = document.getElementById('closeTermsBtnX');
 
         modal.style.display = 'flex';
 
-        const handleAccept = () => {
+        const accept = () => {
             cleanup();
             modal.style.display = 'none';
             resolve(true);
         };
 
-        const handleClose = () => {
+        const decline = () => {
             cleanup();
             modal.style.display = 'none';
             resolve(false);
         };
 
         const cleanup = () => {
-            closeBtn.removeEventListener('click', handleClose);
-            acceptBtn.removeEventListener('click', handleAccept);
+            btnAccept.removeEventListener('click', accept);
+            btnDecline.removeEventListener('click', decline);
+            btnClose.removeEventListener('click', decline);
         };
 
-        closeBtn.addEventListener('click', handleClose);
-        acceptBtn.addEventListener('click', handleAccept);
+        btnAccept.addEventListener('click', accept);
+        btnDecline.addEventListener('click', decline);
+        btnClose.addEventListener('click', decline);
     });
 }
