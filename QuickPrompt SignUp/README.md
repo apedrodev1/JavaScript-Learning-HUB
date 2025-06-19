@@ -268,37 +268,56 @@ The following flowchart describes the registration steps:
 
 
 ```
-project-root/
-├── index.html                         # Página principal com botão de inscrição
-├── screenTwo.js                       # Entry point que executa a função principal
-├── package.json                       # Configuração do projeto Node + JSDoc
-├── package-lock.json                  # Lockfile do Node
-├── README.md                          # Documentação principal (monolítica)
-├── READMEv2.md                        # Documentação comparativa modular vs monolítica
-├── docs/                              # Documentação JSDoc
-│   ├── modular/                       # Documentação da versão modular
-│   └── monolithic/                    # Documentação da versão monolítica
+.project-root/
+├── package.json                                    # Node + JSDoc project configuration
+├── package-lock.json                               # Node lockfile
+├── README.md                                       # Main documentation (monolithic version)
+├── READMEv2.md                                     # Documentation for the modular version
+├── src/                                            # Comparative documentation (modular vs monolithic)
+├── assets/                                         # Media folder
+│   └── img/
+│       ├── front_end_img/                          # UI assets and interface images
+│       └── README_img/                             # Images used in documentation
+├── css/                                            # Cascading Style Sheets
+│   ├── style.index.css
+│   ├── styleScreenConfirmating.css
+│   ├── styleScreenGiveaway.css
+│   └── styleScreenNotParticipating.css
+├── ux/
+│   └── giveaway_section/
+│       ├── screenConfirmating.html                 # User lands here after confirming participation
+│       ├── screenGiveaway.html                     # Entry point that runs the main function (registration flow)
+│       └── screenNotParticipating.html             # User lands here after declining participation
+├── docs/                                           # JSDoc auto-generated documentation
+│   ├── modular/                                    # Documentation for the modular version
+│   └── monolithic/                                 # Documentation for the monolithic version
 ├── php/
-│   └── register.php                   # Endpoint PHP para armazenar os dados
+│   ├── database/
+│   │   └── users.sql                               # SQL script to set up the user table
+│   ├── register.php                                # PHP API endpoint to store user data in the database
+│   ├── env.                                        # Environment configuration (e.g., credentials)
+│   └── db.php                                      # Database connection configuration
 ├── js/
 │   ├── classes/
-│   │   └── User.js                    # Classe User: ID, idade, encapsulamento de dados
+│   │   └── User.js                                 # User class (ID generation, age calculation, data encapsulation)
 │   ├── data/
-│   │   └── user.json                  # Armazenamento temporário (mock)
-│   ├── functions/
-│   │   ├── mainFunction.js           # Versão modular do fluxo principal
-│   │   ├── mainFunctionV2.js         # Versão monolítica do fluxo principal
-│   │   ├── flow/
-│   │   │   ├── collectUserInfo.js    # Coleta de dados via prompt
-│   │   │   ├── confirmation.js       # Mensagem final de confirmação
-│   │   │   └── getStart.js           # Confirmação inicial de participação
-│   │   ├── terms/
-│   │   │   ├── handleTerms.js        # Lógica de aceite dos termos
-│   │   │   └── termsAndConditions.html # Página com os termos exibidos ao usuário
-│   ├── utils/
-│   │   ├── validations.js            # Funções de validação de entrada
-│   │   └── helpers.js                # Funções utilitárias auxiliares
-└── node_modules/                     # Dependências do Node.js
+│   │   └── user.json                               # Temporary mock database (JSON)
+│   ├── functions/                                  # Main functions for both modular and monolithic flows
+│   │   ├── mainFunction.js                          # Modular version of the main registration flow
+│   │   ├── mainFunctionV2.js                        # Monolithic version of the main registration flow
+│   │   ├── flow/                                    # Modular flow steps
+│   │   │   ├── collectUserInfo.js                   # Collects user data (name, email, birth date)
+│   │   │   ├── confirmation.js                      # Displays the confirmation message
+│   │   │   └── getStart.js                          # Asks the user whether they want to start
+│   │   ├── terms/                                   # Terms acceptance logic
+│   │   │   ├── handleTerms.js                       # Handles terms acceptance flow
+│   │   │   └── termsAndConditions.html              # Static page for terms and conditions
+│   │   ├── utils/                                   # Utilities specific to the modular function
+│   │   │   ├── validations.js                       # Input validation (name, email, birth date)
+│   │   │   └── helpers.js                           # Helper functions (e.g., capitalize names)
+│   ├── utils/                                       # Global or visual utilities
+│   │   └── chronometer.js                           # Countdown timer used in UI pages (Confirmating, NotParticipating)
+└── index.html                                       # Main landing page with the registration button
 
 
 ```
