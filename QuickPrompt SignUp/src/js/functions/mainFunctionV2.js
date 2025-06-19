@@ -1,5 +1,9 @@
 /**
- * User class to represent a participant in the prize draw.
+ * Abre o modal e retorna a decisão do usuário.
+ * @returns {Promise<boolean>} true = aceitou, false = recusou
+ */
+/**
+ * Classe que representa um participante.
  */
 class User {
     constructor(fullName, email, birthDateISO) {
@@ -31,6 +35,9 @@ class User {
     }
 }
 
+/**
+ * 📍 Validações e utilidades
+ */
 function capitalize(name) {
     return name
         .toLowerCase()
@@ -115,83 +122,80 @@ function promptAndValidate(promptMessage, validationFunction) {
 }
 
 /**
- * Opens a modal and resolves the user's choice.
- * @returns {Promise<boolean>} Resolves true if accepted, false if closed.
+ * ✅ Tela de confirmação
  */
+function showConfirmation(user) {
+    alert(
+        `🎉 Thank you for registering, ${user.fullName}!\n\n` +
+        `This is your lucky number: ${user.id}\n\n` +
+        `📧 Stay tuned to your email (${user.email}) for draw updates.\n` +
+        `Good luck! 🍀`
+    );
+    window.location.href = './screenConfirmating.html';
+}
+
 function openTermsModal() {
     return new Promise((resolve) => {
         const modal = document.getElementById('termsModal');
-        const closeBtn = document.getElementById('closeTermsBtn');
-        const acceptBtn = document.getElementById('acceptTermsBtn');
+        const btnAccept = document.getElementById('acceptTermsBtn');
+        const btnDecline = document.getElementById('closeTermsBtnAlt');
+        const btnClose = document.getElementById('closeTermsBtnX');
 
         modal.style.display = 'flex';
 
-        const handleAccept = () => {
+        const accept = () => {
             cleanup();
             modal.style.display = 'none';
             resolve(true);
         };
 
-        const handleClose = () => {
+        const decline = () => {
             cleanup();
             modal.style.display = 'none';
             resolve(false);
         };
 
         const cleanup = () => {
-            closeBtn.removeEventListener('click', handleClose);
-            acceptBtn.removeEventListener('click', handleAccept);
+            btnAccept.removeEventListener('click', accept);
+            btnDecline.removeEventListener('click', decline);
+            btnClose.removeEventListener('click', decline);
         };
 
-        closeBtn.addEventListener('click', handleClose);
-        acceptBtn.addEventListener('click', handleAccept);
+        btnAccept.addEventListener('click', accept);
+        btnDecline.addEventListener('click', decline);
+        btnClose.addEventListener('click', decline);
     });
 }
 
 /**
- * Handles the acceptance of terms and conditions using modal logic.
- * @returns {Promise<boolean>} True if accepted, false otherwise.
+ * Fluxo principal de aceitação dos termos com controle de recusas.
  */
 async function handleTermsAcceptance() {
-    const wantsToView = confirm("Would you like to view the terms and conditions before proceeding?");
-    if (wantsToView) {
-        const acceptedInModal = await openTermsModal();
-        if (acceptedInModal) return true;
+    let declinedCount = 0;
 
-        alert("⚠️ You must accept the terms to participate.");
-        const agreeAfterClose = confirm("Do you agree with the terms and conditions?");
-        if (agreeAfterClose) return true;
+    while (true) {
+        const decision = await openTermsModal();
 
-        return false;
+        if (decision) {
+            return true; // ✅ Aceitou
+        } else {
+            declinedCount++;
+
+            if (declinedCount === 1) {
+                alert('⚠️ Você deve aceitar os termos para participar!');
+            } else {
+                // ❌ Recusou duas vezes → tela de não participante
+                window.location.href = '../../pages/screens/screenNotParticipating.html';
+                return false;
+            }
+        }
     }
-
-    const agrees = confirm("Do you agree with the terms and conditions? ❗ Without even reading them?");
-    if (agrees) return true;
-
-    const retry = confirm("⚠️ You must accept the terms to participate. Do you accept now?");
-    if (retry) return true;
-
-    alert("❌ You must accept the terms to participate.");
-    return false;
 }
 
 /**
- * Displays a confirmation message to the user.
- * @param {User} user - The registered user.
+ * 🚀 Função principal
  */
-function showConfirmation(user) {
-    alert(
-        `Thank you for registering, ${user.fullName}, You're in!!\n` +
-        `🎉 This is your lucky number: ${user.id}\n\n` +
-        `📧 Stay tuned to your email (${user.email}) for draw updates.\n` +
-        `Good luck! 🍀`
-    );
-}
-
-/**
- * Main function to handle the full registration flow.
- */
-async function mainFunctionV2() {
+export default async function mainFunctionV2() {
     while (true) {
         const start = prompt("Hello! Would you like to register for the prize draw? (1 - Yes, 0 - No)");
         const validation = validateStartInput(start);
@@ -201,6 +205,7 @@ async function mainFunctionV2() {
         }
         if (start === '0') {
             alert("No problem. Come back whenever you want!");
+            window.location.href = './screenNotParticipating.html';
             return;
         }
         break;
@@ -223,6 +228,7 @@ async function mainFunctionV2() {
 
         if (!tempUser.isAdult()) {
             alert("Only participants aged 18 or older can register.");
+            window.location.href = './screenNotParticipating.html';
             return;
         }
 
@@ -235,20 +241,18 @@ async function mainFunctionV2() {
 
     const accepted = await handleTermsAcceptance();
     if (!accepted) {
-        alert("You must accept the terms to participate.");
         return;
     }
 
     showConfirmation(user);
-
-
 }
 
+/**
+ * Listener para botão voltar
+ */
 document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("btnGoBack");
     if (btn) {
         btn.addEventListener("click", mainFunctionV2);
     }
 });
-
-export default mainFunctionV2;
