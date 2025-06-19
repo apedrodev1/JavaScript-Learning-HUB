@@ -1,32 +1,29 @@
 import { openTermsModal } from './openTermsModal.js';
 
 /**
- * Manages user agreement to terms and conditions.
- * Handles logic based on modal interaction or direct prompt.
- *
- * @returns {Promise<boolean>} - True if the user accepts, false otherwise.
+ * Manages user agreement to terms and conditions with retry logic.
+ * If declined twice, redirects to the not participating screen.
+ * 
+ * @returns {Promise<boolean>} - True if accepted, false if declined twice.
  */
 export async function handleTermsAcceptance() {
-    const wantsToView = confirm("Would you like to view the terms and conditions before proceeding?");
+    let declinedCount = 0;
 
-    if (wantsToView) {
-        const acceptedInModal = await openTermsModal();
-        if (acceptedInModal) return true;
+    while (true) {
+        const decision = await openTermsModal();
 
-        alert("⚠️ You must accept the terms to participate.");
+        if (decision) {
+            return true; // ✅ Accepted terms
+        } else {
+            declinedCount++;
 
-        const agreeAfterClose = confirm("Do you agree with the terms and conditions?");
-        if (agreeAfterClose) return true;
-
-        return false;
+            if (declinedCount === 1) {
+                alert('⚠️ You must accept the terms to participate!');
+            } else {
+                // ❌ Declined twice — redirect
+                window.location.href = '../../pages/screens/screenNotParticipating.html';
+                return false;
+            }
+        }
     }
-
-    const agrees = confirm("Do you agree with the terms and conditions? ❗ Without even reading them?");
-    if (agrees) return true;
-
-    const retry = confirm("⚠️ You must accept the terms to participate. Do you accept now?");
-    if (retry) return true;
-
-    alert("❌ You must accept the terms to participate.");
-    return false;
 }
