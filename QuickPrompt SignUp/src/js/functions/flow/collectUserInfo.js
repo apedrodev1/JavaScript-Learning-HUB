@@ -9,7 +9,7 @@ import {
     validateName,
     validateEmail,
     validateBirthDate
-} from '../../utils/validations.js';
+} from '../utils/validations.js';
 
 /**
  * Prompts user for name, email, and birthdate, validates them,
@@ -68,6 +68,7 @@ export function collectUserInfo() {
 
             if (!tempUser.isAdult()) {
                 alert("Only participants aged 18 or older can register.");
+                window.location.href = './screenNotParticipating.html';
                 return null;
             }
 
