@@ -3,7 +3,7 @@ import { openTermsModal } from './openTermsModal.js';
 /**
  * Manages user agreement to terms and conditions with retry logic.
  * If declined twice, redirects to the not participating screen.
- * 
+ *
  * @returns {Promise<boolean>} - True if accepted, false if declined twice.
  */
 export async function handleTermsAcceptance() {
