@@ -41,7 +41,7 @@ This generates HTML docs inside the docs/ folder for easy navigation.
 
 ### Open the Project
 
-- Open `index.html` with a local server (e.g., Live Server on VS Code).
+- Open [`index.html`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/index.html) with a local server (e.g., Live Server on VS Code).
 - The main page shows a simple interface with a button to enter the prize draw.
 
 </br>
@@ -61,10 +61,10 @@ The first button is located in the **top-right corner of the navigation bar**. T
 
 - **Label:** `Join the Giveaway`
 - **Location:** Header, navigation bar (top-right corner)
-- **Function:** Redirects directly to the registration screen [`screenTwo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/screenTwo.html)
+- **Function:** Redirects directly to the registration screen [`screenGiveaway`](hhttps://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/ux/giveaway_section/screenGiveaway.html)
 
 <p align="center">
-  <img src="./assets/img/README img/go_to_program.png" alt="where to click" width="400">
+  <img src="./src/assets/img/README img/go_to_program.png" alt="where to click" width="400">
 </p>
 
 ---
@@ -75,10 +75,10 @@ The second button is prominently placed in the **Hero Section**, usually at the 
 
 - **Label:** `Join the Giveaway`
 - **Location:** Hero Section (center of the banner)
-- **Function:** Redirects directly to the registration screen [`screenTwo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/screenTwo.html)
+- **Function:** Redirects directly to the registration screen [`screenGiveaway`](hhttps://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/ux/giveaway_section/screenGiveaway.html)
 
 <p align="center">
-  <img src="./assets/img/README img/go_to_program2.png" alt="where to click" width="400">
+  <img src="./src/assets/img/README img/go_to_program2.png" alt="where to click" width="400">
 </p>
 
 ---
@@ -89,10 +89,10 @@ The third button is located within one of the **carousel slides**. This offers a
 
 - **Label:** `Join the Giveaway` *(or equivalent on the slide)*
 - **Location:** At the botton page. Inside the carousel (depends on the active slide)
-- **Function:** Redirects directly to the registration screen [`screenTwo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/screenTwo.html)
+- **Function:** Redirects directly to the registration screen [`screenGiveaway`](hhttps://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/ux/giveaway_section/screenGiveaway.html)
 
 <p align="center">
-  <img src="./assets/img/README img/go_to_program3.png" alt="where to click" width="400">
+  <img src="./src/assets/img/README img/go_to_program.png" alt="where to click" width="400">
 </p>
 
 ---
