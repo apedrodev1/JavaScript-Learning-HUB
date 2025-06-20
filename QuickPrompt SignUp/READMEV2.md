@@ -6,13 +6,13 @@
 
 This document compares two architectural approaches to the main registration flow in the **QuickPrompt SignUp** project. The goal is to showcase the strengths and trade-offs of each version while providing clean, maintainable code examples.
 
-In addition to the README, this project uses **[JSDoc](./docs/monolithic/index.html)** to generate full API documentation for the monolithic version.
+In addition to the README, this project uses **[JSDoc](./src/docs/monolithic/index.html)** to generate full API documentation for the monolithic version.
 
 ---
 </br>
 
 
-## 🧱 Version 1 — Modular, Function-Based [`main_function.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js)
+## 🧱 Version 1 — Modular, Function-Based [`main_function.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/js/functions/mainFunction.js)
 
 ### ✅ Pros
 - Highly modular — each responsibility lives in its own function/module.
@@ -29,7 +29,7 @@ In addition to the README, this project uses **[JSDoc](./docs/monolithic/index.h
 
 </br>
 
-## 🧩 Version 2 — Monolithic (Refactored) [`main_functionV2.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunctionV2.js)
+## 🧩 Version 2 — Monolithic (Refactored) [`main_functionV2.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/js/functions/mainFunctionV2.js)
 
 ### ✅ Pros
 - Simple and straightforward — logic is centralized.
@@ -74,10 +74,10 @@ If you plan to expand, add features, or work collaboratively, Version 1 offers b
 
 ## 📎 Links to Source Files
 
-- [`main_function.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js)
+- [`main_function.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/js/functions/mainFunction.js)
 
 
-- [`main_functionV2.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunctionV2.js)
+- [`main_functionV2.js`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/js/functions/mainFunctionV2.js)
 
 
 
