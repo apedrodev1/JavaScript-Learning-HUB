@@ -16,5 +16,5 @@ export function showConfirmation(user) {
         `📧 Stay tuned to your email (${user.email}) for draw updates.\n` +
         `Good luck! 🍀`
     );
-    window.location.href = './screenParticipating.html';
+    window.location.href = './screenConfirmating.html';
 }
