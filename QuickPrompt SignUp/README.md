@@ -92,7 +92,7 @@ The third button is located within one of the **carousel slides**. This offers a
 - **Function:** Redirects directly to the registration screen [`screenGiveaway`](hhttps://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/ux/giveaway_section/screenGiveaway.html)
 
 <p align="center">
-  <img src="./src/assets/img/README img/go_to_program.png" alt="where to click" width="400">
+  <img src="./src/assets/img/README img/go_to_program3 .png" alt="where to click" width="400">
 </p>
 
 ---
