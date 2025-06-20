@@ -20,6 +20,7 @@ export default async function main_function() {
     const wantsToRegister = getStartConfirmation();
     if (!wantsToRegister) {
         alert("No problem. Come back whenever you want!");
+        window.location.href = './screenNotParticipating.html';
         return;
     }
 
@@ -29,6 +30,7 @@ export default async function main_function() {
     const accepted = await handleTermsAcceptance();
     if (!accepted) {
         alert("You must accept the terms to participate.");
+        window.location.href = './screenNotParticipating.html';
         return;
     }
 
