@@ -4,7 +4,7 @@
  * @module getStart
  */
 
-import { validateStartInput } from '../../utils/validations.js';
+import { validateStartInput } from '../utils/validations.js';
 
 /**
  * Prompts the user to confirm if they want to register.
