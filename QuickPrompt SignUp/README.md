@@ -116,7 +116,7 @@ The third button is located within one of the **carousel slides**. This offers a
 </br>
 
 <p align="center">
-  <img src="./assets/img/README img/use_case_diagram.png" alt="Use Case Diagram" width="400">
+  <img src="./src/assets/img/README img/use_case_diagram.png/" alt="Use Case Diagram" width="400">
 </p>
 
 </br>
@@ -148,7 +148,7 @@ The following flowchart describes the registration steps:
 </br>
 
 <p align="center">
-  <img src="./assets/img/README img/flow_diagram.png" alt="User Registration Flow" width="400">
+  <img src="./src/assets/img/README img/flow_diagram.png" alt="User Registration Flow" width="400">
 </p>
 
 </br>
@@ -162,14 +162,14 @@ The following flowchart describes the registration steps:
 <br>
 
 1. **Initial Prompt** 
-- [`main_function`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L6)
+- [`main_function`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/js/functions/mainFunction.js#L6)
    - Displays: "Would you like to register for the prize draw?"
    - If user declines: show exit message and end program.
 
 <br>
 
 2. **User Data Collection** 
-- [`collectUserInfo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L12)
+- [`collectUserInfo`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/js/functions/mainFunction.js#L12)
    - First Name → validated with `validateName()`
    - Last Name → validated with `validateName()`
    - Birthdate → validated with `validateBirthDate()`
@@ -179,7 +179,7 @@ The following flowchart describes the registration steps:
 <br>
 
 3. **Terms Acceptance**
-- [`handleTermsAcceptance()`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L15)
+- [`handleTermsAcceptance()`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/js/functions/mainFunction.js#L15)
 
    - Opens confirmation dialog (or link to terms).
    - If user declines: a second confirmation is shown.
@@ -189,7 +189,7 @@ The following flowchart describes the registration steps:
 
 4. **Final Confirmation** 
 
-- [`showConfirmationMessage(user)`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/js/functions/mainFunction.js#L21)
+- [`showConfirmationMessage(user)`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/js/functions/mainFunction.js#L21)
    - Displays:
      - Full name
      - Generated lucky number (user ID)
