@@ -243,9 +243,10 @@ The following flowchart describes the registration steps:
 
 ## 🔧 Technologies
 
-- JavaScript (ES6 Modules)
-- HTML5 & CSS3
-- Optional backend with PHP for storing registrations (future)
+- JavaScript (ES6 Modules),
+- HTML5 & CSS3,
+- BootStrap,
+- Optional backend with PHP for storing registrations (future).
 
 ---
 
