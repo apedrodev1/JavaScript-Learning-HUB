@@ -49,7 +49,7 @@ This generates HTML docs inside the docs/ folder for easy navigation.
 
 ## 🎯 **Start Registration**
 
-To start the registration process for the giveaway, there are **three buttons** available on the main page that will redirect you to the registration screen (**screenTwo**). These buttons are intentionally placed in key sections of the website to make navigation easier for users.
+To start the registration process for the giveaway, there are **three buttons** available on the main page that will redirect you to the registration screen [`screenGiveaway`](https://github.com/apedrodev1/JavaScript-Learning-HUB/blob/main/QuickPrompt%20SignUp/src/ux/giveaway_section/screenGiveaway.html). These buttons are intentionally placed in key sections of the website to make navigation easier for users.
 
 > ⚠️ **Important:** The order of the images below matches the order of the buttons in the HTML structure.
 
@@ -234,6 +234,7 @@ The following flowchart describes the registration steps:
 - **Prompt-based Registration:** Quick inputs via JavaScript prompt dialogs, optimized for speed.
 - **Confirmation & Agreement:** Displays confirmation message and requires acceptance of terms.
 - **Simple UI:** Clean, minimal pages focusing on usability and flow.
+- **Responsive Pages:** Focus on usability to all kinds of devices and their respectives screen sizes.
 - **JSDoc Documentation:** Auto-generated technical documentation using [JSDoc](./docs/modular/index.html).
 
 ---
