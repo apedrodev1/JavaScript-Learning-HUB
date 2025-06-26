@@ -272,7 +272,7 @@ The following flowchart describes the registration steps:
 ```
 .project-root/
 ├── package.json                                    # Node + JSDoc project configuration
-├── package-lock.json                               # Node lockfile
+├── package-lock.json                               # Node lockfile                                   
 ├── README.md                                       # Main documentation (monolithic version)
 ├── READMEv2.md                                     # Documentation for the modular version
 ├── src/                                            # Comparative documentation (modular vs monolithic)
