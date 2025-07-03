@@ -1,8 +1,5 @@
 # 🚀 QuickPrompt SignUp 
 
-
-
-
 </br>
 
 ## 📝 Description
