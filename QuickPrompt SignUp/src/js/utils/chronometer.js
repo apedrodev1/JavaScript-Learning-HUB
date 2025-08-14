@@ -1,5 +1,5 @@
 // Defina a data final da promoção
-const endDate = new Date("2025-06-30T23:59:59").getTime();
+const endDate = new Date("2077-06-30T23:59:59").getTime();
 
 const countdown = setInterval(function () {
     const now = new Date().getTime();
