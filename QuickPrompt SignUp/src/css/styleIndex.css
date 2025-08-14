@@ -35,6 +35,81 @@ body {
   font-weight: bold;
 }
 
+/* 🎯 Search bar */
+.search-bar {
+  max-width: 280px;
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar input {
+  background-color: #222;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  flex: 1;
+  transition: all 0.25s ease;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(245, 183, 0, 0.6);
+}
+
+.search-bar button {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.search-bar button:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+/* 🎨 Ajuste do fundo: mais vibrante no mobile, mais clean no desktop */
+@media (max-width: 992px) {
+  .search-bar {
+    background-color: var(--medium-color);
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+
+/* 🍔 Animação suave do botão hamburguer */
+.navbar-toggler {
+  border: none;
+  transition: transform 0.5s ease;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler:hover {
+  transform: rotate(8px) scale(1.05);
+}
+
+/* Estado ativo com transição */
+.navbar-toggler[aria-expanded="true"] {
+  transform: rotate(90deg);
+}
+
+
+
 /* 🏆 Hero Section */
 .hero {
   background-color: var(--medium-color);
