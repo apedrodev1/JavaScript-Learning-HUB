@@ -6,6 +6,7 @@
   --medium-color: #003366;
   --light-color: #f8f9fa;
   --text-color: #ffffff;
+  --bk-color: #222;
 }
 
 /* 🌐 Body */
@@ -22,7 +23,7 @@ body {
 
 .navbar .nav-link {
   color: var(--text-color);
-  transition: color 0.3s;
+  transition: color 0.2s;
 }
 
 .navbar .nav-link:hover,
@@ -33,25 +34,30 @@ body {
 .navbar-brand {
   color: var(--primary-color);
   font-weight: bold;
+  font-size: 25px;
 }
 
 /* 🎯 Search bar */
+/* 🔍 Barra de pesquisa estilizada */
 .search-bar {
-  max-width: 280px;
+  min-width: 150px;
   width: 100%;
   display: flex;
-  gap: 8px;
-  transition: all 0.3s ease-in-out;
+  align-items: center;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: var(--bk-color);
+  border: 1px solid #555;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .search-bar input {
-  background-color: #222;
-  border: 1px solid #555;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 8px;
   flex: 1;
-  transition: all 0.25s ease;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
 }
 
 .search-bar input::placeholder {
@@ -60,55 +66,28 @@ body {
 
 .search-bar input:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 8px rgba(245, 183, 0, 0.6);
 }
 
 .search-bar button {
   background-color: var(--primary-color);
-  color: var(--dark-color);
   border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
+  padding: none;
+  color: var(--dark-color);
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .search-bar button:hover {
-  background-color: var(--primary-hover);
-  transform: scale(1.05);
+  transform: scale(1.4);
 }
 
-/* 🎨 Ajuste do fundo: mais vibrante no mobile, mais clean no desktop */
-@media (max-width: 992px) {
-  .search-bar {
-    background-color: var(--medium-color);
-    padding: 10px;
-    border-radius: 10px;
-  }
+/* Efeito quando a barra estiver ativa */
+.search-bar:focus-within {
+  box-shadow: 0 0 8px var(--primary-color);
 }
-
-/* 🍔 Animação suave do botão hamburguer */
-.navbar-toggler {
-  border: none;
-  transition: transform 0.5s ease;
-}
-
-.navbar-toggler:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.navbar-toggler:hover {
-  transform: rotate(8px) scale(1.05);
-}
-
-/* Estado ativo com transição */
-.navbar-toggler[aria-expanded="true"] {
-  transform: rotate(90deg);
-}
-
-
 
 /* 🏆 Hero Section */
 .hero {
@@ -262,6 +241,123 @@ footer p {
 /* Responsividade da Navbar */
 @media (max-width: 992px) {
   .navbar .btn {
-    margin-top: 10px;
+    margin-top: 20px;
+  }
+
+  .navbar-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* duas colunas iguais */
+    gap: 10px;
+    text-align: center;
+  }
+
+  /* Itens comuns */
+  .navbar-nav .nav-item {
+    width: 100%;
   }
 }
+
+/* 🍔 Animação suave do botão hamburguer */
+.navbar-toggler {
+  border: none;
+  transition: transform 0.5s ease;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler:hover {
+  transform: rotate(8px) scale(1.05);
+}
+
+/* Estado ativo com transição */
+.navbar-toggler[aria-expanded="true"] {
+  transform: rotate(90deg);
+}
+
+
+
+/* 🔍 Barra de pesquisa responsiva */
+.search-bar {
+  max-width: 280px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: var(--bk-color);
+  border: 1px solid #555;
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+.search-bar button {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 8px 12px;
+  color: var(--dark-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito quando ativa */
+.search-bar:focus-within {
+  box-shadow: 0 0 8px var(--primary-color);
+}
+
+/* 📱 Ajustes para telas menores */
+@media (max-width: 992px) {
+  .search-bar {
+    max-width: 100%;
+    border-radius: 15px;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-bar {
+    order: 2;
+    margin: 10px auto;
+  }
+}
+
+ .navbar-nav .nav-item:last-child {
+    grid-column: span 2; /* ocupa as duas colunas */
+    display: flex;
+    justify-content: center;
+  }
+
+
+   /* Giveaway centralizado */
+  .navbar-nav .nav-item:last-child .btn {
+    width: auto;
+    margin-bottom: 5px;
+  }
+
+  /* 
+  ver depois
+  .navbar-nav .btn:hover {
+   transform: scale(1.5);
+  } */
+
